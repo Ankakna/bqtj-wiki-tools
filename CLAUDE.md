@@ -36,7 +36,10 @@ data/        - 生成的输出文件（JSON + Excel，已加入 gitignore）
 
 每个脚本都是针对特定数据类型的独立处理器：
 
-- `parse_arms.py` - 从 XML 处理武器数据，输出独立的 JSON 文件 + Excel 更新表
+- `parse_arms.py` - 从 XML 处理武器数据，输出：
+  - 独立 JSON 文件（`data/arms/json/*.json`）
+  - 汇总 JSON 文件（`data/arms/武器数据汇总_*.json`）
+  - Excel 更新表（`data/arms/武器数据更新_*.xlsx`）
 - `parse_skills.py` - 处理具有 father/skill 层级结构的技能数据，包含重名检测和报告功能
 - `parse_things.py` - 处理物品数据（碎片、材料等），支持 gift 等特殊子标签解析，包含重名检测和报告功能
 - `patch_things.py` - 对 things 数据进行后处理补丁，通过 arms 数据补全武器碎片缺失字段（smeltD、btnList、itemsLevel 等）
@@ -85,8 +88,9 @@ pip install -e .
 
 ### 输出格式
 
-- 独立 JSON 文件：以实体的 `name` 字段命名，存放在 `data/<type>/json/`
-- Excel 批量文件：生成时附带时间戳，用于 HuijiBot 批量上传，存放在 `data/<type>/`
+- **独立 JSON 文件**：以实体的 `name` 字段命名，存放在 `data/<type>/json/`
+- **汇总 JSON 文件**（武器数据）：所有武器合并为一个数组，`data/arms/武器数据汇总_*.json`
+- **Excel 批量文件**：生成时附带时间戳，用于 HuijiBot 批量上传，存放在 `data/<type>/`
 
 ### 类别映射
 

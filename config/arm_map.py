@@ -163,4 +163,13 @@ CATEGORY_MAP = {
     "yearSnake": ["zodiac"],
     "yearTiger": ["zodiac", "darkgold"],
     "yearTigerDea": ["death"],
+    "yearRabbit45": ["test"],
+    "electricArcS": ["death"],
+    "electricArc": ["death"],
+    "waterFlamerDea": ["death"],
+    "sawEmitterE": ["death"],
+    "smileCrossbowE": ["death"],
+    "spiralCannonE": ["death"],
+    "falconGunE": ["death"],
+    "fireFlamerDea": ["death"],
 }

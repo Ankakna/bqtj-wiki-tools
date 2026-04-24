@@ -8,7 +8,7 @@
 		<gift>things;strengthenDrug;	10</gift>
 		<gift>things;armsHighBox;		1</gift>
 		<gift>things;equipHighBox;		1</gift>
-		<gift>things;militarySupplies;	30</gift>
+		<gift>things;militarySupplies;	60</gift>
 		<gift>things;anniversaryCash;	3</gift>
 		
 	</level>
@@ -43,7 +43,7 @@
 		<gift>things;strengthenDrug;	47</gift>
 		<gift>things;armsHighBox;		4</gift>
 		<gift>things;equipHighBox;		4</gift>
-		<gift>things;militarySupplies;	144</gift>
+		<gift>things;militarySupplies;	288</gift>
 		<gift>things;anniversaryCash;	14</gift>
 		<gift>things;allBlackEquipCash;	5</gift>
 	</level>
@@ -54,7 +54,7 @@
 		<gift>things;strengthenDrug;	48</gift>
 		<gift>things;armsHighBox;		4</gift>
 		<gift>things;equipHighBox;		4</gift>
-		<gift>things;militarySupplies;	146</gift>
+		<gift>things;militarySupplies;	290</gift>
 		<gift>things;anniversaryCash;	14</gift>
 		<gift>things;allBlackEquipCash;	8</gift>
 	</level>
@@ -65,7 +65,7 @@
 		<gift>things;strengthenDrug;	49</gift>
 		<gift>things;armsHighBox;		4</gift>
 		<gift>things;equipHighBox;		4</gift>
-		<gift>things;militarySupplies;	148</gift>
+		<gift>things;militarySupplies;	296</gift>
 		<gift>things;anniversaryCash;	14</gift>
 		<gift>things;allBlackEquipCash;	11</gift>
 	</level>
@@ -77,7 +77,7 @@
 		<gift>things;strengthenDrug;	50</gift>
 		<gift>things;armsHighBox;	5</gift>
 		<gift>things;equipHighBox;		5</gift>
-		<gift>things;militarySupplies;	150</gift>
+		<gift>things;militarySupplies;	300</gift>
 		<gift>things;anniversaryCash;	15</gift>
 		<gift>things;allBlackEquipCash;	12</gift>
 	</level>
@@ -88,7 +88,7 @@
 		<gift>things;strengthenDrug;	51</gift>
 		<gift>things;armsHighBox;	5</gift>
 		<gift>things;equipHighBox;		5</gift>
-		<gift>things;militarySupplies;	152</gift>
+		<gift>things;militarySupplies;	304</gift>
 		<gift>things;anniversaryCash;	15</gift>
 		<gift>things;allBlackEquipCash;	13</gift>
 	</level>
@@ -99,7 +99,7 @@
 		<gift>things;strengthenDrug;	52</gift>
 		<gift>things;armsHighBox;	5</gift>
 		<gift>things;equipHighBox;		5</gift>
-		<gift>things;militarySupplies;	154</gift>
+		<gift>things;militarySupplies;	308</gift>
 		<gift>things;anniversaryCash;	15</gift>
 		<gift>things;allBlackEquipCash;	14</gift>
 	</level>
@@ -110,7 +110,7 @@
 		<gift>things;strengthenDrug;	54</gift>
 		<gift>things;armsHighBox;	6</gift>
 		<gift>things;equipHighBox;		6</gift>
-		<gift>things;militarySupplies;	156</gift>
+		<gift>things;militarySupplies;	312</gift>
 		<gift>things;anniversaryCash;	16</gift>
 		<gift>things;allBlackEquipCash;	15</gift>
 	</level>

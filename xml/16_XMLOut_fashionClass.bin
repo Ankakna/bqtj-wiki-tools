@@ -249,9 +249,12 @@
 			<image name="swimLing" cnName="清凉心零" sex="female" onlyRole="XinLing" hd="1">
 				<addObjJson>{'dpsAll':0.35,'lifeAll':0.40,"blackEquipDropPro":0.2,"specialPartsDropPro":0.34}</addObjJson>
 			</image>
-			<image name="foxLing" cnName="白狐心零" sex="female" onlyRole="XinLing" hd="1" replaceWeaponType="darts" weaponAction="fox_dartsAttack" skillArr="foxLingSkill">
+			<image name="foxLing" cnName="白狐心零" sex="female" onlyRole="XinLing" hd="1"  mp4Arr="foxLingSuper1" replaceWeaponType="darts" weaponAction="fox_dartsAttack" skillArr="foxLingSkill">
 				<addObjJson>{'dpsAll':0.35,'lifeAll':0.40,"gemDropPro":0.3,"specialPartsDropPro":0.34}</addObjJson>
 			</image>
+			
+			
+			
 			<![CDATA[小樱、小美]]>
 			<image name="cowboyYing" cnName="牛仔小樱" sex="female" onlyRole="Girl,XiaoMei" hd="1">
 				<addObjJson>{'dpsAll':0.35,'lifeAll':0.40,"blackEquipDropPro":0.2,"specialPartsDropPro":0.34}</addObjJson>
@@ -263,8 +266,9 @@
 				<addObjJson>{'dpsAll':0.35,'lifeAll':0.40,"gemDropPro":0.3,"specialPartsDropPro":0.34}</addObjJson>
 			</image>
 			
+			
 			<![CDATA[女性全通用，属性好，定价可以比男性高10块]]>
-			<image name="officerYing" cnName="惊雀时装" sex="female" hd="1" replaceWeaponType="blade" weaponAction="officer_bladeAttack" skillArr="bladeSkill">
+			<image name="officerYing" cnName="惊雀时装" sex="female" hd="2"  mp4Arr="officerYing1,officerYing2" replaceWeaponType="blade" weaponAction="officer_bladeAttack" skillArr="bladeSkill">
 				<addObjJson>{'dpsAll':0.35,'lifeAll':0.40,"blackArmsDropPro":0.6,"blackEquipDropPro":0.6,"gemDropPro":0.40,"yaStoneDropNum":8}</addObjJson>
 			</image>
 			
@@ -274,6 +278,14 @@
 			<image name="mechaYingSuper" cnName="赤姬时装" sex="female" hd="1" replaceWeaponType="sword" weaponAction="mecha_swordAttack" skillArr="hundredGhostsSkill" imgSwf="mechaYing" iconLabel="mechaYing/fashion_icon2">
 				<addObjJson>{'dpsAll':0.35,'lifeAll':0.40,"blackArmsDropPro":0.6,"blackEquipDropPro":0.6,"gemDropPro":0.40,"demStroneDropNum":1}</addObjJson>
 			</image>
+			<image name="foxLingSuper" cnName="白狐时装" sex="female" hd="1" mp4Arr="foxLingSuper1,foxLingSuper2,foxLingSuper3" replaceWeaponType="darts" weaponAction="fox_dartsAttack" skillArr="foxLingSkill" imgSwf="foxLing" iconLabel="foxLing/fashion_icon2">
+				<addObjJson>{'dpsAll':0.35,'lifeAll':0.40,"blackEquipDropPro":0.4,"gemDropPro":0.3,"specialPartsDropPro":0.34,"wilderKeyDay":1}</addObjJson>
+			</image>
+			
+			<image name="girlWing" cnName="凌空时装" skillArr="girlWing" sex="female" hd="2" mp4Arr="girlWing1,girlWing2">
+				<addObjJson>{'dpsAll':0.35,"weaponMul":0.4,'lifeAll':0.40,"blackEquipDropPro":0.60,"specialPartsDropPro":0.4,"madheartDropNum":1}</addObjJson>
+			</image>
+			
 		</father>
 		
 	</gather>

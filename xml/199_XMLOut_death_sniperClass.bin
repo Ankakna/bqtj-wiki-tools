@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<father type="sniper" cnName="狙击枪">
+	<father type="sniper" name="death" cnName="狙击枪">
 		<![CDATA[橙色]]>
 		<bullet color="orange">
 			<name>sniperSmilodonDea</name>
-			<cnName>破障·剑齿</cnName><dpsMul>0.93</dpsMul>
+			<cnName>破障·剑齿</cnName><dpsMul>1</dpsMul>
 			<iconUrl>newGun/sniperSmilodon_icon</iconUrl>
 			<capacity>45</capacity>
 			<attackGap>1.3</attackGap>
@@ -130,7 +130,7 @@
 			</skill>
 	</father>
 	
-	<father type="sniper" cnName="狙击枪">
+	<father type="sniper" name="death" cnName="狙击枪">
 		<bullet>
 			<name>barrettM82</name>
 			<cnName>巴雷特</cnName><dpsMul>1.2</dpsMul>

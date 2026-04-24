@@ -1054,6 +1054,19 @@
 			<loveD num="4"/>
 			<gift>parts;loaderParts_90;6</gift>
 		</things>
+		<things cnName="93级零件箱">
+			<name>partsChest93</name>
+			<cnName>93级零件箱</cnName>
+			<iconUrl>ThingsIcon/partsChest93</iconUrl><!-- 技能图标 -->
+			<description>
+				使用后将获得6个93级的普通零件。
+			</description>
+			<effectD type="addGift" useSurplusBagB="1" />
+			<loveD num="4"/>
+			<gift>parts;loaderParts_93;6</gift>
+		</things>
+		
+		
 		
 		
 		<things cnName="凯撒箱">
@@ -1845,6 +1858,7 @@
 				学习和升级技能高等级所需的稀有石头。
 				[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}
 				[n]锻造合成所得
+				[n]活跃值礼包
 				[n]商店购买、竞技场兑换
 			</description>
 			<smeltD grade="1" addType="" price="3"/>

@@ -4,7 +4,7 @@
 	<father cn="来自武器工厂">
 		
 	</father>
-	<father type="crossbow" cnName="弩">
+	<father type="crossbow" name="death" cnName="弩">
 		<bullet color="blue">
 			<cnName>痛·刺蝎</cnName>
 			<name>scorpionDea</name><iconUrl>newGun/scorpionCrossbow_icon</iconUrl>

@@ -2,6 +2,147 @@
 <data>
 	<![CDATA[六周年已添加]]>
 	<father name="heroSkill" cnName="英雄技能">
+		<skill name="横扫">
+			<name>spurtingLing</name>
+			<cnName>横扫</cnName><ignoreImmunityB>1</ignoreImmunityB><ignoreNoSkillB>1</ignoreNoSkillB><noSkillDodgeB>1</noSkillDodgeB>
+			<!--触发条件与目标------------------------------------------------------------ -->
+			<changeText>范围[range]码{n}最短触发间隔[minTriggerT]秒</changeText>
+			<conditionType>passive</conditionType>
+			<condition>hurt</condition>
+			<target targetMustLiveB="1" noTargetB="1">target,range,enemy</target>
+			<!--效果------------------------------------------------------------ -->
+			<addType>instant</addType>
+			<effectType>spurtingLing</effectType>
+			<extraValueType>hurtValue</extraValueType>
+			<minTriggerT>2.4</minTriggerT>
+			<firstTriggerT>4</firstTriggerT>
+			<mul>1</mul>
+			<range>350</range>
+			<pointEffectImg name="orangeLightning"/>
+			<description>对目标造成伤害时，将对目标周围[range]码的敌人造成同等伤害（无视减伤技能，无视免疫、技能免疫），对拥有副手、载具、尸宠、红武、徒手敏感的敌人无效。最短触发间隔[minTriggerT]秒。{font color='#00FF00'}14级无需装备技能也会有技能效果。{/font}</description>
+			<growth>
+				<skill><range>350</range><minTriggerT>1.8</minTriggerT></skill>
+				<skill><range>380</range><minTriggerT>1.7</minTriggerT></skill>
+				<skill><range>410</range><minTriggerT>1.6</minTriggerT></skill>
+				<skill><range>450</range><minTriggerT>1.5</minTriggerT></skill>
+				<skill><range>500</range><minTriggerT>1.4</minTriggerT></skill>
+				<skill><range>600</range><minTriggerT>1.3</minTriggerT></skill>
+				<skill><range>700</range><minTriggerT>1.2</minTriggerT></skill>
+				<skill><range>800</range><minTriggerT>1.1</minTriggerT></skill>
+				<skill><range>900</range><minTriggerT>1.0</minTriggerT></skill>
+				<skill><range>1000</range><minTriggerT>0.9</minTriggerT></skill>
+				<skill><range>1200</range><minTriggerT>0.7</minTriggerT></skill>
+				<skill><range>1500</range><minTriggerT>0.5</minTriggerT></skill>
+				<skill><range>2000</range><minTriggerT>0.3</minTriggerT></skill>
+				<skill><range>2000</range><minTriggerT>0.3</minTriggerT><noNeedEquipB>1</noNeedEquipB><changeText>无需装备技能也会有技能效果</changeText></skill>
+			</growth>
+		</skill>
+		<skill name="湮灭">
+			<name>toDelLing</name><noCopyB>1</noCopyB>
+			<cnName>湮灭</cnName><ignoreImmunityB>1</ignoreImmunityB><noSkillDodgeB>1</noSkillDodgeB><ignoreNoSkillB>1</ignoreNoSkillB>
+			<!--触发条件与目标------------------------------------------------------------ -->
+			<changeText>概率[effectProArr.0]</changeText>
+			<conditionType>passive</conditionType>
+			<condition>killTarget</condition>
+			<otherConditionArr>targetDieGotoStateDie,targetNoBoss,noUnionBattle,noTask</otherConditionArr>
+			<target>target</target>
+			<!--效果------------------------------------------------------------ -->
+			<addType>instant</addType>
+			<effectType>toDel</effectType>
+			<effectProArr>0.1</effectProArr>
+			<![CDATA[<targetEffectImg name="shadowDie"/>]]>
+			<description>杀死敌人（除了首领）时，有[effectProArr.0]的概率消除它的尸体。升至第10级时，队友杀敌也能消除尸体。任务、争霸中无效。</description>
+			<growth>
+				<skill><effectProArr>0.1</effectProArr></skill>
+				<skill><effectProArr>0.2</effectProArr></skill>
+				<skill><effectProArr>0.3</effectProArr></skill>
+				<skill><effectProArr>0.4</effectProArr></skill>
+				<skill><effectProArr>0.5</effectProArr></skill>
+				<skill><effectProArr>0.6</effectProArr></skill>
+				<skill><effectProArr>0.7</effectProArr></skill>
+				<skill><effectProArr>0.8</effectProArr></skill>
+				<skill><effectProArr>0.9</effectProArr></skill>
+				<skill><effectProArr>1.0</effectProArr><changeText>概率[effectProArr.0]{n}队友杀敌也能消除尸体</changeText></skill>
+			</growth>
+		</skill>
+		
+		
+		
+		<skill name="攻防一体">
+			<name>lifeAddHurtLing</name><iconUrl>SkillIcon/lifeAddHurtDR</iconUrl><wantDescripB>1</wantDescripB>
+			<cnName>攻防一体</cnName><everNoClearB>1</everNoClearB><ignoreImmunityB>1</ignoreImmunityB><noSkillDodgeB>1</noSkillDodgeB><ignoreNoSkillB>1</ignoreNoSkillB>
+			<!--英雄技能属性------------------------------------------------------------ -->
+			<changeText>增伤最高[mul]</changeText>
+			<!--触发条件与目标------------------------------------------------------------ -->
+			<conditionType>passive</conditionType>
+			<condition>add</condition>
+			<target>me</target>
+			<!--效果------------------------------------------------------------ -->
+			<addType>state</addType>
+			<effectType>lifeAddHurt</effectType>
+			<value>0.0000004</value>
+			<mul>0.05</mul>
+			<duration>9999999</duration>
+			<description>获得与角色生命值相关的增伤，增伤=生命值x0.00004%，最高[mul]，无视封锁。{font color='#00FF00'}14级无需装备技能也会有技能效果。{/font}</description>
+			<!-- 技能各等级 ------------------------------------------------------------ -->
+			<growth>
+				<skill><mul>0.10</mul></skill>
+				<skill><mul>0.16</mul></skill>
+				<skill><mul>0.22</mul></skill>
+				<skill><mul>0.28</mul></skill>
+				<skill><mul>0.34</mul></skill>
+				<skill><mul>0.40</mul></skill>
+				<skill><mul>0.50</mul></skill>
+				<skill><mul>0.60</mul></skill>
+				<skill><mul>0.70</mul></skill>
+				<skill><mul>0.80</mul></skill>
+				<skill><mul>0.90</mul></skill>
+				<skill><mul>1.00</mul></skill>
+				<skill><mul>1.10</mul></skill>
+				<skill><mul>1.20</mul><noNeedEquipB>1</noNeedEquipB><changeText>增伤最高[mul]{n}无需装备技能也会有技能效果</changeText></skill>
+			</growth>
+		</skill>
+		<skill name="整数增益">
+			<name>integerHurtLing</name><iconUrl>SkillIcon/integerHurtDR</iconUrl><wantDescripB>1</wantDescripB>
+			<cnName>整数增益</cnName><everNoClearB>1</everNoClearB><ignoreNoSkillB>1</ignoreNoSkillB>
+			<!--英雄技能属性------------------------------------------------------------ -->
+			<changeText>提升[mul-1]的伤害{n}</changeText>
+			<!--触发条件与目标------------------------------------------------------------ -->
+			<conditionType>passive</conditionType>
+			<condition>add</condition>
+			<target>me</target>
+			<!--效果------------------------------------------------------------ -->
+			<addType>state</addType>
+			<effectType>integerHurt</effectType>
+			<value>5</value>
+			<mul>1.05</mul>
+			<duration>9999999</duration>
+			<!--图像------------------------------------------------------------ -->
+			<stateEffectImg name="crazy_vehicle_hand"/>
+			<![CDATA[<otherEffectImg name="murderous_hero_me"/>]]>
+			<description>当剩余弹药为[value]的倍数时，角色将获得[mul-1]增伤状态（无视封锁）。注意，增伤效果是击中敌人时生效，不是在发射子弹时生效。{font color='#00FF00'}14级无需装备技能也会有技能效果。{/font}</description>
+			<!-- 技能各等级 ------------------------------------------------------------ -->
+			<growth>
+				<skill><mul>1.2</mul></skill>
+				<skill><mul>1.3</mul></skill>
+				<skill><mul>1.4</mul></skill>
+				<skill><mul>1.5</mul></skill>
+				<skill><mul>1.6</mul></skill>
+				<skill><mul>1.7</mul></skill>
+				<skill><mul>1.8</mul></skill>
+				<skill><mul>2.0</mul></skill>
+				<skill><mul>2.2</mul></skill>
+				<skill><mul>2.4</mul></skill>
+				<skill><mul>2.6</mul></skill>
+				<skill><mul>2.8</mul></skill>
+				<skill><mul>3.0</mul></skill>
+				<skill><mul>3.0</mul><noNeedEquipB>1</noNeedEquipB><changeText>无需装备技能也会有技能效果</changeText></skill>
+			</growth>
+		</skill>
+		
+		
+		
+		
 		<skill name="嘲讽">
 			<name>tauntLing</name>
 			<cnName>嘲讽</cnName><ignoreImmunityB>1</ignoreImmunityB><noSkillDodgeB>1</noSkillDodgeB><noBeClearB>1</noBeClearB>
@@ -57,7 +198,7 @@
 			<duration>1</duration>
 			<range>99999</range>
 			<stateEffectImg partType="body" con="add">generalEffect/hurtDefence1</stateEffectImg>
-			<description>当目标敌人处于无敌状态时，自己和主角受到伤害降低[1-mul]、百分比伤害降低[1-secMul]。</description>
+			<description>当目标敌人处于无敌状态时，自己和队友受到伤害降低[1-mul]（不高于90%）、百分比伤害降低[1-secMul]。</description>
 			<!-- 技能各等级 ------------------------------------------------------------ -->
 			<growth>
 				<skill><mul>0.9</mul></skill>
@@ -145,7 +286,7 @@
 			<cnName>暗夜信徒</cnName><everNoClearB>1</everNoClearB>
 			<effectInfoArr>增加伤害输出</effectInfoArr>
 			<addD pro="mul" range="0.01,0.03" info="继承战斗力[v]" />
-			<changeText>继承战斗力：[mul]{n}不超过自身战斗力的[secMul]</changeText>
+			<changeText>增伤或继承战斗力：[mul]{n}不超过自身战斗力的[secMul]</changeText>
 			<!--触发条件与目标------------------------------------------------------------ -->
 			<conditionType>passive</conditionType>
 			<otherConditionArr>sceneLabelHave</otherConditionArr>
@@ -158,7 +299,7 @@
 			<secMul>0.30</secMul>
 			<duration>999999</duration>
 			<stateEffectImg partType="mouth" con="add" raNum="1">skillEffect/nightLing</stateEffectImg>
-			<description>在星空或月亮的场景下，继承当前主角[mul]的战斗力，继承战斗力不超过自身战斗力的[secMul]。</description>
+			<description>在星空或月亮的场景下，如果是P1角色，则直接增伤[mul]（衰减）；如果是非P1角色，则继承当前P1角色[mul]的战斗力（衰减），继承战斗力不超过自身战斗力的[secMul]。</description>
 			<!-- 技能各等级 ------------------------------------------------------------ -->
 			<growth>
 				<skill><mul>0.05</mul><secMul>0.30</secMul></skill>

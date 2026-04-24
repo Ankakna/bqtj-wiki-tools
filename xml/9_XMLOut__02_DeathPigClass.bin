@@ -144,7 +144,7 @@
 					<bulletAngle>270</bulletAngle>
 					<!--特殊属性------------------------------------------------------------ -->	
 					<penetrationGap>1000</penetrationGap>
-					<penetrationNum>999</penetrationNum>
+					<penetrationNum>9999</penetrationNum>
 					<!--运动属性------------------------------------------------------------ -->	
 					<shootPoint>0,0</shootPoint>
 					<bulletSpeed>0</bulletSpeed>

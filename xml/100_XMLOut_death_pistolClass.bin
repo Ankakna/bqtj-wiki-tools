@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
 	
-	<father type="pistol" cnName="手枪">
+	<father type="pistol" name="death" cnName="手枪">
 		<![CDATA[紫色]]>
 		<bullet color="purple">
-			<name>yearHourseDea</name><dpsMul>0.59</dpsMul>
+			<name>yearHourseDea</name><dpsMul>0.7</dpsMul>
 			<cnName>处决·午马</cnName><skillArr>yearHourseDea</skillArr>
 			<!--基本-->
 			<capacity>333</capacity><iconUrl>specialGun/yearHourseIcon</iconUrl>
@@ -104,10 +104,10 @@
 			<bulletImgRange>specialGun/bullet</bulletImgRange>
 		</bullet>
 	</father>
-	<father type="pistol" cnName="手枪">
+	<father type="pistol" name="death" cnName="手枪">
 		<bullet>
 			<name>qsg92</name>
-			<cnName>如梭</cnName>
+			<cnName>如梭</cnName><dpsMul>1.2</dpsMul>
 			<iconUrl>newGun/qsg92_icon</iconUrl>
 			<!--基本-->
 			<capacity>9</capacity>
@@ -140,7 +140,7 @@
 		
 		<bullet color="white">
 			<name>toyPistol</name>
-			<cnName>玩具手枪</cnName><dpsMul>0.4</dpsMul><uiDpsMul>0.4</uiDpsMul>
+			<cnName>玩具手枪</cnName><dpsMul>0.6</dpsMul><uiDpsMul>0.6</uiDpsMul>
 			<iconUrl>newGun/toyPistol_icon</iconUrl>
 			<!--基本-->
 			<capacity>6</capacity>

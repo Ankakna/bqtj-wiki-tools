@@ -741,7 +741,7 @@
 			</achieve>
 			<achieve name="deathWenJie" cnName="文杰肉鸽">
 				<condition type="valueCompare" pro="deathWenJieWinDiff" value="2" /><gift>things;deathSilver;100</gift>
-				<description>亚瑟通关肉鸽 普通 难度。</description>
+				<description>文杰通关肉鸽 普通 难度。</description>
 			</achieve>
 			<achieve name="deathZangShi" cnName="藏师肉鸽">
 				<condition type="valueCompare" pro="deathZangShiWinDiff" value="2" /><gift>things;deathSilver;100</gift>

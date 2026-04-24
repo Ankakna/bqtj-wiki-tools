@@ -250,7 +250,7 @@
 			<cnName>击落</cnName><noSkillDodgeB>1</noSkillDodgeB><ignoreImmunityB>1</ignoreImmunityB><noBeClearB>1</noBeClearB>
 			<conditionType>passive</conditionType>
 			<condition>hit</condition>
-			<otherConditionArr>isFlyState</otherConditionArr>
+			<otherConditionArr>isFlyState,canBeToLand</otherConditionArr>
 			<target>target</target>
 			<addType>instantAndState</addType>
 			<effectType>toLand</effectType>
@@ -275,7 +275,7 @@
 			<cnName>受击坠落</cnName><noSkillDodgeB>1</noSkillDodgeB><ignoreImmunityB>1</ignoreImmunityB>
 			<conditionType>passive</conditionType>
 			<condition>underHit</condition>
-			<otherConditionArr>isFlyState</otherConditionArr>
+			<otherConditionArr>isFlyState,canBeToLand</otherConditionArr>
 			<target>target</target>
 			<addType>instant</addType>
 			<effectType>toLand</effectType>
@@ -516,13 +516,13 @@
 			<cnName>防空盾</cnName><noBeClearB>1</noBeClearB><everNoClearB>1</everNoClearB><ignoreNoSkillB>1</ignoreNoSkillB>
 			
 			<conditionType>passive</conditionType>
-			<condition>add</condition>
+			<condition>underAllHit</condition>
 			<target>me</target>
 			
 			<addType>instant</addType>
-			<effectType>noUnderFlyHit</effectType>
-			
-			<description>不受飞行敌人的攻击。</description>
+			<effectType>underFlyHurtMul</effectType>
+			<mul>0.2</mul>
+			<description>受到飞行敌人的伤害降低[1-mul]。</description>
 		</skill>
 		<skill name="激光盾">
 			<name>noUnderLaser</name><showInLifeBarB>1</showInLifeBarB><wantDescripB>1</wantDescripB>
@@ -916,12 +916,12 @@
 			<cnName>瞬秒心零</cnName><noSkillDodgeB>1</noSkillDodgeB><ignoreImmunityB>1</ignoreImmunityB>
 			<conditionType>passive</conditionType>
 			<condition>hit</condition>
-			<otherConditionArr>tergetName</otherConditionArr>
+			<otherConditionArr>tergetName,targetNoP1</otherConditionArr>
 			<conditionString>XinLing</conditionString>
 			<target>target</target>
 			<addType>instant</addType>
 			<effectType>kill</effectType>
-			<description>瞬秒心零。</description>
+			<description>瞬秒心零，P1除外。</description>
 		</skill>
 		
 		<skill>

@@ -3,28 +3,32 @@
 	<![CDATA[ 目前比例是5.5 ，所有buyLimitNum结果都乘以5.5]]>
 	<father name="anniCoin" cnName="纪念币" priceType="anniCoin" labelArr="all">
 		<type>
-			<goods defineLabel="yaGem" price="10" 	dayBuyLimitNum="10" buyLimitNum="200" fixedLimitB="1" />
-			<goods defineLabel="oldBulletStamp" price="1" 	dayBuyLimitNum="10" buyLimitNum="300" fixedLimitB="1" />
-			<goods defineLabel="highlighter" price="5" 	dayBuyLimitNum="10" fixedLimitB="1" />
-			<goods defineLabel="rainGun" price="5" 	dayBuyLimitNum="5" buyLimitNum="100" fixedLimitB="1" />
-			<goods defineLabel="vehicleCash" price="2" 	dayBuyLimitNum="20" fixedLimitB="1" />
-			<goods defineLabel="ghostStone" price="15" 	dayBuyLimitNum="2" fixedLimitB="1"/>
-			<goods dataType="base" defineLabel="partsCoin" price="2" 			dayBuyLimitNum="5" buyLimitNum="100" fixedLimitB="1"/>
+			<goods defineLabel="yaGem" price="10" 	dayBuyLimitNum="15" buyLimitNum="200" fixedLimitB="1" />
+			<goods defineLabel="oldBulletStamp" price="1" 	dayBuyLimitNum="20" buyLimitNum="300" fixedLimitB="1" />
+			<goods defineLabel="highlighter" price="5" 	dayBuyLimitNum="20" fixedLimitB="1" />
+			<goods defineLabel="rainGun" price="5" 	dayBuyLimitNum="10" buyLimitNum="100" fixedLimitB="1" />
+			<goods defineLabel="vehicleCash" price="2" 	dayBuyLimitNum="40" fixedLimitB="1" />
+			<goods defineLabel="ghostStone" price="10" 	dayBuyLimitNum="3" fixedLimitB="1"/>
+			<goods dataType="base" defineLabel="partsCoin" price="2" 			dayBuyLimitNum="8" buyLimitNum="100" fixedLimitB="1"/>
 			<goods defineLabel="longGlasses_1" price="20" 	buyLimitNum="10" fixedLimitB="1"/>
-			<goods defineLabel="partsChest78" price="10" 	dayBuyLimitNum="2"/>
-			<goods dataType="base" defineLabel="tenCoin" price="2" 	dayBuyLimitNum="200"	buyLimitNum="20000" fixedLimitB="1"/>
+			<goods defineLabel="partsChest78" price="10" 	dayBuyLimitNum="4"/>
+			<goods dataType="base" defineLabel="tenCoin" price="2" 	dayBuyLimitNum="400"	buyLimitNum="20000" fixedLimitB="1"/>
 			<goods defineLabel="intensDrug" price="3" 			buyLimitNum="100" fixedLimitB="1"/>
-			<goods defineLabel="teddyBear" price="10" 			dayBuyLimitNum="1" buyLimitNum="100" fixedLimitB="1"/>
-			<goods defineLabel="greedySnake" price="5" 			dayBuyLimitNum="5" buyLimitNum="100" fixedLimitB="1"/>
-			<goods defineLabel="barrenAwn" price="5" 			dayBuyLimitNum="3" buyLimitNum="260" fixedLimitB="1"/>
+			<goods defineLabel="teddyBear" price="10" 			dayBuyLimitNum="2" buyLimitNum="100" fixedLimitB="1"/>
+			<goods defineLabel="soldiersStamp" price="3" 			dayBuyLimitNum="5"/>
+			<goods defineLabel="lily" price="3" 			dayBuyLimitNum="2"/>
+			
+			<goods defineLabel="barrenAwn" price="5" 			buyLimitNum="260" fixedLimitB="1"/>
 			<goods defineLabel="firstArmsBox" price="1" />
 			<goods dataType="fashion" inBagType="equip" defineLabel="dragonHead" price="90" 			limitOneB="1" />
-			<goods defineLabel="iceCone" price="2" 			dayBuyLimitNum="7" buyLimitNum="180" fixedLimitB="1"/>
-			<goods defineLabel="soldiersStamp" price="3" 			dayBuyLimitNum="3"/>
+			
+			<goods defineLabel="greedySnake" price="5" 			buyLimitNum="100" fixedLimitB="1"/>
+			<goods defineLabel="iceCone" price="2" 			buyLimitNum="180" fixedLimitB="1"/>
+			
 			<goods defineLabel="lightCone" price="7" 			buyLimitNum="60"  fixedLimitB="1"/>
 			<goods defineLabel="workerHead" price="8" 			buyLimitNum="10" fixedLimitB="1" />
-			<goods defineLabel="skyArch" price="3" 			dayBuyLimitNum="7"/>
-			<goods defineLabel="lily" price="3" 			dayBuyLimitNum="1"/>
+			<goods defineLabel="skyArch" price="3" 			/>
+			
 			<goods defineLabel="possession_heroChip" price="3" 			buyLimitNum="140" fixedLimitB="1"/>
 			<goods defineLabel="skeletonMedal_1" price="1" 			buyLimitNum="25" />
 			<goods defineLabel="pianoGun" price="2" 			buyLimitNum="40" />

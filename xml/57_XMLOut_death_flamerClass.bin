@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<father type="flamer" cnName="火炮">
+	<father type="flamer" name="death" cnName="火炮">
 		<bullet name="洪荒"  kind="water" color="blue">
 			<name>waterFlamerDea</name><dpsMul>1.25</dpsMul>
 			<cnName>湿足·洪荒</cnName><iconUrl>newGun/waterFlamer_icon</iconUrl>
@@ -59,7 +59,7 @@
 			<bulletSpeed>25</bulletSpeed>
 			<!--特殊------------------------------------------------------------ -->	
 			<oneHitBodyB>1</oneHitBodyB>
-			<penetrationNum>1000</penetrationNum>
+			<penetrationNum>9999</penetrationNum>
 			
 			<!--图像动画属性------------------------------------------------------------ -->
 			<shootSoundUrl></shootSoundUrl>

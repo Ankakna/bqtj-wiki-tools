@@ -1,11 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<father type="lightning">
+	<father type="lightning" name="death">
+		<bullet color="orange" sightMul="2">
+			<name>electricArcX</name>
+			<cnName>极弧X</cnName>
+			<aiShootRange>700</aiShootRange><!-- ai射程 -->
+			<dpsMul>0.045</dpsMul>
+			<iconUrl>newGun/electricArcXIcon</iconUrl>
+			<!--基本-->
+			<capacity>100</capacity>
+			<attackGap>0.4</attackGap>
+			<reloadGap>2</reloadGap>
+			<bulletWidth>25</bulletWidth>
+			<bulletNum>1</bulletNum>				
+			<shootAngle>1</shootAngle>
+			<shakeAngle>13</shakeAngle>
+			<noShakeTime>0.5</noShakeTime>
+			<!--武器属性------------------------------------------------------------ -->
+			<armsArmMul>0.5</armsArmMul>
+			<upValue>10</upValue>
+			<shootShakeAngle>30</shootShakeAngle>
+			<shootRecoil>5</shootRecoil>
+			<screenShakeValue>9</screenShakeValue>
+			<!--基本属性------------------------------------------------------------ -->
+			<noHitB>1</noHitB>
+			<bulletLife>5</bulletLife>
+			<hitType>rect</hitType>
+			<!--运动属性------------------------------------------------------------ -->	
+			<bulletSpeed>0</bulletSpeed>
+			<bulletSkillArr>electricArcSunPRE</bulletSkillArr>
+			<!--特殊------------------------------------------------------------ -->
+			<boomD selfB="1"/>
+			<penetrationNum>999</penetrationNum>
+			<penetrationGap>1000</penetrationGap>
+			<skillArr>armsToMousePoint</skillArr>
+			<godSkillArr></godSkillArr>
+			<!--图像动画属性------------------------------------------------------------ -->
+			<shootSoundUrl>sound/lightningShoot</shootSoundUrl>
+			<bulletImgUrl name="electricArcBullet"/>
+			<selfBoomImgUrl name="yearDragon_hit"/>
+			<!--图像范围------------------------------------------------------------ -->
+			<bodyImgRange>newGun/electricArcX</bodyImgRange>
+			<bulletImgRange>specialGun/bullet</bulletImgRange>
+			<info>前后2颗子弹之间将产生电弧，持续对敌人造成伤害。子弹本体没有伤害。</info>
+		</bullet>
+		
+		
 		<bullet color="purple" sightMul="2">
 			<name>electricArcS</name>
 			<cnName>极弧S</cnName>
 			<aiShootRange>700</aiShootRange><!-- ai射程 -->
-			<dpsMul>0.060</dpsMul>
+			<dpsMul>0.045</dpsMul><![CDATA[v36.0  0.06]]>
 			<iconUrl>newGun/electricArcSIcon</iconUrl>
 			<!--基本-->
 			<capacity>200</capacity>
@@ -49,7 +94,7 @@
 			<name>electricArc</name>
 			<cnName>极弧</cnName>
 			<aiShootRange>700</aiShootRange><!-- ai射程 -->
-			<dpsMul>0.060</dpsMul>
+			<dpsMul>0.060</dpsMul><![CDATA[v36.0  0.048]]>
 			<iconUrl>newGun/electricArcIcon</iconUrl>
 			<!--基本-->
 			<capacity>400</capacity>

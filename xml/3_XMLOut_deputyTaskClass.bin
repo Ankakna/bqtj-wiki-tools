@@ -227,7 +227,7 @@
 		</task>
 		
 		<![CDATA[六周年添加]]>
-		<task name="xinLingTrain" cnName="训练女助手（心零入队）" lv="93" unlockLv="30" levelIsTaskLvB="1">
+		<task role="noXinLing" name="xinLingTrain" cnName="训练女助手（心零入队）" lv="93" unlockLv="30" levelIsTaskLvB="1">
 			<diff>2</diff>
 			<conditionText>macth_kills_XinLing</conditionText>
 			<shortText>在消灭所有僵尸之后，你的灭敌数必须少于心零。</shortText>

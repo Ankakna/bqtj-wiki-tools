@@ -2,14 +2,15 @@
 <data>
 	<father name="tenCoin" cnName="十年币" priceType="tenCoin" labelArr="all">
 		<type>
+			<goods defineLabel="partsChest93" price="50" 	buyLimitNum="6" dayBuyLimitNum="1"  fixedLimitB="1"/>
 			<goods defineLabel="longGlasses_1" price="10" 	buyLimitNum="40" dayBuyLimitNum="2"  fixedLimitB="1"/>
-			<goods defineLabel="consLibra" price="4" 			dayBuyLimitNum="4" buyLimitNum="120"/>
-			<goods defineLabel="highPartnerCard" price="4" 			dayBuyLimitNum="1" buyLimitNum="60"/>
+			<goods defineLabel="consLibra" price="4" 			dayBuyLimitNum="6" buyLimitNum="120"/>
+			<goods defineLabel="highPartnerCard" price="4" 			dayBuyLimitNum="2" buyLimitNum="60"/>
 			<goods defineLabel="roamRocket" price="4" 			buyLimitNum="100"/>
 			<goods defineLabel="starTrails" price="5" 			buyLimitNum="210"/>
 			<goods defineLabel="teddyBear" price="15" 			buyLimitNum="30" />
 			<goods defineLabel="barrenAwn" price="5" 			buyLimitNum="100" />
-			<goods defineLabel="skyArch" price="4" 			dayBuyLimitNum="4" />
+			<goods defineLabel="skyArch" price="4" 			/>
 			
 			<![CDATA[可增加上限的物品]]>
 			<goods defineLabel="intensDrug" price="5" 			buyLimitNum="300" />
@@ -19,6 +20,8 @@
 			<goods defineLabel="yaRock" price="9" 			buyLimitNum="200" />
 			<goods defineLabel="demStone" price="5" 			buyLimitNum="800" />
 			<goods defineLabel="madheart" price="6" 			buyLimitNum="600" />
+			
+			<goods dataType="base" defineLabel="anniCoin" num="2" price="1"/>
 			
 		</type>
 		

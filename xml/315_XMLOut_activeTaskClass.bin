@@ -2,6 +2,88 @@
 <data>
 	<![CDATA[不用的活动可以直接删除，每次加载存档系统会清理没有定义的任务的。]]>
 	<father name="active" cnName="活动"  dayNum="1" buyNum="0" autoUnlockByLevelB="1">
+		
+		
+		<task name="spurtingLingTask" cnName="横扫体验卡" uiShowTime="999999" lv="70" unlockLv="0" moreKillEnemyNumIsMe="1" levelIsTaskLvB="1" tempLvB="1">
+			<openD start="2026-4-23" end="2026-5-5" />
+			<conditionText>僵尸 [nowNum]/[num]</conditionText>
+			<uiConditionText>消灭[num] 个僵尸</uiConditionText>
+			<description>在任务中，玩家不能使用枪械，但是可获得心零P1技能“横扫14级”。消灭指定数量僵尸后完成任务。</description>
+			<!-- 地图 -->
+			<worldMapId>BaiLu</worldMapId>
+			<levelId>spurtingLingTask</levelId>
+			<noEnemyWhenCompleteB>1</noEnemyWhenCompleteB>
+			<uiFleshCondition><one>bodyEvent:die; anyone</one></uiFleshCondition>
+			<condition type="collect" target="killEnemyNum" value="500" cumulativeType="no" />
+			<growth>
+				<task lv="50">
+					<enemyLifeMul>10</enemyLifeMul>
+					<condition type="collect" target="killEnemyNum" value="500" cumulativeType="no" />
+					<gift>base;anniCoin;45</gift>
+					<gift>base;tenCoin;25</gift>
+					<gift>things;demStone;15</gift>
+					<gift>things;madheart;15</gift>
+					<gift>things;bloodStone;20</gift>
+					<gift>things;armsGemChest;20</gift>
+					<gift>things;allBlackEquipCash;30</gift>
+					<gift>things;yearMonkey;7</gift>
+				</task>
+				<task lv="99">
+					<enemyLifeMul>80</enemyLifeMul>
+					<condition type="collect" target="killEnemyNum" value="500" cumulativeType="no" />
+					<gift>base;anniCoin;50</gift>
+					<gift>base;tenCoin;25</gift>
+					<gift>things;demStone;15</gift>
+					<gift>things;madheart;15</gift>
+					<gift>things;bloodStone;20</gift>
+					<gift>things;armsGemChest;20</gift>
+					<gift>things;allBlackEquipCash;30</gift>
+					<gift>things;yearMonkey;7</gift>
+				</task>
+				<task lv="99">
+					<enemyLifeMul>240</enemyLifeMul>
+					<condition type="collect" target="killEnemyNum" value="500" cumulativeType="no" />
+					<gift>base;anniCoin;50</gift>
+					<gift>base;tenCoin;25</gift>
+					<gift>things;demStone;15</gift>
+					<gift>things;madheart;15</gift>
+					<gift>things;bloodStone;20</gift>
+					<gift>things;armsGemChest;20</gift>
+					<gift>things;allBlackEquipCash;30</gift>
+					<gift>things;yearMonkey;7</gift>
+					<gift>things;ghostStone;1</gift>
+				</task>
+				<task lv="99">
+					<enemyLifeMul>600</enemyLifeMul>
+					<condition type="collect" target="killEnemyNum" value="500" cumulativeType="no" />
+					<gift>base;anniCoin;50</gift>
+					<gift>base;tenCoin;25</gift>
+					<gift>things;demStone;15</gift>
+					<gift>things;madheart;15</gift>
+					<gift>things;bloodStone;20</gift>
+					<gift>things;armsGemChest;20</gift>
+					<gift>things;allBlackEquipCash;30</gift>
+					<gift>things;yearMonkey;7</gift>
+					<gift>things;ghostStone;2</gift>
+				</task>
+				<task lv="99">
+					<enemyLifeMul>1800</enemyLifeMul>
+					<condition type="collect" target="killEnemyNum" value="500" cumulativeType="no" />
+					<gift>base;anniCoin;50</gift>
+					<gift>base;tenCoin;25</gift>
+					<gift>things;demStone;15</gift>
+					<gift>things;madheart;15</gift>
+					<gift>things;bloodStone;20</gift>
+					<gift>things;armsGemChest;20</gift>
+					<gift>things;allBlackEquipCash;30</gift>
+					<gift>things;yearMonkey;7</gift>
+					<gift>things;ghostStone;3</gift>
+				</task>
+			</growth>
+				
+		</task>
+		
+		<![CDATA[
 		<task name="screwBall26" cnName="电球的试炼" uiShowTime="999999" lv="99" unlockLv="30" moreKillEnemyNumIsMe="1" levelIsTaskLvB="1" tempLvB="1">
 			<openD start="2026-3-23" end="2026-4-6 23:59:59"/>
 			<shortText>消灭守关首领</shortText>
@@ -87,7 +169,7 @@
 		</task>
 		
 		
-		<![CDATA[
+		
 		<task name="sumBossTask" cnName="首领闯关" uiShowTime="999999" lv="99" unlockLv="40" moreKillEnemyNumIsMe="1" levelIsTaskLvB="1" tempLvB="1">
 			<openD start="2022-6-27" end="2022-8-27 23:59:59" />
 			<shortText>消灭所有敌人</shortText>

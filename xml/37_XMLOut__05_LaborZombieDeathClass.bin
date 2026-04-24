@@ -85,7 +85,7 @@
 					<boomD selfB="1" hurtMul="0"/>
 					<!--特别属性------------------------------------------------------------ -->	
 					<hitGap>0.2</hitGap>
-					<penetrationNum>9999</penetrationNum><![CDATA[9999代表穿透不衰减]]>
+					<penetrationNum>999</penetrationNum>
 					<penetrationGap>1000</penetrationGap>
 					<bulletImgUrl name="smallPoison2"/>
 					<hitImgUrl name="poisonHit"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<father type="howitzer" cnName="榴弹炮">
+	<father type="howitzer" name="death" cnName="榴弹炮">
 		<bullet cnName="撒旦" color="orange">
 			<name>arcHowDea</name><dpsMul>0.5</dpsMul>
 			<cnName>陈年·撒旦</cnName><skillArr>oldSugarDea</skillArr>
@@ -47,7 +47,7 @@
 		</bullet>
 	</father>
 	
-	<father type="howitzer" cnName="榴弹炮">
+	<father type="howitzer" name="death" cnName="榴弹炮">
 		<bullet color="blue">
 			<name>yearDogDea</name>
 			<cnName>弹力·戌狗</cnName>

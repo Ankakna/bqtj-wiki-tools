@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<father type="rocket" cnName="火炮-紫色">
+	<father type="rocket" name="death" cnName="火炮-紫色">
 		<bullet cnName="丑牛"  kind="poison" color="purple">
 			<name>yearCattleDea</name>
 			<cnName>滞毒·丑牛</cnName><dpsMul>0.58</dpsMul>
@@ -272,7 +272,7 @@
 			<info>射出的子弹将粘在地形上，15秒后才消失。</info>
 		</bullet>
 	</father>	
-	<father type="rocket" cnName="火炮">	
+	<father type="rocket" name="death" cnName="火炮">	
 		
 		<bullet cnName="卯兔" kind="water" color="blue">
 			<name>yearRabbitDea</name>
@@ -382,7 +382,7 @@
 					<hitFloorImgUrl name="fireFlamer_hit"/>
 				</bullet>
 	</father>
-	<father type="rocket" cnName="火炮">
+	<father type="rocket" name="death" cnName="火炮">
 		<bullet color="blue">
 			<name>rocketDeath</name>
 			<cnName>火箭筒</cnName><iconUrl>newGun/rocketDeath_icon</iconUrl>

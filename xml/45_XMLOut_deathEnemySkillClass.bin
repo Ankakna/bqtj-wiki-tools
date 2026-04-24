@@ -151,7 +151,7 @@
 					<bulletSkillArr>rotatingLightningLEN</bulletSkillArr>
 					<bulletAngle>0</bulletAngle><bulletLife>9999999</bulletLife><bulletWidth>530</bulletWidth><hitType>longLine</hitType>	
 					<penetrationGap>1000</penetrationGap>
-					<penetrationNum>999</penetrationNum>
+					<penetrationNum>9999</penetrationNum>
 					<noMagneticB>1</noMagneticB><noBeClearB>1</noBeClearB>
 					<bulletSpeed>0</bulletSpeed>
 					<noHitTime>0.7</noHitTime><!-- 前期准备时间 -->
@@ -178,7 +178,7 @@
 			<effectType>magneticB</effectType>
 			<value>1</value>
 			<mul>0.2</mul>
-			<duration>6</duration>
+			<duration>4</duration>
 			<range>800</range>
 			<passiveSkillArr>magneticFieldDeathLink</passiveSkillArr>
 			<meEffectImg soundUrl="sound/magneticField"></meEffectImg>
@@ -425,10 +425,21 @@
 			<effectType>invincibleHoleDeath</effectType><effectFather>death</effectFather>
 			<duration>0.5</duration>
 			<range>700</range>
+			<linkArr>invincibleHoleDeath_link</linkArr>
 			<meEffectImg name="KingRabbitKingHit_state"/>
 			<pointEffectImg name="orangePointerLine"/>
 			<stateEffectImg name="invincibleShield2"/>
 			<description>让所有我方单位（排除自己）进入无敌状态。</description>
 		</skill>
+				<skill>
+					<name>invincibleHoleDeath_link</name>
+					<cnName>无法攻击</cnName>
+					<!--触发条件与目标------------------------------------------------------------ -->
+					<conditionType>active</conditionType>
+					<target>me</target>
+					<!--效果------------------------------------------------------------ -->
+					<addType>instant</addType>
+					<effectType>noAttackOrderAndClearAI</effectType>
+				</skill>
 	</father>
 </data>

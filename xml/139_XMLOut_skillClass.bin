@@ -529,7 +529,7 @@
 		
 		<skill>
 			<name>goldFalcon</name>
-			<cnName>金翼</cnName><noSkillDodgeB>1</noSkillDodgeB><ignoreImmunityB>1</ignoreImmunityB><noBeClearB>1</noBeClearB>
+			<cnName>金翼</cnName><noSkillDodgeB>1</noSkillDodgeB><ignoreImmunityB>1</ignoreImmunityB><noBeClearB>1</noBeClearB><everNoClearB>1</everNoClearB>
 			<!--触发条件与目标------------------------------------------------------------ -->
 			<conditionType>passive</conditionType>
 			<condition>add</condition>
@@ -537,9 +537,28 @@
 			<!--效果------------------------------------------------------------ -->
 			<addType>instantAndState</addType>
 			<effectType>goldFalcon</effectType>
-			<description>进入关卡将长出黄金翅膀，让角色一直处于飞行状态。主线任务、首领工厂的困难模式下无效。未穿该时装时，可用“使用外观”来让角色获得该技能效果。可使用“I”键来切换陆空状态。</description>
+			<valueString>goldFalcon/wing</valueString>
+			<description>进入关卡将长出黄金翅膀，让角色一直处于飞行状态。主线任务中无效。未穿该时装时，可用“使用外观”来让角色获得该技能效果。可使用“I”键来切换陆空状态。</description>
 			<duration>9999999</duration>
 		</skill>
+		<skill>
+			<name>girlWing</name>
+			<cnName>驭空</cnName><noSkillDodgeB>1</noSkillDodgeB><ignoreImmunityB>1</ignoreImmunityB><noBeClearB>1</noBeClearB><everNoClearB>1</everNoClearB>
+			<!--触发条件与目标------------------------------------------------------------ -->
+			<conditionType>passive</conditionType>
+			<condition>add</condition>
+			<target>me</target>
+			<!--效果------------------------------------------------------------ -->
+			<addType>instantAndState</addType>
+			<effectType>girlWing</effectType>
+			<value>40</value>
+			<mul>1.8</mul>
+			<secMul>0.4</secMul>
+			<valueString>girlWing/wing</valueString>
+			<description>初始拥有[value]%的怒气，怒气回复提升至原来的[mul]；副手攻击范围提升[secMul]；进入关卡进入飞行形态（可使用I键切换陆空状态），且不会被击落。未穿该时装时，可用“使用外观”来让角色获得当前技能效果。注意，该时装没有绑定副手动作！</description>
+			<duration>9999999</duration>
+		</skill>
+		
 		
 		<skill>
 			<name>dragonHeadSkill</name>
@@ -551,8 +570,9 @@
 			<!--效果------------------------------------------------------------ -->
 			<addType>instant</addType><summonedUnitsB>1</summonedUnitsB>
 			<effectType>dragonHeadSkill</effectType>
+			<valueString>FireDragon/wing</valueString>
 			<obj>"cnName":"异火龙"</obj>
-			<description>进入关卡将长出龙翅，让角色一直处于飞行状态。主线任务、争霸下无效。可使用“I”键来切换陆空状态。</description>
+			<description>进入关卡将长出龙翅，让角色一直处于飞行状态。主线任务下无效。可使用“I”键来切换陆空状态。</description>
 		</skill>
 		<skill>
 			<name>zombieMask</name>
@@ -1208,6 +1228,20 @@
 			<duration>99999</duration>
 			<description>增加[mul]倍的射击速度。</description>
 			<stateEffectImg partType="2eye,2hand" con="filter" raNum="30">skillEffect/smallFire</stateEffectImg>
+		</skill>
+		<skill>
+			<name>bigWeapon5</name>
+			<cnName>巨刃x5</cnName><everNoClearB>1</everNoClearB><noSkillDodgeB>1</noSkillDodgeB><ignoreImmunityB>1</ignoreImmunityB>
+			<conditionType>passive</conditionType><everNoClearB>1</everNoClearB>
+			<condition>add</condition>
+			<target>me</target>
+			<!--效果------------------------------------------------------------ -->
+			<addType>state</addType>
+			<effectType>attackScale</effectType>
+			<mul>5</mul>
+			<duration>999999</duration>
+			<stateEffectImg name="bigWeaponCard"/>
+			<description>使自己的近战（包括副手）伤害范围扩大[mul]。</description>
 		</skill>
 		
 		<skill name="战争狂人脱下头盔">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
 	
-	<father type="rifle" cnName="橙色 步枪">
+	<father type="rifle" name="death" cnName="橙色 步枪">
 		<bullet color="orange">
 			<name>gatling</name>
 			<cnName>加特林</cnName><dpsMul>1.11</dpsMul>
@@ -35,7 +35,7 @@
 		</bullet>
 	</father>
 	
-	<father type="rifle" cnName="步枪">
+	<father type="rifle" name="death" cnName="步枪">
 		<![CDATA[紫色]]>
 		<bullet color="purple">
 			<name>sandStormDea</name>
@@ -66,7 +66,7 @@
 			<!--图像范围------------------------------------------------------------ -->
 			<shootSoundUrl>specialGun/rifleYellow_sound</shootSoundUrl>
 			<bodyImgRange>specialGun/rifleYellow</bodyImgRange>
-			<bulletImgRange>newGun/m4RedBullet</bulletImgRange>
+			<bulletImgRange>specialGun/bullet</bulletImgRange>
 		</bullet>
 		
 		<bullet color="purple">
@@ -170,7 +170,7 @@
 			<bulletImgRange>newGun/akYellowBullet</bulletImgRange>
 		</bullet>
 	</father>
-	<father type="rifle" cnName="步枪">
+	<father type="rifle" name="death" cnName="步枪">
 		<bullet>
 			<name>m4Rifle</name>
 			<cnName>M4</cnName>

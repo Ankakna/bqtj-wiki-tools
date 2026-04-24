@@ -46,8 +46,9 @@
 			<body diff="3" value="5" must="200"/>
 		</father>
 		<father name="smallMap">
-			<body must="30" text="小地图显示传送门" />
-			<body must="50" text="小地图显示水晶、宝箱、弹药、钥匙等"/>
+			<![CDATA[<body must="30" text="小地图显示传送门" />]]>
+			
+			<body must="80" text="小地图显示水晶、宝箱、弹药、钥匙等"/>
 		</father>
 		<father name="bigMap">
 			<body must="30" text="大地图传送功能（玩家需在传送门附近）" />

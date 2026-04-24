@@ -278,15 +278,7 @@
 	<error>贩卖账号</error>
 	<error>置之不理</error>
 </ask>
-<ask>
-	<title>在不耗费黄金的情况下，玩家每天最多获得多少军队贡献值</title>
-	<correct>1100</correct>
-	<error>510</error>
-	<error>600</error>
-	<error>750</error>
-	<error>1050</error>
-	<error>1500</error>
-</ask>
+
 <ask>
 	<title>下列哪个不可能是零件的等级</title>
 	<correct>43</correct>

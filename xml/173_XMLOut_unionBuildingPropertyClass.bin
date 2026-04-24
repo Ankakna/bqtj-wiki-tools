@@ -138,7 +138,7 @@
 17 
 18 
 	</pro>
-	<pro name="federalTaskGift" cnName="联邦任务奖励数量">
+	<pro name="federalTaskGift" cnName="联邦任务奖励数量-系统里会乘以2">
 		40 
 42 
 44 

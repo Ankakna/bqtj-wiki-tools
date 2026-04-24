@@ -217,7 +217,7 @@
 			</drop>
 		</body>
 		
-		<body name="IronDog" cnName="铁犬" scene="XuWu1" lifeMul="6" dpsMul="0.3" openTime="2024-11-5" day="9999" noExchangeB="1" noBuyB="1" noMoreB="1" limitAll="125">
+		<body name="IronDog" cnName="铁犬" scene="XuWu1" lifeMul="6" dpsMul="0.3" openTime="2024-11-5" day="9999" noExchangeB="1" noBuyB="1" noMoreB="1" limitAll="162">
 			<drop cnName="纪念币" pro="1" d6="12" d5="10" d4="8" d3="7" d2="6" d1="5" d0="4">
 				<gift>base;anniCoin;1</gift>
 			</drop>

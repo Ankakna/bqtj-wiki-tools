@@ -762,6 +762,77 @@
 	</father>
 	
 	<father name="normal"><![CDATA[设置成normal就可以直接fixed了，如果不这样做，就无法fixed。]]>
+		<gather name="横扫体验卡">
+			<level name="spurtingLingTask">
+				<sceneLabel>BaiLu</sceneLabel>
+				<!-- 掉落 -->
+				<info noMoreB="1" noVehicleB="1" noTreasureB="1" />
+				<drop noB="1" />
+				<!-- 发兵集--------------------------------------------------------------------------------------- -->
+				<unitG>
+					
+					<allDefault aiOrder="patrolGlobal" noSuperB="1"></allDefault>
+					<!-- 敌方 -->
+					<unitOrder id="enemy1">
+						<numberType>pro</numberType>
+						<unit cnName="战斗僵尸" num="4" skillArr="State_AddMove,fastForward_enemy,resistMulHurt,State_SpellImmunity" lifeMul="0.2" dpsMul="0.02" skillCloseB="1" />
+						<unit cnName="肥胖僵尸" num="2" skillArr="State_AddMove,fastForward_enemy,resistMulHurt,State_SpellImmunity" lifeMul="0.2" dpsMul="0.02"  skillCloseB="1"/>
+						<unit cnName="冥刃游尸" num="2" skillArr="State_AddMove,fastForward_enemy,resistMulHurt,State_SpellImmunity" lifeMul="0.2" dpsMul="0.02"  skillCloseB="1"/>
+						<unit cnName="无头自爆僵尸" num="2" skillArr="State_AddMove,fastForward_enemy,resistMulHurt,State_SpellImmunity" lifeMul="0.2" dpsMul="0.02"  skillCloseB="1"/>
+					</unitOrder>
+					
+				</unitG>
+				<!-- 区域集 -->
+				<rectG>
+					<rect id="r_birth">1070,234,160,50</rect>
+					<rect id="r_over">2946,363,71,130</rect>
+					<rect id="r1">30,250,220,64</rect>
+					<rect id="r2">2770,427,220,64</rect>
+					<rect id="r3">1144,621,220,64</rect>
+					<rect label="addCharger">2286,300,74,44</rect>
+					<rect label="addCharger">437,230,74,44</rect>
+				</rectG>
+				
+				
+				<eventG>
+					<group>
+						<event id="e2_1">
+							<condition delay="0.1"></condition>
+							<order>body:p1; addSkillLock:spurtingLing_14,noArmsShoot,infiniteAnger</order>
+						</event>
+						<event id="e2_1">
+							<condition doNumber="8" orderChooseType="randomOne">enemyNumber:less_40</condition>
+							<order>createUnit:enemy1; r_topLong</order>
+						</event>
+						<event id="e2_1">
+							<condition doNumber="20" orderChooseType="randomOne">enemyNumber:less_50</condition>
+							<order>createUnit:enemy1; r_topLong</order>
+						</event>
+						<event id="e2_1">
+							<condition doNumber="40" orderChooseType="randomOne">enemyNumber:less_60</condition>
+							<order>createUnit:enemy1; r_topLong</order>
+						</event>
+						<event id="e2_1">
+							<condition doNumber="250" orderChooseType="randomOne">enemyNumber:less_70</condition>
+							<order>createUnit:enemy1; r_topLong</order>
+						</event>
+						<event id="e2_11">
+							<condition>enemyNumber:less_1</condition>
+							<order>level; showPointer:r_over</order>
+						</event>
+					</group>
+					<group>
+						<event id="e_win">
+							<condition delay="0.01">task:state; spurtingLingTask:complete</condition>
+							<order>level; noEnemy</order>
+							<order>level; showPointer:r_over</order>
+						</event>
+					</group>
+				</eventG>
+			</level>
+		</gather>
+		
+		
 		<gather name="极限射速">
 			<level name="maxSpeedTask">
 				<sceneLabel>BaiLu</sceneLabel>

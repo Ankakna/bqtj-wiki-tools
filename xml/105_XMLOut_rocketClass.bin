@@ -28,16 +28,16 @@
 			<dpsMul>0.7</dpsMul>
 			<uiDpsMul>1.06</uiDpsMul>
 			<!--运动属性------------------------------------------------------------ -->	
-			<bulletSpeed>40</bulletSpeed>
+			<bulletSpeed>45</bulletSpeed>
 			<!--特殊------------------------------------------------------------ -->
 			<boomD  bodyB="1" floorB="1" radius="130"/>
 			<!--图像动画属性------------------------------------------------------------ -->
 			<flipX>1</flipX>
 			<bulletImgUrl raNum="30">rocket/rocketBullet</bulletImgUrl>
-			<hitImgUrl soundUrl="boomSound/midBoom1"  soundVolume="0.3"  shake="3,0.4,13">boomEffect/boom2</hitImgUrl><!-- 子弹图像【必备】 -->
+			<hitImgUrl name="midSpace"/><!-- 子弹图像【必备】 -->
 			<hitFloorImgUrl soundUrl="boomSound/smallBoom"  shake="3,0.4,9" soundVolume="0.5">boomEffect/boom1</hitFloorImgUrl><!-- 子弹图像【必备】 -->
-			<smokeImgUrl con="filter" raNum="30">bulletHitEffect/smoke_small</smokeImgUrl><!-- 子弹尾烟效果（默认为空） -->
-			<fireImgType></fireImgType>
+			<smokeImgUrl name="rocketSmokeSm"/><!-- 子弹尾烟效果（默认为空） -->
+			<fireImgUrl name="gunFireRocket"/>
 			<!--图像范围------------------------------------------------------------ -->
 			<bodyImgRange>rocket/body,rocket/body2</bodyImgRange>
 			<barrelImgRange>rocket/barrel,rocket/barrel2</barrelImgRange>

@@ -1198,9 +1198,15 @@
 			<changeText>翻滚[value]码的距离{n}最短触发间隔[minTriggerT]秒</changeText>
 			<!--触发条件与目标------------------------------------------------------------ -->
 			<conditionType>passive</conditionType>
+			<condition>rollKey</condition>
+			<otherConditionArr>noNowState</otherConditionArr>
+			<![CDATA[
+			
 			<condition>moveCombo</condition>
+			
 			<otherConditionArr>landMoveCombo</otherConditionArr>
 			<conditionString>left,left|right,right</conditionString>
+			]]>
 			<target>me</target>
 			<!--效果------------------------------------------------------------ -->
 			<addType>state</addType>

@@ -57,6 +57,7 @@
 			<gift>things;strengthenStone;4</gift>
 			<gift>things;armsRadium;5</gift>
 			<gift>things;highEquipEchelonCard;1</gift>
+			<gift>things;yearMonkey;1</gift>
 			<gift>things;zodiacBag;1</gift>
 		</one>
 		<one name="active_5" 	must="150">
@@ -66,6 +67,7 @@
 			<gift>things;strengthenStone;3</gift>
 			<gift>things;armsRadium;4</gift>
 			<gift>things;armsTitanium;4</gift>
+			<gift>things;lightStone;15</gift>
 			<gift>things;highArmsEchelonCard;1</gift>
 			
 		</one>
@@ -75,6 +77,7 @@
 			<gift>things;bossCardStamp;3</gift>
 			<gift>things;weaponChest;10</gift>
 			<gift>things;deviceChest;8</gift>
+			<gift>things;militarySupplies;30</gift>
 			<gift>base;wilderKey;1</gift>
 		</one>
 	</gift>

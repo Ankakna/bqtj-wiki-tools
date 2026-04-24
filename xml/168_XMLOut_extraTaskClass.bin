@@ -22,29 +22,39 @@
 			<condition type="collect" target="killEnemyNum" targetId="boss" value="1"/>
 			<growth>
 				<task>
-					<diff>15</diff>
+					<enemyLifeMul>15</enemyLifeMul><enemyDpsMul>2</enemyDpsMul>
 					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
 					<gift>things;armsGemChest;6</gift>
 				</task>
 				<task>
-					<diff>30</diff>
+					<enemyLifeMul>30</enemyLifeMul><enemyDpsMul>3</enemyDpsMul>
 					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
 					<gift>things;armsGemChest;7</gift>
 				</task>
 				<task>
-					<diff>60</diff>
+					<enemyLifeMul>60</enemyLifeMul><enemyDpsMul>4</enemyDpsMul>
 					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
 					<gift>things;armsGemChest;8</gift>
 				</task>
 				<task>
-					<diff>120</diff>
+					<enemyLifeMul>120</enemyLifeMul><enemyDpsMul>5</enemyDpsMul>
 					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
 					<gift>things;armsGemChest;9</gift>
 				</task>
 				<task>
-					<diff>140</diff>
+					<enemyLifeMul>140</enemyLifeMul><enemyDpsMul>6</enemyDpsMul>
 					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
 					<gift>things;equipGemChest;9</gift>
+				</task>
+				<task>
+					<enemyLifeMul>240</enemyLifeMul><enemyDpsMul>5</enemyDpsMul>
+					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
+					<gift>things;armsGemChest;11</gift>
+				</task>
+				<task>
+					<enemyLifeMul>250</enemyLifeMul><enemyDpsMul>5</enemyDpsMul>
+					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
+					<gift>things;equipGemChest;11</gift>
 				</task>
 			</growth>
 		</task> 
@@ -57,32 +67,44 @@
 			<fixedLevelUrl>extraTask/extra_PoisonDemon</fixedLevelUrl>
 			<!-- 任务各等级 ------------------------------------------------------------ -->
 			<drop dropName="diff_4" />
-			<diff>15</diff>
+			<diff>1</diff>
 			<condition type="collect" target="killEnemyNum" targetId="boss" value="1"/>
 			<growth>
 				<task>
-					<diff>15</diff>
+					<enemyLifeMul>15</enemyLifeMul><enemyDpsMul>2</enemyDpsMul>
 					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
 					<gift>parts;huntParts_1;4</gift>
 					<gift>parts;acidicParts_1;1</gift>
 				</task>
 				<task>
-					<diff>30</diff>
+					<enemyLifeMul>30</enemyLifeMul><enemyDpsMul>3</enemyDpsMul>
 					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
 					<gift>parts;acidicParts_1;4</gift>
 					<gift>parts;huntParts_1;2</gift>
 				</task>
 				<task>
-					<diff>60</diff>
+					<enemyLifeMul>60</enemyLifeMul><enemyDpsMul>6</enemyDpsMul>
 					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
 					<gift>parts;huntParts_1;4</gift>
 					<gift>parts;acidicParts_1;4</gift>
 				</task>
 				<task>
-					<diff>120</diff>
+					<enemyLifeMul>120</enemyLifeMul><enemyDpsMul>8</enemyDpsMul>
 					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
 					<gift>parts;huntParts_1;5</gift>
 					<gift>parts;acidicParts_1;5</gift>
+				</task>
+				<task>
+					<enemyLifeMul>240</enemyLifeMul><enemyDpsMul>9</enemyDpsMul>
+					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
+					<gift>parts;huntParts_1;6</gift>
+					<gift>parts;acidicParts_1;6</gift>
+				</task>
+				<task>
+					<enemyLifeMul>320</enemyLifeMul><enemyDpsMul>10</enemyDpsMul>
+					<gift>base;coin;40;;;;LevelEnemyCoin</gift>
+					<gift>parts;huntParts_1;7</gift>
+					<gift>parts;acidicParts_1;7</gift>
 				</task>
 			</growth>
 		</task>

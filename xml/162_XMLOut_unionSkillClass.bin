@@ -115,7 +115,7 @@
 			<condition>skillCombo</condition>
 			<otherConditionArr>skillCombo</otherConditionArr>
 			<conditionRange>9</conditionRange>
-			<conditionString>feedback_hero,pointBoom_hero|feedback_hero,hiding_hero|invisibility_hero,hiding_hero</conditionString>
+			<conditionString>feedback_hero,pointBoom_hero|feedback_hero,hiding_hero|invisibility_hero,hiding_hero|tauntLing,feedback_hero</conditionString>
 			<target>me</target>
 			<!--效果------------------------------------------------------------ -->
 			<addType>state</addType>
@@ -127,7 +127,7 @@
 			<!-- 子弹所需 -->
 			<obj>"name":"godEyes"</obj>
 			<!--图像------------------------------------------------------------ -->
-			<description>同时触发人物技能组合：电离折射、定点轰炸（或者电离折射、群体隐身，或者隐匿之雾、群体隐身），技能要求最低等级为9级，将启动二元化学激光，原本无毒的化学激光交叉碰撞后，迅速产生光化学毒素，伤害范围内的人并破坏他们10%的防御力，持续20秒。</description>
+			<description>同时触发人物技能组合：电离折射、定点轰炸（或者电离折射、群体隐身，或者隐匿之雾、群体隐身，或者电离折射、嘲讽），技能要求最低等级为9级，将启动二元化学激光，原本无毒的化学激光交叉碰撞后，迅速产生光化学毒素，伤害范围内的人并破坏他们10%的防御力，持续20秒。</description>
 		</skill>
 		
 		<skill cnName="上帝之杖"><!-- dps -->
@@ -138,7 +138,7 @@
 			<condition>skillCombo</condition>
 			<otherConditionArr>skillCombo</otherConditionArr>
 			<conditionRange>9</conditionRange>
-			<conditionString>crazy_hero,tenacious_hero,through_hero|tenacious_hero,poisonousFog_hero,vacuumJie|groupReverseHurt_hero,globalLight_hero,through_hero</conditionString>
+			<conditionString>tenacious_hero,through_hero|tenacious_hero,poisonousFog_hero|groupReverseHurt_hero,through_hero|tauntLing,through_hero</conditionString>
 			<target>me</target>
 			<!--效果------------------------------------------------------------ -->
 			<addType>state</addType>
@@ -151,7 +151,7 @@
 			<obj>"name":"godMace"</obj>
 			<pointEffectImg raNum="1" soundUrl="sound/laserShoot2">bulletHitEffect/purpleLaser</pointEffectImg>
 			<!--图像------------------------------------------------------------ -->
-			<description>同时触发人物技能组合：反击、狂暴、金刚钻（或者反击、毒雾、真空，或者反转术、全域圣光、金刚钻），技能要求最低等级为9级，之后将引导太空中的天基动能卫星，向地面发射巨大的金属柱，形成人造陨石轰击地面，造成堪比核弹的灾难性打击，冲击波能让敌人降低20%防御力，持续20秒。</description>
+			<description>同时触发人物技能组合：反击、金刚钻（或者反击、毒雾，或者反转术、金刚钻，或者嘲讽、金刚钻），技能要求最低等级为9级，之后将引导太空中的天基动能卫星，向地面发射巨大的金属柱，形成人造陨石轰击地面，造成堪比核弹的灾难性打击，冲击波能让敌人降低20%防御力，持续20秒。</description>
 		</skill>
 		
 		

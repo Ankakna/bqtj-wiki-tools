@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<father type="shotgun" cnName="散弹枪">
+	<father type="shotgun" name="death" cnName="散弹枪">
 		<bullet color="purple">
 			<name>crocodileDea</name>
 			<cnName>爆·沙鳄</cnName><dpsMul>0.44</dpsMul>
@@ -150,7 +150,7 @@
 		</bullet>
 	</father>
 	
-	<father type="shotgun" cnName="散弹枪">
+	<father type="shotgun" name="death" cnName="散弹枪">
 		<bullet>
 			<name>xm1014</name>
 			<cnName>冷血</cnName><dpsMul>0.7</dpsMul>

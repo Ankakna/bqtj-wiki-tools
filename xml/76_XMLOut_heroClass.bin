@@ -211,7 +211,7 @@
 			<cnName>小樱</cnName>
 			<sex>female</sex>
 			<raceType>human</raceType>
-			<swfUrl>swf/hero/Girl358.swf</swfUrl>
+			<swfUrl>swf/hero/Girl361.swf</swfUrl>
 			<description>一位温柔可爱、性格单纯的女孩，她将成为爆枪联盟的第一位女队员，但身世却一直是个迷。</description>
 			<!-- 基本系数 -->
 			<rosRatio>0.02</rosRatio><!-- 硬直比例，血量扣除到达这个百分比的多少就硬直 -->
@@ -382,7 +382,7 @@
 				</hurt>
 				<hurt>
 					<imgLabel>fox_dartsAttack</imgLabel><![CDATA[白狐-剑齿镖，子弹型）]]>
-					<hurtRatio>0.8</hurtRatio>
+					<hurtRatio>0.16</hurtRatio>
 					<bulletLabel>saberDartsFox</bulletLabel>
 					<grapRect>-735,-181,625,293</grapRect>
 					<shakeValue>10</shakeValue><beatBack>4</beatBack><screenShakeValue>8</screenShakeValue>
@@ -437,6 +437,7 @@
 			<!-- 运动 -->
 			<maxVx>11</maxVx>
 			<squatMaxVx>5</squatMaxVx>
+			<flyType>space</flyType><motionD F_AIR="6" />
 			<!-- AI属性 -->
 			<armsNumber>2</armsNumber><!-- 武器个数 -->
 			<randomArmsRange>rocket1</randomArmsRange><!-- 随机枪范围，里面是armsRange的标签 -->	
@@ -444,7 +445,9 @@
 			<extraAIClassLabel>Hero_AIExtra</extraAIClassLabel>
 			<!-- 技能 -->
 			<skillArr></skillArr>
-			<studyCnNameArr>妖魅,嘲讽,遇强则刚,复仇,共鸣,暗夜信徒,恶爪</studyCnNameArr>
+			<studyCnNameArr>横扫,金刚钻,妖魅,先锋盾,远视,精准,嘲讽,整数增益,电离折射,滑翔,王者之翼,遇强则刚,复仇,近视,共鸣,湮灭,攻防一体,暗夜信徒,恶爪,合金护甲,全域光波</studyCnNameArr>
+			<p1SkillArr>横扫,金刚钻,整数增益,电离折射,滑翔,王者之翼,近视,湮灭,攻防一体,合金护甲,全域光波</p1SkillArr>
+			
 			<addMoreText>完成支线任务“训练女助手”后入队</addMoreText>
 			<moreD dpsMul="0.55" underHurtMul="0.35" studySkillLvAdd="1" firstLv="50" />
 		</body>	
@@ -498,6 +501,7 @@
 			<!-- 运动 -->
 			<maxVx>11</maxVx>
 			<squatMaxVx>5</squatMaxVx>
+			<flyType>space</flyType><motionD F_AIR="6" />
 			<!-- AI属性 -->
 			<armsNumber>2</armsNumber><!-- 武器个数 -->
 			<randomArmsRange>shotgun1</randomArmsRange><!-- 随机枪范围，里面是armsRange的标签 -->	
@@ -587,6 +591,7 @@
 			<!-- 运动 -->
 			<maxVx>11</maxVx>
 			<squatMaxVx>5</squatMaxVx>
+			<flyType>space</flyType><motionD F_AIR="6" />
 			<!-- AI属性 -->
 			<armsNumber>5</armsNumber><!-- 武器个数 -->
 			<randomArmsRange>sniperRifle,rocket1,pistol1,ak47,shotgun1</randomArmsRange><!-- 随机枪范围，里面是armsRange的标签 -->	

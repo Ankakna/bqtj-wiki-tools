@@ -36,7 +36,7 @@
 				</unitG>
 				<!-- 区域集************************************************ -->
 				<rectG>
-					<rect id="r_birth">600,290,200,117</rect>
+					<rect id="r_birth">125,660,112,30</rect>
 					<rect id="r_over">2940,563,60,125</rect>
 					<rect id="r1">1500,180,500,80</rect>
 					<rect id="r2">2000,180,500,80</rect>
@@ -51,20 +51,14 @@
 				<!-- 事件集************************************************ -->
 				<eventG>
 					<group>
-						<!-- 产生主角 -->
-						<event id="e1_1">
-							<condition></condition>
-							<order>createUnit:we1; r_birth</order>
-						</event>
-					</group>
-					<group>
 						<event>
+							<order>WoTu1</order>
 							<order>say; startList:s1</order>
 						</event>
 						<event>
 							<condition>say:listOver</condition>
+							
 						</event>
-						
 						<event id="e2_1"><condition delay="2"></condition></event>
 						<event id="e2_1">
 							<condition doNumber="3" orderChooseType="randomOne">enemyNumber:less_1</condition>
@@ -96,7 +90,7 @@
 						</event>
 						<!-- 对话完毕后胜利 -->
 						<event id="e2_11">
-							<condition>say:listOver; s2</condition>
+							<condition>say:listOver</condition>
 							<order>worldMap:levelName; WoTu:WoTu_2</order>
 							<order>worldMap:save; superNum:1</order><!-- 允许精英怪出现1波 -->
 							<order>completeNowMenoryTask</order>
@@ -774,14 +768,15 @@
 					<group>
 						
 						<!--开始和表哥对话-->
-						<event id="e1_1">
-							<condition delay="2"></condition>
+						<event>
 							<order>say; startList:s1</order>
 						</event>
-					
-					<!-- 对话结束后，添加任务，产生敌人 ,随机2个命令中的一个-->
-						<event id="e2_0">
-							<condition>say:listOver; s1</condition>
+						<event>
+							<condition delay="1">say:listOver</condition>
+							<order>say; startList:s11</order>
+						</event>
+						<event>
+							<condition>say:listOver</condition>
 							<order>task; get:YangMei_1</order>
 						</event>
 						<![CDATA[]]>
@@ -2503,7 +2498,7 @@
 						
 						<!-- 2秒后发兵 -->
 						<event id="e1_1">
-							<condition delay="2"></condition>
+							<condition delay="0.1"></condition>
 						</event>
 						
 						<event id="e2_2">
@@ -2532,12 +2527,16 @@
 							<order>level; rebirthAllMore</order>
 						</event>
 						<event id="e2_8"><!-- 距离小于200才开始对话 -->
-							<condition>bodyGap:less_350; p1:藏师将军</condition>
+							<condition>bodyGap:less_450; p1:藏师将军</condition>
+							<order>say; startList:s0</order>
+						</event>
+						<event>
+							<condition delay="0.1">say:listOver</condition>
 							<order>say; startList:s1</order>
 						</event>
 						<!--对话结束后胜利 -->
-						<event id="e2_9">
-							<condition delay="1">say:listOver; s1</condition>
+						<event>
+							<condition delay="1">say:listOver</condition>
 							<order>say; startList:s2</order>
 							<order>body:藏师将军; ai:patrolRandom</order><!-- 随机巡逻 -->
 						</event>
@@ -4543,12 +4542,16 @@
 							<order>createUnit:we2; r2</order>
 							<order>level; rebirthAllMore</order>
 						</event>
-						<event id="e2_8"><!-- 距离小于200才开始对话 -->
+						<event><!-- 距离小于200才开始对话 -->
 							<condition>bodyGap:less_350; p1:亚瑟</condition>
-							<order>say; startList:s1</order>
+							<order>say; startList:s0</order>
 						</event>
-						<event id="e_9">
-							<condition>say:listOver; s1</condition>
+						<event>
+							<condition delay="0.1">say:listOver</condition>
+							<order>say; startList:s1</order><!-- 随机巡逻 -->
+						</event>
+						<event>
+							<condition>say:listOver</condition>
 							<order>body:亚瑟; ai:patrolRandom</order><!-- 随机巡逻 -->
 						</event>
 						<!-- 表哥、藏师出现 -->

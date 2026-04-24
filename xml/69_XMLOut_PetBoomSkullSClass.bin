@@ -16,7 +16,7 @@
 			<!-- 图像 -->
 			<dieImg soundUrl="sound/pointBoom_hero" shake="3,0.4,30">boomEffect/boom3</dieImg>
 			<dieJumpMul>0</dieJumpMul>
-			<imgType>bmp</imgType>
+			<imgType>normal</imgType>
 			<imgArr>
 				stand,move,die1
 				,shootAttack1,shootAttack2

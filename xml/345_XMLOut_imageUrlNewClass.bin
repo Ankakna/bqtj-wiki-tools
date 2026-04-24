@@ -54,7 +54,7 @@
 		
 		
 		<body cnName="掉落物碰撞" name="dropHit" con="add" soundUrl="uiSound/getDrop" soundRan="6" raNum="8" ranAn="60" >bulletHitEffect/blue</body>
-		<body cnName="冲刺小烟" name="sprintSmoke"  raNum="30" con="add">bulletHitEffect/smoke_motion</body>
+		<body cnName="冲刺小烟" name="sprintSmoke"  raNum="30" con="add" soundUrl="bodySound/fastMove" soundRan="2">bulletHitEffect/smoke_motion</body>
 		<body cnName="夺命箭发射" name="deadlyArrowDeathFire" soundUrl="hitSound/magicShoot"  soundRan="3" ranAn="180" raNum="4" randomRange="8">bulletHitEffect/purpleBoomSmall</body>
 	</father>
 	
@@ -282,6 +282,8 @@
 		<body cnName="毒液" name="poisonClaw" partType="2hand,shootPoint" con="filter" raNum="30">skillEffect/poisonClaw_enemy</body>
 		<body cnName="无敌护盾2" name="invincibleShield2" partType="body" con="add">generalEffect/invincibleShield2</body>
 		
+		<body  cnName="翻滚状态"  name="rollingState" con="filter" raNum="1" soundUrl="bodySound/fastMove" soundRan="2">skillEffect/rollingShadow</body>
+		
 	</father>
 	<father name="target" cnName="瞬发">
 		
@@ -368,6 +370,7 @@
 		<body cnName="喷火器击中" name="flamerHit" ranPro="0.3" soundUrl="hitSound/fireShoot"  soundRan="3" raNum="30" ranAn="360" con="add" randomRange="8">bulletHitEffect/spark_motion</body>
 		
 		<body cnName="弹药回复" name="addCharger" soundUrl="sound/groupLight_hero" con="add" >skillEffect/greenLight</body>
+		<body cnName="消失" name="addCharger" soundUrl="sound/groupLight_hero" con="add" >skillEffect/hide</body>
 		
 		
 	</father>

@@ -2,17 +2,21 @@
 <data>
 	<father name="normal" cnName="普通" priceType="coin" labelArr="hot,all,props,materials,fashion,vehicle,arms,parts,equip,other">
 		<type name="hot">
+			<![CDATA[
 			<goods cnName="3月补偿礼包" name="offset2026_3" price="1000" buyLimitNum="5" dayBuyLimitNum="1" endTime="2026-4-6" autoUseB="1"><priceType>coin</priceType></goods>
 			
-			<![CDATA[
-			<goods cnName="游戏盒签到补偿" name="gameBoxOffset26_1" price="10" buyLimitNum="1" dayBuyLimitNum="1" endTime="2026-2-28" autoUseB="1"><priceType>coin</priceType></goods>
+			
+			<goods cnName="游戏盒签到补偿" name="gameBoxOffset26_1" price="10" buyLimitNum="1" dayBuyLimitNumdayBuyLimitNum="1" endTime="2026-2-28" autoUseB="1"><priceType>coin</priceType></goods>
 			
 			
 			<goods name="pumpkinGoods" dataType="base" defineLabel="pumpkin" price="1000" num="2000" buyLimitNum="1" endTime="2025-12-15"/>
 			<goods cnName="缓时卡" name="slowTimeCard" price="10" dayBuyLimitNum="1" buyLimitNum="1"></goods>
 			]]>
+			<goods  otherArr="hot,fashion" noOtherPathB="1" propId="4584" dataType="fashion" inBagType="equip" cnName="凌空时装" name="girlWing"  price="1500" discount="0.8"><priceType>money</priceType></goods>
+			<goods  otherArr="hot,fashion" propId="4583" dataType="fashion" inBagType="equip" cnName="白狐时装" name="foxLingSuper"  price="1500" discount="0.8"><priceType>money</priceType></goods>
+			
 			<goods otherArr="hot,fashion" noOtherPathB="1" propId="4575" dataType="fashion" inBagType="equip" cnName="噬原时装" name="phage"  price="1500" endTime="2026-2-28"><priceType>money</priceType></goods>
-			<goods  otherArr="hot,fashion" propId="4576" dataType="fashion" inBagType="equip" cnName="赤姬时装" name="mechaYingSuper"  price="1500" discount="0.9"><priceType>money</priceType></goods>
+			<goods  otherArr="hot,fashion" propId="4588" dataType="fashion" inBagType="equip" cnName="赤姬时装" name="mechaYingSuper"  price="1500"><priceType>money</priceType></goods>
 			
 			
 			
@@ -32,8 +36,8 @@
 			<goods otherArr="hot,fashion" noOtherPathB="1" propId="4546" dataType="fashion" inBagType="equip" cnName="黄金隼" name="goldFalcon"  price="1000" discount="0.8"><priceType>money</priceType></goods>
 			
 			
-			<goods otherArr="hot,equip" propId="4525" cnName="镭射箱" name="shuttleSword" price="190" buyLimitNum="12" chooseNumB="1" endTime="2025-2-28" discount="0.8" ><priceType>money</priceType></goods>
-			<goods otherArr="hot,equip" propId="4526" cnName="黑洞箱" name="blackHoleSword" price="220" buyLimitNum="12" chooseNumB="1" endTime="2025-2-28" discount="0.8" ><priceType>money</priceType></goods>
+			<goods otherArr="hot,equip" propId="4525" cnName="镭射箱" name="shuttleSword" price="190" buyLimitNum="12" chooseNumB="1" endTime="2026-5-10" discount="0.8" ><priceType>money</priceType></goods>
+			<goods otherArr="hot,equip" propId="4526" cnName="黑洞箱" name="blackHoleSword" price="220" buyLimitNum="12" chooseNumB="1" endTime="2026-5-10" discount="0.8" ><priceType>money</priceType></goods>
 			<goods  otherArr="hot,equip"  propId="4556" cnName="凯撒箱" name="sprintSword20" price="1500"  buyLimitNum="6" endTime="2025-11-16" discount="0.5" ><priceType>money</priceType></goods>
 			
 			<goods  otherArr="hot,vehicle"  propId="4558" dataType="vehicle" inBagType="equip" cnName="切割者" name="BoneBreaker" price="400" buyLimitNum="1"  endTime="2025-11-16" ><priceType>money</priceType></goods>
@@ -62,7 +66,7 @@
 			<goods propId="1209" cnName="技能刷新卡" name="skillFleshCard" price="5" chooseNumB="1"><priceType>money</priceType></goods>
 			
 			<goods propId="4172" cnName="竞技宝箱" name="arenaChest" num="1" price="3" chooseNumB="1"><priceType>money</priceType></goods>
-			<goods otherArr="hot" propId="3978" cnName="扫荡卡" name="sweepingCard" num="1" price="8" chooseNumB="1"  dayBuyLimitNum="30"><priceType>money</priceType></goods>
+			<goods otherArr="hot" propId="3978" cnName="扫荡卡" name="sweepingCard" num="1" price="8" chooseNumB="1"><priceType>money</priceType></goods>
 			<goods otherArr="hot" propId="3106" cnName="双倍武器掉率卡" name="doubleArmsCard" price="10" chooseNumB="1"><priceType>money</priceType></goods>
 			<goods otherArr="hot" propId="3105" cnName="双倍装备掉率卡" name="doubleEquipCard" price="8" chooseNumB="1"><priceType>money</priceType></goods>
 			<goods propId="1210" cnName="双倍经验绿卡" name="doubleCard" price="5" chooseNumB="1"><priceType>money</priceType></goods>
@@ -70,7 +74,7 @@
 			
 			<goods otherArr="hot" propId="4397" cnName="魂卡券" name="bossCardStamp" num="1" price="3" chooseNumB="1" buyLimitNum="5000"><priceType>money</priceType></goods>
 			
-			<goods propId="4110" cnName="募兵券" name="soldiersStamp" num="1" price="8" chooseNumB="1" dayBuyLimitNum="7"><priceType>money</priceType></goods>
+			<goods propId="4110" cnName="募兵券" name="soldiersStamp" num="1" price="8" chooseNumB="1"><priceType>money</priceType></goods>
 			
 			<goods propId="4424" cnName="队友功勋牌" name="exploitCard" num="1" price="30" chooseNumB="1"><priceType>money</priceType></goods>
 			<goods propId="4396" cnName="技能熟练卡" name="profiStamp" price="10" chooseNumB="1" num="1"><priceType>money</priceType></goods>
@@ -136,7 +140,7 @@
 			
 			<goods propId="4537" cnName="升化剂" name="intensDrug" price="1" chooseNumB="1" ><priceType>money</priceType></goods>
 			
-			<goods propId="4479" cnName="聚魂石" name="ghostStone" price="8" chooseNumB="1" dayBuyLimitNum="40"><priceType>money</priceType></goods>
+			<goods propId="4479" cnName="聚魂石" name="ghostStone" price="8" chooseNumB="1"><priceType>money</priceType></goods>
 			<goods propId="4430" cnName="玩具熊" name="teddyBear" num="1" price="10" chooseNumB="1"><priceType>money</priceType></goods>
 			<goods propId="3975" cnName="百合花" name="lily" num="1" price="8" chooseNumB="1"><priceType>money</priceType></goods>
 			<goods propId="4514" cnName="神队卡片" name="highPartnerCard" num="1" price="5" chooseNumB="1"><priceType>money</priceType></goods>
@@ -165,8 +169,8 @@
 			
 			
 			
-			<goods  otherArr="hot" noOtherPathB="1" propId="4481" dataType="fashion" inBagType="equip" cnName="白狐心零时装" name="foxLing"  price="820" ><priceType>money</priceType></goods>
 			<goods otherArr="hot" noOtherPathB="1" propId="4425" dataType="fashion" inBagType="equip" cnName="紫嫣小美时装" name="purpleMei" price="700"><priceType>money</priceType></goods>
+			<goods  otherArr="hot" noOtherPathB="1" propId="4481" dataType="fashion" inBagType="equip" cnName="白狐心零时装" name="foxLing"  price="1025" discount="0.8"><priceType>money</priceType></goods>
 			
 			<goods noOtherPathB="1" propId="4550" dataType="fashion" inBagType="equip" cnName="清凉心零时装" name="swimLing" price="800" discount="0.875"><priceType>money</priceType></goods>
 			<goods noOtherPathB="1" propId="4551" dataType="fashion" inBagType="equip" cnName="牛仔小樱时装" name="cowboyYing" price="800" discount="0.875"><priceType>money</priceType></goods>
@@ -291,7 +295,7 @@
 			<goods propId="4458" cnName="电磁球" dataType="parts" name="electricParts_1" num="1" price="250" chooseNumB="1"><priceType>money</priceType></goods>
 			<goods propId="4459" cnName="火焰球" dataType="parts" name="fireParts_1" num="1" price="250" chooseNumB="1"><priceType>money</priceType></goods>
 			<goods propId="4460" cnName="冷冻球" dataType="parts" name="frozenParts_1" num="1" price="250" chooseNumB="1"><priceType>money</priceType></goods>
-			<goods propId="4485" cnName="消磁器" dataType="parts" name="degaussingParts_1" num="1" price="50" chooseNumB="1" dayBuyLimitNum="1"><priceType>money</priceType></goods>
+			<goods propId="4485" cnName="消磁器" dataType="parts" name="degaussingParts_1" num="1" price="50" chooseNumB="1"><priceType>money</priceType></goods>
 			
 			<goods  otherArr="hot"  propId="4507" cnName="猎人技能器" dataType="parts" name="huntParts_1" num="1" price="2" chooseNumB="1"><priceType>money</priceType></goods>
 			<goods  otherArr="hot"  propId="4508" cnName="腐蚀芯片" dataType="parts" name="acidicParts_1" num="1" price="1" chooseNumB="1"><priceType>money</priceType></goods>

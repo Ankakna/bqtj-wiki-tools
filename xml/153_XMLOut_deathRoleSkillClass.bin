@@ -24,7 +24,7 @@
 			<meEffectImg soundUrl="sound/crazy_hero"></meEffectImg>
 			<stateEffectImg partType="2eye" con="filter" raNum="30">skillEffect/smallFire</stateEffectImg>
 			<stateEffectImg2 partType="2eye" con="add">skillEffect/crazy_hero_eye</stateEffectImg2>
-			<description>释放技能后，增加[mul-1]武器的射击速度（面板射速大于[value]发每秒的，不加射速，增加同等武器伤害），持续[duration]秒。</description>
+			<description>释放技能后，增加[mul-1]武器的射击速度（面板射速大于[value]发每秒的，不加射速，增加同等武器伤害），同时不消耗子弹，持续[duration]秒。</description>
 			<!-- 技能各等级 ------------------------------------------------------------ -->
 			<growth>
 				<skill><cd>46</cd></skill>
@@ -46,14 +46,14 @@
 			<!--效果------------------------------------------------------------ -->
 			<addType>instantAndState</addType>
 			<effectType>vacuumDR</effectType><effectFather>death</effectFather>
-			<mul>1.1</mul>
+			<![CDATA[<mul>1.1</mul>]]>
 			<range>1000</range>
 			<duration>2</duration>
 			<meEffectImg name="vacuumJieSound"/>
 			<targetEffectImg name="vacuumJie"/>
 			<stateEffectImg name="noMoveWarrior_state"/>
 			<pointEffectImg name="teleportLine"/>
-			<description>将鼠标处半径[range]码的敌人吸附至鼠标处，麻痹并减防[mul-1]，持续[duration]秒，期间盾牌僵尸的盾牌将失效。</description>
+			<description>将鼠标处半径[range]码的敌人吸附至鼠标处，持续[duration]秒，期间盾牌僵尸的盾牌将失效。</description>
 			<growth>
 				<skill><cd>8</cd></skill>
 				<skill><cd>7</cd></skill>
@@ -64,7 +64,7 @@
 			<name>hidingDR</name><iconUrl>SkillIcon/hiding_hero</iconUrl><wantDescripB>1</wantDescripB>
 			<cnName>隐身</cnName>
 			<changeText>技能冷却时间[cd]秒</changeText>
-			<cd>12</cd>
+			<cd>9</cd>
 			<!--触发条件与目标------------------------------------------------------------ -->
 			<conditionType>active</conditionType>
 			<condition>avtiveSkillCdOver</condition>
@@ -74,15 +74,15 @@
 			<!--效果------------------------------------------------------------ -->
 			<addType>state</addType>
 			<effectType>hidingB</effectType>
-			<mul>4</mul>
+			<mul>6</mul>
 			<secMul>0</secMul><!-- 背后攻击造成额外伤害 -->
-			<duration>6</duration>
+			<duration>7</duration>
 			<meEffectImg name="madfireHiding_me"/>
-			<description>释放技能后进入隐身状态，持续[duration]秒。隐身时对敌人发起攻击，将打破隐身状态，同时对敌人造成2~4倍的暴击。</description>
+			<description>释放技能后进入隐身状态，持续[duration]秒。隐身时对敌人发起攻击，将打破隐身状态，同时对敌人造成最高[mul]的暴击。</description>
 			<growth>
-				<skill><cd>12</cd></skill>
-				<skill><cd>10</cd></skill>
-				<skill><cd>8</cd></skill>
+				<skill><mul>6</mul></skill>
+				<skill><mul>7</mul></skill>
+				<skill><mul>8</mul></skill>
 			</growth>
 		</skill>
 		
@@ -142,9 +142,9 @@
 			<targetEffectImg></targetEffectImg>
 			<description>下蹲时射击，都有[effectProArr.0]的概率派生跟踪导弹。导弹伤害为当前武器面板单发伤害x[mul]。</description>
 			<growth>
-				<skill><mul>2</mul></skill>
-				<skill><mul>2.7</mul></skill>
-				<skill><mul>3.4</mul></skill>
+				<skill><mul>3.3</mul></skill>
+				<skill><mul>4.4</mul></skill>
+				<skill><mul>5.5</mul></skill>
 			</growth>
 		</skill>
 		
@@ -190,9 +190,9 @@
 			<description>在空中按下“蹲下”键后，人物将开启滑翔模式，并提高[mul]的伤害。落地或双击“蹲下”键，将清除技能效果。</description>
 			<!-- 技能各等级 ------------------------------------------------------------ -->
 			<growth>
+				<skill><mul>0.15</mul></skill>
+				<skill><mul>0.20</mul></skill>
 				<skill><mul>0.25</mul></skill>
-				<skill><mul>0.32</mul></skill>
-				<skill><mul>0.41</mul></skill>
 			</growth>
 		</skill>
 		
@@ -211,13 +211,13 @@
 			<addType>instantAndState</addType>
 			<effectType>boomWaveDR</effectType><effectFather>death</effectFather>
 			<mul>0.02</mul>
-			<duration>13</duration>
+			<duration>15</duration>
 			<range>99999</range>
 			<!--图像------------------------------------------------------------ -->
 			<meEffectImg name="earthquake_me"/>
 			<stateEffectImg name="pullAttackHit_state"/>
 			<otherEffectImg name="foxLightning"/>
-			<description>打爆精英罐时，爆炸的余波会将眩晕所有敌人（除了罐内的精英怪），眩晕时间如下：小怪45秒、精英怪20秒、首领[duration]秒，并减少小怪[mul]的生命值。</description>
+			<description>打爆精英罐时，爆炸的余波会将眩晕所有敌人（除了罐内的精英怪），眩晕时间如下：小怪60秒、精英怪20秒、首领[duration]秒，并减少小怪[mul]的生命值。</description>
 			<!-- 技能各等级 ------------------------------------------------------------ -->
 			<growth>
 				<skill><mul>0.02</mul></skill>
@@ -230,7 +230,7 @@
 			<name>integerHurtDR</name><iconUrl>SkillIcon/integerHurtDR</iconUrl><wantDescripB>1</wantDescripB>
 			<cnName>整数增益</cnName><everNoClearB>1</everNoClearB>
 			<!--英雄技能属性------------------------------------------------------------ -->
-			<changeText>提升[mul]的伤害{n}</changeText>
+			<changeText>获得[mul-1]的增伤状态{n}</changeText>
 			<!--触发条件与目标------------------------------------------------------------ -->
 			<conditionType>passive</conditionType>
 			<condition>add</condition>
@@ -239,12 +239,12 @@
 			<addType>state</addType>
 			<effectType>integerHurtDR</effectType><effectFather>death</effectFather>
 			<value>5</value>
-			<mul>1.58</mul>
+			<mul>1.6</mul>
 			<duration>9999999</duration>
 			<!--图像------------------------------------------------------------ -->
 			<stateEffectImg name="crazy_vehicle_hand"/>
 			<![CDATA[<otherEffectImg name="murderous_hero_me"/>]]>
-			<description>当剩余弹药为[value]的倍数时，角色将获得[mul-1]增伤状态。注意，增伤效果是击中敌人时生效，不是在发射子弹时生效。</description>
+			<description>当剩余弹药为[value]的倍数时，角色将获得[mul-1]增伤状态。若当前武器为无限弹药，则增伤效果减半。注意，增伤效果是击中敌人时生效，不是在发射子弹时生效。</description>
 			<!-- 技能各等级 ------------------------------------------------------------ -->
 			<growth>
 				<skill><mul>1.6</mul></skill>
@@ -267,7 +267,7 @@
 			<effectType>rollHoleDR</effectType><effectFather>death</effectFather>
 			<mul>0.0000001</mul>
 			<duration>0.5</duration>
-			<range>70</range>
+			<range>80</range>
 			<!--图像------------------------------------------------------------ -->
 			<otherEffectImg name="invincibleEmp_point"/>
 			<description>翻滚时将清除身边的敌人子弹。</description>
@@ -283,7 +283,7 @@
 			<name>lifeAddHurtDR</name><iconUrl>SkillIcon/lifeAddHurtDR</iconUrl><wantDescripB>1</wantDescripB>
 			<cnName>攻防一体</cnName><everNoClearB>1</everNoClearB>
 			<!--英雄技能属性------------------------------------------------------------ -->
-			<changeText>转换[mul]的弹药{n}</changeText>
+			<changeText>增伤等于升级次数x[mul]{n}</changeText>
 			<!--触发条件与目标------------------------------------------------------------ -->
 			<conditionType>passive</conditionType>
 			<condition>add</condition>
@@ -450,7 +450,7 @@
 			<value>180</value><!-- 移动距离 -->
 			<duration>0.46</duration>
 			<secMul>0.36</secMul><!-- 移动持续的时间 -->
-			<stateEffectImg name="rolling_hero_state"/>
+			<stateEffectImg name="rollingState"/>
 			<otherEffectImg name="sprintSmoke"/>
 			<!--图像------------------------------------------------------------ -->
 			<description>按下翻滚键进行翻滚，期间不受攻击、子弹碰撞，最短触发间隔[minTriggerT]秒。</description>
@@ -467,6 +467,19 @@
 			<value>100</value>
 			<duration>999999</duration>
 			<description>无限怒气。</description>
+		</skill>
+		<skill>
+			<name>fastReload</name>
+			<cnName>快速换弹</cnName><everNoClearB>1</everNoClearB><noSkillDodgeB>1</noSkillDodgeB><ignoreImmunityB>1</ignoreImmunityB>
+			<conditionType>passive</conditionType><noBeClearB>1</noBeClearB>
+			<condition>add</condition>
+			<target>me</target>
+			<!--效果------------------------------------------------------------ -->
+			<addType>state</addType>
+			<effectType>reloadSpeedMul</effectType>
+			<mul>2</mul>
+			<duration>999999</duration>
+			<description>换弹速度提升[mul-1]。</description>
 		</skill>
 		<skill>
 			<name>weaponRosLost</name>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<father type="cutter" cnName="切割枪">
+	<father type="cutter"  name="death" cnName="切割枪">
 		<bullet name="yearTiger" color="orange">
 			<name>yearTigerDea</name>
 			<cnName>狂刃·寅虎</cnName><dpsMul>0.41</dpsMul>
@@ -40,7 +40,7 @@
 	</father>
 	
 	
-	<father type="wavegun">
+	<father type="wavegun" name="death">
 		<![CDATA[橙色枪，很牛逼的枪]]>
 		<bullet name="狮子座" kind="electric" color="orange">
 			<name>consLeoDea</name><iconUrl>newGun/consLeo_icon</iconUrl>
@@ -78,7 +78,7 @@
 		<bullet color="purple">
 			<name>airCannonX</name><iconUrl>newGun/airCannonX_icon</iconUrl>
 			<cnName>空气炮X</cnName>
-			<aiShootRange>1200</aiShootRange><!-- ai射程 -->
+			<aiShootRange>250</aiShootRange><!-- ai射程 -->
 			<dpsMul>0.65</dpsMul>
 			<!--基本-->
 			<capacity>800</capacity>
@@ -101,6 +101,7 @@
 			<bulletSkillArr>airCannonDieEvent</bulletSkillArr>
 			<!--特殊------------------------------------------------------------ -->
 			<boomD selfB="1" radius="200" haveBodyHitEffectB="1" />
+			<followD aiStopGap="110"/>
 			<!--图像动画属性------------------------------------------------------------ -->
 			<shootSoundUrl>hitSound/wave</shootSoundUrl>
 			<bulletImgUrl name="no"/>
@@ -117,7 +118,7 @@
 		<bullet color="blue">
 			<name>airCannon</name><iconUrl>newGun/airCannon_icon</iconUrl>
 			<cnName>空气炮</cnName>
-			<aiShootRange>1200</aiShootRange><!-- ai射程 -->
+			<aiShootRange>250</aiShootRange><!-- ai射程 -->
 			<dpsMul>0.45</dpsMul>
 			<!--基本-->
 			<capacity>1200</capacity>
@@ -140,6 +141,7 @@
 			<bulletSkillArr>airCannonDieEvent</bulletSkillArr>
 			<!--特殊------------------------------------------------------------ -->
 			<boomD selfB="1" radius="160" haveBodyHitEffectB="1" />
+			<followD aiStopGap="110"/>
 			<!--图像动画属性------------------------------------------------------------ -->
 			<shootSoundUrl>hitSound/wave</shootSoundUrl>
 			<bulletImgUrl name="no"/>
@@ -155,7 +157,7 @@
 		<bullet color="blue">
 			<name>stopCannon</name><iconUrl>newGun/stopCannon_icon</iconUrl>
 			<cnName>消弹炮</cnName>
-			<aiShootRange>1200</aiShootRange><!-- ai射程 -->
+			<aiShootRange>250</aiShootRange><!-- ai射程 -->
 			<dpsMul>0.5</dpsMul>
 			<!--基本-->
 			<capacity>1200</capacity>
@@ -178,6 +180,7 @@
 			<bulletSkillArr>stopCannonDieEvent</bulletSkillArr>
 			<!--特殊------------------------------------------------------------ -->
 			<boomD selfB="1" radius="160" haveBodyHitEffectB="1" />
+			<followD aiStopGap="110"/>
 			<!--图像动画属性------------------------------------------------------------ -->
 			<shootSoundUrl>hitSound/wave</shootSoundUrl>
 			<bulletImgUrl name="no"/>
@@ -193,7 +196,7 @@
 	
 	
 	
-	<father  type="energy" cnName="能量枪">
+	<father  type="energy" name="death" cnName="能量枪">
 		<bullet color="orange">
 			<name>falconGunDea</name><dpsMul>0.5</dpsMul>
 			<cnName>真·隼武</cnName><noMagneticB>1</noMagneticB>
@@ -303,7 +306,7 @@
 	</father>
 	
 
-	<father type="weather" cnName="气象枪">
+	<father type="weather" name="death" cnName="气象枪">
 		<bullet name="飓风·申猴" kind="wind" color="purple">
 			<name>yearMonkeyDea</name>
 			<cnName>飓风·申猴</cnName><dpsMul>0.13</dpsMul>
@@ -317,7 +320,7 @@
 			<bulletNum>1</bulletNum>				
 			<gunNum>1</gunNum>
 			<!--特殊------------------------------------------------------------ -->
-			<penetrationNum>999</penetrationNum>
+			<penetrationNum>9999</penetrationNum>
 			<twoHitGap>0.3</twoHitGap>
 			<noMagneticB>1</noMagneticB>
 			<!--武器属性------------------------------------------------------------ -->

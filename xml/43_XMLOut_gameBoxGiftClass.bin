@@ -84,7 +84,7 @@
 		</one>
 		
 		
-		]]>
+		
 		<one codeExchangeId="37877" name="sign2026_3_1" cnName="3月1天签到礼包" startTime="2026-3-1 00:00:00" endTime="2026-4-1 00:00:00" hideOutTimeB="1">
 			<codeUrl>http://news.4399.com/gonglue/bqyx/xinwen/471939.html</codeUrl>
 			<gift>things;rebirthStone;1</gift>
@@ -122,7 +122,7 @@
 		</one>
 		
 	
-		
+		]]>
 		<one codeExchangeId="37894" name="sign2026_4_1" cnName="4月1天签到礼包" startTime="2026-4-1 00:00:00" endTime="2026-5-1 00:00:00" hideOutTimeB="1">
 			<codeUrl>http://news.4399.com/gonglue/bqyx/xinwen/471939.html</codeUrl>
 			<gift>base;anniCoin;40</gift>
@@ -153,46 +153,46 @@
 			<gift>things;strengthenStone;120</gift>
 		</one>
 	
-			<![CDATA[
+			
 		
 		
-		<one codeExchangeId="37583" name="sign2026_5_1" cnName="5月1天" startTime="2026-5-1 00:00:00" endTime="2026-6-1 00:00:00" hideOutTimeB="1">
+		<one codeExchangeId="37927" name="sign2026_5_1" cnName="5月1天" startTime="2026-5-1 00:00:00" endTime="2026-6-1 00:00:00" hideOutTimeB="1">
 			<codeUrl>http://news.4399.com/gonglue/bqyx/xinwen/471939.html</codeUrl>
-			<gift>things;demBall;5</gift>
+			<gift>things;demBall;10</gift>
 			<gift>things;rebirthStone;2</gift>
 			<gift>things;strengthenStone;20</gift>
 		</one>
-		<one codeExchangeId="37584" name="sign2026_5_5" cnName="5月5天" startTime="2026-5-1 00:00:00" endTime="2026-6-1 00:00:00" hideOutTimeB="1">
+		<one codeExchangeId="37928" name="sign2026_5_5" cnName="5月5天" startTime="2026-5-1 00:00:00" endTime="2026-6-1 00:00:00" hideOutTimeB="1">
 			<codeUrl>http://news.4399.com/gonglue/bqyx/xinwen/471939.html</codeUrl>
-			<gift>things;demBall;10</gift>
+			<gift>things;demBall;20</gift>
 			<gift>things;rebirthStone;4</gift>
 			<gift>things;strengthenStone;40</gift>
 
 		</one>
-		<one codeExchangeId="37585" name="sign2026_5_14" cnName="5月14天" startTime="2026-5-1 00:00:00" endTime="2026-6-1 00:00:00" hideOutTimeB="1">
+		<one codeExchangeId="37929" name="sign2026_5_14" cnName="5月14天" startTime="2026-5-1 00:00:00" endTime="2026-6-1 00:00:00" hideOutTimeB="1">
 			<codeUrl>http://news.4399.com/gonglue/bqyx/xinwen/471939.html</codeUrl>
-			<gift>things;demBall;15</gift>
+			<gift>things;demBall;30</gift>
 			<gift>things;rebirthStone;6</gift>
 			<gift>things;strengthenStone;60</gift>
 
 
 		</one>
-		<one codeExchangeId="37586" name="sign2026_5_25" cnName="5月25天" startTime="2026-5-1 00:00:00" endTime="2026-6-1 00:00:00" hideOutTimeB="1">
+		<one codeExchangeId="37930" name="sign2026_5_25" cnName="5月25天" startTime="2026-5-1 00:00:00" endTime="2026-6-1 00:00:00" hideOutTimeB="1">
 			<codeUrl>http://news.4399.com/gonglue/bqyx/xinwen/471939.html</codeUrl>
-			<gift>things;demBall;20</gift>
+			<gift>things;demBall;40</gift>
 			<gift>things;rebirthStone;8</gift>
 			<gift>things;strengthenStone;80</gift>
 
 		</one>
-		<one codeExchangeId="37587" name="sign2026_5_30" cnName="5月满勤" startTime="2026-5-1 00:00:00" endTime="2026-6-1 00:00:00" hideOutTimeB="1">
+		<one codeExchangeId="37931" name="sign2026_5_30" cnName="5月满勤" startTime="2026-5-1 00:00:00" endTime="2026-6-1 00:00:00" hideOutTimeB="1">
 			<codeUrl>http://news.4399.com/gonglue/bqyx/xinwen/471939.html</codeUrl>
-			<gift>things;demBall;30</gift>
+			<gift>things;demBall;50</gift>
 			<gift>things;rebirthStone;10</gift>
 			<gift>things;strengthenStone;100</gift>
 
 		</one>
 		
-			
+			<![CDATA[
 		
 		<one codeExchangeId="37631" name="sign2026_6_1" cnName="6月1天" startTime="2026-6-1 00:00:00" endTime="2026-7-1 00:00:00" hideOutTimeB="1">
 			<codeUrl>http://news.4399.com/gonglue/bqyx/xinwen/471939.html</codeUrl>

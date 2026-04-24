@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<father name="mp4">
+		<body name="XinLing_WoTu1" url="swf/mp4/XinLing_WoTu1.mp4"/>
+		<body name="XinLing_WoTu2" url="swf/mp4/XinLing_WoTu2.mp4"/>
+		<body name="XinLing_YangMei1" url="swf/mp4/XinLing_YangMei1.mp4"/>
+		
+		<body name="BaiLu1" url="swf/mp4/BaiLu1.mp4"/>
+		<body name="YaSe" url="swf/mp4/YaSe.mp4"/>
+		
+		
+		<![CDATA[时装视频]]>
+		<body name="girlWing1" url="swf/mp4/girlWing1.mp4"/>
+		<body name="girlWing2" url="swf/mp4/girlWing2.mp4"/>
+		<body name="officerYing1" url="swf/mp4/officerYing1.mp4"/>
+		<body name="officerYing2" url="swf/mp4/officerYing2.mp4"/>
+		<body name="foxLingSuper1" url="swf/mp4/foxLingSuper1.mp4"/>
+		<body name="foxLingSuper2" url="swf/mp4/foxLingSuper2.mp4"/>
+		<body name="foxLingSuper3" url="swf/mp4/foxLingSuper3.mp4"/>
+	</father>
+</data>

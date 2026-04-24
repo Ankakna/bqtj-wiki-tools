@@ -267,6 +267,11 @@
 					<condition type="collect" target="killEnemyNum" value="60" />
 					<gift>things;strengthenStone;19</gift>
 				</task>
+				<task>
+					<diff>20</diff><enemyLifeMul>5</enemyLifeMul><enemyDpsMul>1.2</enemyDpsMul>
+					<condition type="collect" target="killEnemyNum" value="60" />
+					<gift>things;strengthenStone;20</gift>
+				</task>
 			</growth>
 		</task>
 		
@@ -309,6 +314,11 @@
 					<diff>20</diff><enemyLifeMul>3</enemyLifeMul><enemyDpsMul>1.2</enemyDpsMul>
 					<condition type="collect" target="killEnemyNum" value="60" />
 					<gift>things;bloodStone;19</gift>
+				</task>
+				<task>
+					<diff>20</diff><enemyLifeMul>6</enemyLifeMul><enemyDpsMul>1.2</enemyDpsMul>
+					<condition type="collect" target="killEnemyNum" value="60" />
+					<gift>things;bloodStone;20</gift>
 				</task>
 			</growth>
 		</task>

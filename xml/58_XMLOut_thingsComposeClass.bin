@@ -249,6 +249,8 @@
 	
 	<things name="superHero" giftType="head"><must><gift>things;arenaChest;		40</gift></must></things>
 	<things name="specialSoldiers" giftType="head"><must><gift>things;arenaChest;		30</gift></must></things>
+	<things name="anniver12" giftType="head"><must><gift>things;deathSilver;		40</gift></must></things>
+	
 	<things name="demCapacityParts_1" giftType="parts"><must><gift>things;demonChest;		18</gift></must></things>
 	<things name="purgoldCpu_1" giftType="parts" all="1">
 		<must><gift>things;zodiacCash;		100</gift><gift>things;demBall;		700</gift><gift>things;demStone;		600</gift></must>
@@ -265,7 +267,8 @@
 	<things name="profiStamp"><must><gift>things;nuclearStone;		10</gift></must></things>
 	<things name="yaStone" week="100"><must><gift>things;nuclearStone;		5</gift></must></things>
 	<things name="partsGridCard" all="3"><must><gift>things;deathSilver;		40</gift></must></things>
-
+	<things name="godGridCard"><must><gift>things;bagGridCard;36</gift></must><must><gift>things;houseGridCard;120</gift></must></things>
+	
 
 
 

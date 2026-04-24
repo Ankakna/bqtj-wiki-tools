@@ -1055,7 +1055,7 @@
 			<shootPoint>-54,-63</shootPoint>
 			<!--特殊属性------------------------------------------------------------ -->	
 			<penetrationGap>1000</penetrationGap>
-			<penetrationNum>999</penetrationNum>
+			<penetrationNum>30</penetrationNum>
 			<followD value="3" delay="0.3" noLM="1" />
 			<!--运动属性------------------------------------------------------------ -->	
 			<bulletSpeed>25</bulletSpeed>

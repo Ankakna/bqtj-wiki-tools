@@ -76,6 +76,7 @@
 			<body cnName="樱落" name="saberDarts_2607333339" evoLv="4" author="地煞：诡道子"  au="original"/>
 			<body cnName="裂风扇" name="saberDartsLieFeng" evoLv="4" author="驰掣万里"  au="original"/>
 			<body name="foxLing"  items="foxLing" url="foxLing/weaponSp" icon="foxLing/weaponIcon" />
+			<body name="foxLingSuper"  items="foxLingSuper" url="foxLing/weaponSp" icon="foxLing/weaponIcon" />
 		</father>
 		<father cnName="凯撒" name="sprintSword">
 			<body name="sprintSword_1" evoLv="1" />

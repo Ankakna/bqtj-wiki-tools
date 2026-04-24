@@ -11,7 +11,7 @@
 			<lifeRatio>1</lifeRatio>
 			<!-- 图像 -->
 			<headIconUrl>BodyImg/DollRabbit_icon</headIconUrl>
-			<imgType>bmp</imgType>
+			<imgType>normal</imgType>
 			<imgArr>
 				stand,move,run
 				,shootAttack,shellingAttack

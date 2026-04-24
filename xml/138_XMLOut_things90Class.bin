@@ -168,7 +168,7 @@
 			<cnName>技能熟练卡</cnName>
 			<iconUrl>ThingsIcon/profiStamp</iconUrl><!-- 技能图标 -->
 			<description>
-				增加技能3000点熟练度所需的材料，在技能升级界面中操作。
+				增加技能6000点熟练度所需的材料，在技能升级界面中操作。
 				[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}
 				[n]商店购买
 			</description>
@@ -194,7 +194,6 @@
 			<description>
 				解锁武器其中1个零件位所需物品。
 				[n][n]{b}{font color='#FFFF00'}获得方式：{/font}{/b}
-				[n]零件券兑换
 				[n]黄金商店
 			</description>
 		</things>

@@ -222,6 +222,7 @@
 			<body name="lightCone2" evoLv="4" />
 			<body name="lightCone4" evoLv="6" />
 			<body name="lightCone5" evoLv="10" />
+			<body name="lightCone6" evoLv="12" />
 			<body name="lightConeGreen" evoLv="6" p="4" cnName="绿" />
 			<body name="lightConeK" cnName="写实" evoLv="4" goods="lightConeK" />
 			

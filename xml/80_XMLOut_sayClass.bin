@@ -2,6 +2,7 @@
 <data>
 	<father name="normal">
 		<level name="WoTu_1" cnName="沃土镇">
+			
 			<sayList name="s2">
 				<say target="文杰表哥"><content>表弟！中部最大的城市已经沦为僵尸城，现在到处都是行尸！这里很危险！</content></say>
 				<say target="我"><content>我们这里以前不是安全区吗？</content></say>
@@ -12,13 +13,17 @@
 				<say target="文杰表哥"><content>不过那里离沦陷的南唐镇更近，更危险！</content></say>
 				<say target="我"><content>好！知道了，我这就去！</content></say>
 				<say target="文杰表哥"><content>姨妈让我看着你，你不要乱跑！</content></say>
+						<say r="XinLing" mp4="XinLing_WoTu2"></say><!-- 播放视频 -->
+			</sayList>
+			<sayList name="s3">
+				
 			</sayList>
 		</level>
 		
 		<level name="YangMei_1" cnName="杨梅岭">
 			<sayList name="s1">
 				<say target="文杰表哥"><content>你这不知天高地厚的小子，看来我还是得花点时间跟你讲清楚。</content></say>
-				<say target="文杰表哥"><content>5年前僵尸病毒爆发的时候，我们市在北边筑起了50米的防尸高墙，加上天然的海洋屏障，才使得这里成为数不多的安全区。</content></say>
+				<say target="文杰表哥"><content>5年前僵尸病毒爆发的时候，我们市在北边筑起了50米的防尸高墙，加上天然的海洋屏障，才使得这里成为为数不多的安全区。</content></say>
 				<say target="文杰表哥"><content>但是前段时间南唐城突发僵尸病毒，不到72个小时，整个城市已经完全沦陷！</content></say>
 				<say target="文杰表哥"><content>我猜测是防尸高墙出现了漏洞。</content></say>
 				<say target="我"><content>你也是猜测而已啊。</content></say>
@@ -41,6 +46,7 @@
 				<say target="我"><content>我刚刚获得了一把新枪，我来试试用它对付它们。</content></say>
 				<say target="文杰表哥"><content>僵尸很疯狂，但是只要你尽量射击它们的头部，就很容易让他们毙命！</content></say>
 				<say target="文杰表哥"><content>还有它们掉落的衣服、帽子、腰带啊，不要觉得脏，有些比你身上好的你就穿上它吧。</content></say>
+					<say r="XinLing" target="心零"><content>说得我都有点期待了……</content></say>
 				<say target="我"><content>真恶心！</content></say>
 				<say target="文杰表哥"><content>你看我这身装备，就是从僵尸身上扒下来的！非常时期，你就将就一下吧！</content></say>
 				<say target="文杰表哥"><content>对了，西南部有一只僵尸身上带着非常奇特的石头，据说能给生命体带来超能力。</content></say>
@@ -71,12 +77,14 @@
 				<say target="文杰表哥"><content>你表哥我没读过什么书，不要骗我。</content></say>
 					<say r="Girl" target="小樱"><content>这石头我好像在哪见过。</content></say>
 				<say target="我"><content>等回去好好研究研究再做定论吧。</content></say>
+					<say r="XinLing" target="心零"><content>别研究了，都给我！我有用！</content></say>
+					<say r="XinLing" target="我"><content>想得美！</content></say>
 			</sayList>
 		</level>
 		
 		<level name="BaiLu_1" cnName="白鹭镇">
+			<sayList name="s0" mp4="BaiLu1"/>
 			<sayList name="s1">
-				<say target="藏师将军"><content>你们是谁？竟敢在我的地盘抢我的猎物！</content></say>
 				<say target="我"><content>残害无数市民的僵尸，你竟然把它们当成猎物？</content></say>
 				<say target="文杰表哥" pointer="藏师将军"><content>我们只是路过这里，不好意思打扰了。</content></say>
 				<say target="藏师将军"><content>你这毛头小子可能还不知道我是谁。</content></say>
@@ -131,6 +139,7 @@
 			<!-- 藏师被我打败 -->
 			<sayList name="s1">
 				<say target="藏师将军"><content>我承认！我打不过你们！</content></say>
+					<say r="XinLing"  target="心零"><content>这才对嘛！</content></say>
 				<say target="我"><content>哈哈，让你以前轻视我们！</content></say>
 				<say target="藏师将军"><content>这2颗超能石对我来说已经没用了，送给你们！</content></say>
 			</sayList>
@@ -142,6 +151,7 @@
 				<say target="藏师将军"><content>与地球上的不稳定放射性元素相比，这种从陨石中提取的放射性元素更能产生良性变异。如果你能正确使用它就能使你变得更加强大。</content></say>
 				<say target="藏师将军"><content>这些石头具体是从哪里生产出来的，牵扯到天鹰军团，我暂时不能告诉你，不然我人头不保！</content></say>
 					<say r="Girl" target="小樱"><content>天鹰军团？那可是霞光大陆上最强的军团。</content></say>
+					<say r="XinLing"  target="心零"><content>天鹰军团可不好惹。</content></say>
 				<say target="我"><content>好吧，那为什么有些僵尸身上也有呢？</content></say>
 				<say target="藏师将军"><content>都怪我，我以前经常把超能石奖赏给我的得力手下，没想到他们当中有些人把这些石头卖给了神秘商人。</content></say>
 				<say target="藏师将军"><content>僵尸病毒爆发之后，这些手无寸铁的商人很容易被僵尸攻击，他们大部分也变成了僵尸。</content></say>
@@ -154,15 +164,16 @@
 		
 		<level name="ShuangTa_1" cnName="双塔村">
 			<!-- 亚瑟出现 -->
+			<sayList name="s0" mp4="YaSe"/>
 			<sayList name="s1">
 				<say target="亚瑟"><content>我是天鹰军团的总司令亚瑟，听闻你们是本市最强的屠尸战士？</content></say>
 				<say target="我"><content>我们不是，最强屠尸战士应该是藏师将军的称号才对。</content></say>
 				<say target="亚瑟"><content>你们打败了藏师将军，这个消息已经远传千里。</content></say>
 				<say target="亚瑟"><content>作为因防御僵尸而建立起来的天鹰军团，汇集了各国最精英的特种兵。我们打算邀请你们做为霞光战区的总指挥，统领上百人的部队！</content></say>
 				<say target="我"><content>你太抬举了，我只是一个玩世不恭的人，喜欢独来独往，我的能力也无法当此重任。多谢你们的器重。</content></say>
-				<say target="亚瑟"><content>你这样一位不可多得的人才，不加入我们天鹰军团实在太可惜了！</content></say>
+				<say target="亚瑟"><content>你们是不可多得的人才，不加入我们天鹰军团实在太可惜了！</content></say>
 				<say target="亚瑟"><content>我们军团最近已经研发成功一种强力药剂，能够使士兵变得强壮，在战斗中能够携带更多的枪支。</content></say>
-				<say target="亚瑟"><content>我本想在你加入我们之后把它送给你，但是你婉拒了。</content></say>
+				<say target="亚瑟"><content>我本想在你加入我们之后把它送给你们，但是被婉拒了。</content></say>
 				<say target="我"><content>有这么好的东西？</content></say>
 				<say target="我"><content>我确实很想得到它，不过我不能违背自己的原则。</content></say>
 				<say target="文杰表哥"><content>无功不受禄嘛。</content></say>
@@ -186,7 +197,15 @@
 				<say target="亚瑟"><content>来，这是强力药剂。使用它之后，你们就能携带更多的枪支了。</content></say>
 					<say r="Girl" target="小樱"><content>这种好东西还是给小白用吧。</content></say>
 					<say r="Girl" target="我"><content>那我就恭谨不如从命咯。</content></say>
+					
+					<say r="XinLing" target="心零"><content>拿过来！</content></say>
+					<say r="XinLing" target="我"><content>难道不应该让我先试试吗？</content></say>
+					<say r="XinLing" target="心零"><content>凭什么？难道不是女士优先吗？</content></say>
+					<say r="XinLing" target="文杰表哥"><content>这东西说不定有什么副作用吧。</content></say>
+					<say r="XinLing" target="心零"><content>那……就先让给小白吧，我很大方的！</content></say>
+					<say r="XinLing" target="我"><content>我就恭谨不如从命咯。</content></say>
 				<say target="文杰表哥"><content>表弟，以后你就帮我带武器吧！</content></say>
+				
 			</sayList>
 			<sayList name="s2">
 				<say target="我"><content>多谢！</content></say>
@@ -201,7 +220,7 @@
 		<level name="DongShan_1" cnName="东山澳">
 			<!-- 亚瑟出现 -->
 			<sayList name="s1">
-				<say target="藏师将军/手机"><content>@playerName，我先行一步，在青纱镇等你们。</content></say>
+				<say target="藏师将军/手机"><content>我先行一步，在青纱镇等你们。</content></say>
 				<say target="藏师将军/手机"><content>最近出现了一种非常恐怖的自爆僵尸，你要小心！</content></say>
 			</sayList>
 		</level>
@@ -215,6 +234,7 @@
 				<say target="我"><content>你和天鹰军团有什么瓜葛？</content></say>
 				<say target="沙漠特种兵"><content>不要装傻了，是亚瑟派你们来的吧？即使没有我，你们干的伤天害理之事迟早都会被公诸于众的！</content></say>
 					<say r="Girl" target="小樱"><content>莫名其妙，我们和天鹰有什么关系？</content></say>
+					<say r="XinLing" target="心零"><content>看来其中一定有什么猫腻。</content></say>
 				<say target="我"><content>我们不是天鹰军团的。</content></say>
 				<say target="沙漠特种兵"><content>在北斗城，我看到你和亚瑟有交易，反正你们是一伙的！</content></say>
 				<say target="我"><content>亚瑟只是送了我一样东西而已，我们还婉拒了他的聘请。</content></say>
@@ -222,6 +242,7 @@
 				<say target="沙漠特种兵"><content>这位就是大名鼎鼎的屠尸战士@Striker啊？</content></say>
 				<say target="文杰表哥"><content>喂，这里还有一位呢。</content></say>
 					<say r="Girl" target="小樱"><content>一共是三位，谢谢！</content></say>
+					<say r="XinLing" target="心零"><content>为什么他们只认得小白？难道是我太低调了？</content></say>
 				<say target="我"><content>哪里哪里！天鹰军团到底干过什么坏事？</content></say>
 				
 				<say target="沙漠特种兵"><content>反正亚瑟迟早会找上门来的，我就把他们的秘密告诉你们。</content></say>
@@ -230,11 +251,18 @@
 				<say target="沙漠特种兵"><content>南唐城距离北部防尸高墙那么远，为什么病毒会在那里爆发呢？为什么首先沦陷的不是北斗城？</content></say>
 				<say target="沙漠特种兵"><content>因为这一切都是天鹰的杰作！是他们在人口最多的南唐城投放了僵尸病毒！</content></say>
 					<say r="Girl" target="小樱"><content>啊？！</content></say>
+					<say r="XinLing" target="文杰表哥"><content>还真不是防尸高墙的问题。</content></say>
+					<say r="XinLing" target="心零"><content>我早就猜到了！</content></say>
+					
 				<say target="文杰表哥"><content>说得好像有点道理。</content></say>
 				<say target="我"><content>为什么！这对他们有什么好处吗？</content></say>
 				<say target="沙漠特种兵"><content>因为南唐城下蕴藏着丰富的超能矿石！</content></say>
 				<say target="文杰表哥"><content>要是我，直接去挖不就得了？费那么劲干嘛？</content></say>
 					<say r="Girl" target="小樱"><content>我现在怀疑，亚瑟送我们强力药剂可能没那么简单。</content></say>
+					<say r="XinLing" target="心零"><content>完了，我感觉亚瑟赠送的强力药剂也有问题，不会是毒药吧？</content></say>
+					<say r="XinLing" target="我"><content>怕什么，你又没用。</content></say>
+					<say r="XinLing" target="心零"><content>但是我不想带上一个累赘……</content></say>
+					<say r="XinLing" target="我"><content>你！</content></say>
 			</sayList>
 			
 			<!-- 沙漠被弄死，亚瑟出现 -->
@@ -259,6 +287,7 @@
 				<say target="文杰表哥"><content>我也不知道，来这里之前就不见了！</content></say>
 				<say target="我"><content>我记得以前他说过超能石和天鹰军团有关系，看来他也知道不少东西。</content></say>
 					<say r="Girl" target="小樱"><content>总感觉他心里藏着很多小秘密。</content></say>
+					<say r="XinLing" target="心零"><content>藏师就是心里藏着很多小秘密的那种人。</content></say>
 				<say target="文杰表哥"><content>先不管他了！</content></say>
 				
 			</sayList>
@@ -282,6 +311,7 @@
 				<say target="我"><content>如果仅仅是为了南唐城地下的超能矿石，你们为何要释放僵尸病毒，涂炭生灵！</content></say>
 				<say target="亚瑟"><content>看来藏师还是没把实情告诉你。当初你拒绝了我的邀请，那刻起我就不打算留你的命了！</content></say>
 					<say r="Girl" target="小樱"><content>你怎么这么坏！</content></say>
+					<say r="XinLing" target="心零"><content>还好我比较低调，当时没出头。</content></say>
 				<say target="我"><content>那你为何还让我活到现在？</content></say>
 				<say target="亚瑟"><content>我亚瑟做事，双手从来不沾血。直接取你性命岂不坏了天鹰的名声。</content></say>
 				<say target="亚瑟"><content>我知道你一向把自己封为正义之士，于是我释放了一位被关押的天鹰叛徒到青纱镇，并把你引到了那里，让你对我起疑心，这样你才能义无反顾地前往南唐城。</content></say>
@@ -293,9 +323,13 @@
 				<say target="我"><content>你下毒了？</content></say>
 				<say target="亚瑟"><content>你这会怎么变聪明了！可惜了，你这人才。你将在10天之内慢慢衰竭而亡，不用我动半根手指，最多会给我们天鹰药物研究院留下污点而已。</content></say>
 				<say target="我"><content>你！！！</content></say>
+					<say r="XinLing" target="心零"><content>果然！我一语中的！</content></say>
 				<say target="亚瑟"><content>你就慢慢等吧！不再见了！</content></say>
 					<say r="Girl" target="小樱"><content>亚瑟太可恶！</content></say>
 					<say r="Girl" target="小樱"><content>我们现在得想办法帮你解毒。</content></say>
+					<say r="XinLing" target="心零"><content>放心吧小白，即便你变成了累赘，我们也不会放弃的！</content></say>
+					<say r="XinLing" target="文杰表哥"><content>都这时候了，咱们就别开玩笑了。</content></say>
+					<say r="XinLing" target="心零"><content>真不开玩笑，我或许有方法可以救小白。</content></say>
 			</sayList>
 			<sayList name="s2">
 				<say target="藏师将军/手机"><content>快来白鹭镇救我！</content></say>
@@ -382,10 +416,16 @@
 		<level name="ShuangTa_base" cnName="双塔村-夺取双塔村">
 			<sayList name="s1">
 				<say target="文杰表哥"><content>这里果然不错，2座高塔可以直接俯视方圆几十里，我感觉我都可以看到南唐镇了！</content></say>
-				<say target="我"><content>表哥！那是北斗城！</content></say>
+					<say r="XinLing" target="心零"><content>那不是沃土镇吗？</content></say>
+				<say target="我"><content>那是北斗城！</content></say>
+					<say r="XinLing" target="我"><content>你们俩真是！天生一对！</content></say>
 				<say target="制毒师"><content>我们只要守住猪头洋、北斗城这2个入口就可以保证双塔村的安全了！</content></say>
 				<say target="藏师将军"><content>我们还需要一些人手，昼夜轮流把守。可惜我的雇佣兵都没了！</content></say>
 				<say target="我"><content>现在整个霞光市一片荒芜，除了僵尸，没有多少人留在这了！招募也很困难！</content></say>
+					<say r="XinLing" target="心零"><content>要不要我把老家的乡亲父老们都叫来？</content></say>
+					<say r="XinLing" target="我"><content>你不是在开玩笑吧？</content></say>
+					<say r="XinLing" target="心零"><content>这都听不出来吗？我就是在开玩笑，哈哈哈。</content></say>
+					
 				<say target="文杰表哥"><content>我昨天在北斗城地下看到一群民间军事部队，或许他们愿意加入我们。</content></say>
 				<say target="我"><content>制毒师你守在这里，我们前往北斗城瞧瞧去！</content></say>
 			</sayList>
@@ -398,10 +438,14 @@
 				<say target="沙漠特种兵"><content>整个霞光市还有安全的地方？可笑！</content></say>
 				<say target="我"><content>我@Striker向你们保证！那里绝对安全！</content></say>
 				<say target="沙漠特种兵"><content>你就是@Striker？本市最强的屠尸战士！难怪这么厉害！</content></say>
+					<say r="XinLing" target="心零"><content>又来？怎么现在小白成了唯一的屠尸战士了？</content></say>
 				<say target="沙漠特种兵"><content>刚才失礼了！您说的话大家怎能不信！我们这就随你去双塔村！</content></say>
 				<say target="我"><content>哈哈！原来直接报名字就可以了！</content></say>
 				<say target="文杰表哥"><content>切！</content></say>
-				<say target="我"><content>我先带你们去百丈道，让你们练习一下超能石的技能。</content></say>
+					<say r="XinLing" target="心零"><content>是不是小白这个名字比较好记？</content></say>
+					<say r="XinLing" target="心零"><content>反正我邻居有条狗就叫这名字……</content></say>
+					<say r="XinLing" target="我"><content>你……我暂时不跟你计较……</content></say>
+				<say target="我"><content>我先带特种兵去百丈道，让他们练习一下超能石的技能。</content></say>
 				<say target="沙漠特种兵"><content>好！服从命令！</content></say>
 			</sayList>
 		</level>
@@ -468,6 +512,7 @@
 				<say target="制毒师/手机"><content>我已经研制完成了超级魅惑药水，我们可以用它来魅惑僵尸王了！</content></say>
 				<say target="我"><content>这么强大！我马上回来看看！</content></say>
 				<say target="文杰表哥"><content>看着就很好玩。</content></say>
+						
 			</sayList>
 		</level>
 		<level name="ShuiSheng_king" cnName="魅惑僵尸王">
@@ -524,6 +569,12 @@
 				<say target="我"><content>去暮光市怎么走最快？</content></say>
 				<say target="文杰表哥"><content>如果走水路，直接从沃土镇出发，半天就可以到达。如果要陆行，我们得从北斗城向东北方向走。</content></say>
 				<say target="我"><content>我们没有船，只能从北斗城出发了，或许还能找到制毒师。</content></say>
+						<say r="XinLing" target="心零"><content>赶快找到他吧！</content></say>
+						<say r="XinLing" target="我"><content>不对啊，心零，你嗓子怎么了？</content></say>
+						<say r="XinLing" target="心零"><content>好像上火了。</content></say>
+						<say r="XinLing" target="我"><content>难怪最近话少了许多，怪不习惯的。</content></say>
+						<say r="XinLing" target="心零"><content>别说了……咳咳……好像更严重了。</content></say>
+						<say r="XinLing" target="我"><content>果然是报应到了！</content></say>
 			</sayList>
 		</level>
 		

@@ -11,7 +11,7 @@
 			<!-- 基本系数 -->
 			<lifeRatio>1.3</lifeRatio>
 			<!-- 图像 -->
-			<imgType>bmp</imgType>
+			<imgType>normal</imgType>
 			<imgArr>
 				stand,move
 				,normalAttack1,normalAttack2,shootAttack

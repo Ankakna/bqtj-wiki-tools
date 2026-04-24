@@ -227,7 +227,7 @@
 			<!--触发条件与目标------------------------------------------------------------ -->
 			<conditionType>active</conditionType>
 			<condition>avtiveSkillCdOver</condition>
-			<target>me,range,all</target>
+			<target>me,range,enemy</target>
 			<!--效果------------------------------------------------------------ -->
 			<addType>state</addType>
 			<effectType>moveSpeedNoReduce</effectType>
@@ -241,18 +241,18 @@
 			<targetEffectImg con="add">skillEffect/electricDevicer</targetEffectImg>
 			<stateEffectImg con="add" soundUrl="sound/paralysis_enemy_hit">skillEffect/paralysis_enemy</stateEffectImg>
 			
-			<description>向大地释放强大的电流，使地图上的所有单位（包括友方单位）无法移动，持续[duration]秒。此效果不会被净化技能净化。</description>
+			<description>向大地释放强大的电流，使地图上的所有敌人无法移动，持续[duration]秒。此效果不会被净化技能净化。</description>
 			<!-- 技能各等级 ------------------------------------------------------------ -->
 			<growth>
 				<skill><duration>2</duration></skill>
 				<skill><duration>3</duration></skill>
 				<skill><duration>4</duration></skill>
+				<skill><duration>4.5</duration></skill>
 				<skill><duration>5</duration></skill>
+				<skill><duration>5.5</duration></skill>
 				<skill><duration>6</duration></skill>
 				<skill><duration>7</duration></skill>
-				<skill><duration>6</duration><target>me,range,enemy</target><changeText>持续时间：[duration]秒{n}只对敌人有效</changeText><description>向大地释放强大的电流，使地图上的所有敌人无法移动，持续[duration]秒。此效果不会被净化技能净化。</description></skill>
-				<skill><duration>7</duration><target>me,range,enemy</target><changeText>持续时间：[duration]秒</changeText><description>向大地释放强大的电流，使地图上的所有敌人无法移动，持续[duration]秒。此效果不会被净化技能净化。</description></skill>
-				<skill><duration>8</duration><target>me,range,enemy</target><changeText>持续时间：[duration]秒</changeText><description>向大地释放强大的电流，使地图上的所有敌人无法移动，持续[duration]秒。此效果不会被净化技能净化。</description></skill>
+				<skill><duration>8</duration></skill>
 			</growth>
 		</skill>
 		

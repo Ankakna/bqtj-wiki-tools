@@ -34,7 +34,7 @@
 			<hitType>rect</hitType>
 			<!--运动属性------------------------------------------------------------ -->	
 			<bulletSpeed>8</bulletSpeed>
-			<followD value="2" delay="0.5" maxTime="2.5"/>
+			<followD value="2" delay="0.1" maxTime="0.5"/>
 			<bindingD cnName="太空空单位" lifeMul="0.1"/>
 			<!--特殊------------------------------------------------------------ -->
 			<skillArr></skillArr>

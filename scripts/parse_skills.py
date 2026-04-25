@@ -4,7 +4,7 @@ import json
 import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
-from core import XmlCleaner, XmlParser
+from core import XmlCleaner, XmlParser, ValueConverter
 
 # --- 配置 ---
 XML_DIR = './xml'
@@ -113,7 +113,8 @@ def run_skill_processor():
                         
                         # 注入 father 属性
                         skill_data['father'] = father_name
-                        
+                        skill_data = ValueConverter.prepare_output(skill_data, "爆枪突击", "skills")
+
                         # 存入池中，以英文 name 为唯一键
                         skill_pool[skill_data['name']] = skill_data
 

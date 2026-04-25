@@ -212,6 +212,8 @@ def run_things_processor():
                         if not things_data or 'name' not in things_data:
                             continue
 
+                        things_data = ValueConverter.prepare_output(things_data, "爆枪突击", "things")
+
                         # 存入池中，以英文 name 为唯一键
                         things_pool[things_data['name']] = things_data
 

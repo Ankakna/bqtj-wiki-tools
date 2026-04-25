@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
-from core import XmlCleaner, XmlParser
+from core import XmlCleaner, XmlParser, ValueConverter
 from config import CATEGORY_MAP
 
 # --- 配置 ---
@@ -56,7 +56,8 @@ def run_arm_processor():
                         # 注补充数据
                         arm_data['armsType'] = arms_type
                         arm_data['category'] = CATEGORY_MAP.get(arm_data['name'], ["未分类"])
-                        
+                        arm_data = ValueConverter.prepare_output(arm_data, "爆枪突击", "arms")
+
                         # 导出单个 JSON 文件
                         name = arm_data['name']
                         with open(f"{JSON_OUT}/{name}.json", 'w', encoding='utf-8') as j:

@@ -172,4 +172,6 @@ CATEGORY_MAP = {
     "spiralCannonE": ["death"],
     "falconGunE": ["death"],
     "fireFlamerDea": ["death"],
+    "starDeaS": ["death"],
+    "electricArcX": ["death"],
 }

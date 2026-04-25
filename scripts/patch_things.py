@@ -17,6 +17,7 @@ import glob
 import datetime
 from typing import Dict, Any, Optional
 import pandas as pd
+from core import ValueConverter
 
 # --- 配置 ---
 THINGS_JSON_DIR = './data/things/json'
@@ -427,6 +428,8 @@ def run_patch():
         if thing_data.get('_patched') or thing_data.get('_generated'):
             try:
                 file_path = thing_info['file']
+                thing_data = ValueConverter.prepare_output(thing_data, "爆枪突击", "things")
+                thing_info['data'] = thing_data
                 with open(file_path, 'w', encoding='utf-8') as f:
                     json.dump(thing_data, f, ensure_ascii=False, indent=2)
                 total_patched += 1

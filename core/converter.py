@@ -54,3 +54,31 @@ class ValueConverter:
             return int(v)
         except (ValueError, TypeError):
             return v
+
+    @staticmethod
+    def sort_dict_keys(obj: Any) -> Any:
+        '''递归地对字典的键按字母顺序排序。列表和基本类型保持不变。'''
+        if isinstance(obj, dict):
+            return {k: ValueConverter.sort_dict_keys(v) for k, v in sorted(obj.items())}
+        if isinstance(obj, list):
+            return [ValueConverter.sort_dict_keys(item) for item in obj]
+        return obj
+
+    @staticmethod
+    def prepare_output(data: dict, game: str, data_type: str) -> dict:
+        '''为输出数据注入全局字段，优先字段置顶，其余按字母顺序排序键名。'''
+        data['game'] = game
+        data['moduleType'] = data_type
+
+        # 优先置顶字段顺序：game -> moduleType -> name -> cnName
+        priority_keys = ['game', 'moduleType', 'name', 'cnName']
+        sorted_keys = sorted(k for k in data.keys() if k not in priority_keys)
+
+        ordered = {}
+        for k in priority_keys:
+            if k in data:
+                ordered[k] = ValueConverter.sort_dict_keys(data[k])
+        for k in sorted_keys:
+            ordered[k] = ValueConverter.sort_dict_keys(data[k])
+
+        return ordered

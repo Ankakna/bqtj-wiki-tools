@@ -5,6 +5,7 @@ import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
 from core import XmlCleaner, XmlParser, ValueConverter
+from config import SKILL_RENAME_MAP, SKILL_CATEGORY_MAP
 
 # --- 配置 ---
 XML_DIR = './xml'
@@ -13,7 +14,20 @@ EXCEL_NAME = f'./data/skills/技能数据全量更新_{datetime.datetime.now().s
 # 报告输出路径
 REPORT_OUT = './data/skills/处理报告.txt'
 
-def generate_summary(skill_pool):
+# 食物 ID 前缀到中文名的映射，用于数据补全
+FOOD_PREFIX_MAP = {
+    "onion": "洋葱",
+    "pepper": "辣椒",
+    "potato": "土豆",
+    "tomato": "番茄",
+    "carrot": "胡萝卜",
+    "egg": "鸡蛋",
+    "chicken": "鸡肉",
+    "pig": "猪肉",
+    "cattle": "牛肉"
+}
+
+def generate_summary(skill_pool, renamed_count=0):
     '''生成数据统计报告'''
     report = []
     report.append("="*50)
@@ -35,24 +49,30 @@ def generate_summary(skill_pool):
     for f_name, count in sorted(father_stats.items(), key=lambda x: x[1], reverse=True):
         report.append(f" - {f_name:20} : {count} 个")
 
-    # 重名检测
-    report.append("\n[重名异常检测 (同一中文名对应多个英文 ID)]")
+    # 重名检测（分类感知：同一显示分类 + 同一中文名 才算重名）
+    report.append("\n[重名异常检测 (同一显示分类下，同一中文名对应多个英文 ID)]")
     cn_map = defaultdict(list)
     for name, data in skill_pool.items():
         cn = data.get('cnName') or "[缺失中文名]"
-        cn_map[cn].append(name)
-    
+        father = data.get('father', 'unknown')
+        cat = SKILL_CATEGORY_MAP.get(father, '其他技能')
+        cn_map[(cn, cat)].append(name)
+
     dup_count = 0
-    for cn, names in cn_map.items():
+    for (cn, cat), names in cn_map.items():
         if len(names) > 1:
             dup_count += 1
-            report.append(f" ⚠️  名称: {cn}")
+            report.append(f" ⚠️  名称: {cn}  [{cat}]")
             report.append(f"     关联ID: {', '.join(names)}")
-    
+
     if dup_count == 0:
         report.append(" ✅ 未发现重名冲突。")
     else:
         report.append(f"\n 共发现 {dup_count} 组重名技能。")
+
+    # 重命名处理报告
+    if renamed_count > 0:
+        report.append(f"\n[重名处理] 根据技能重命名表，已自动重命名 {renamed_count} 个技能。")
 
     # 关键字段缺失检测
     report.append("\n[异常数据检测]")
@@ -115,14 +135,45 @@ def run_skill_processor():
                         skill_data['father'] = father_name
                         skill_data = ValueConverter.prepare_output(skill_data, "爆枪突击", "skills")
 
+                        # 食物技能数据补全
+                        current_cn = skill_data.get('cnName')
+                        # 判断条件：没有中文名，因为只有食物技能是这种情况
+                        if not current_cn:
+                            raw_id = skill_data.get('name', '')
+                            
+                            # 加个容错处理，以免未来多出一些奇奇怪怪的、没有 cnName 的技能
+                            if father_name == 'food' or "FoodSkill" in raw_id:
+                                prefix = raw_id.replace('FoodSkill', '')
+                                cn_prefix = FOOD_PREFIX_MAP.get(prefix, prefix.capitalize())
+
+                                # 写这个主要是满足解析器的错误判断
+                                if cn_prefix == None:
+                                    print('食物映射失败。检查是否版本更新了新的食物名称及效果。')
+                                else:
+                                    skill_data['cnName'] = cn_prefix + '效果'
+                            
+                            # 其他已知分类但缺失名称的（可选）
+                            elif father_name == 'some_other_type':
+                                print('存在未命名技能：', raw_id, '，请检查原始数据。')
+
                         # 存入池中，以英文 name 为唯一键
                         skill_pool[skill_data['name']] = skill_data
 
             except Exception as e:
                 print(f"  [!] 错误文件 {file}: {e}")
     
+    # 应用技能重命名表
+    renamed_count = 0
+    for name, data in skill_pool.items():
+        if name in SKILL_RENAME_MAP:
+            data['cnName'] = SKILL_RENAME_MAP[name]
+            renamed_count += 1
+
+    if renamed_count:
+        print(f"已根据重命名表更新 {renamed_count} 个技能的 cnName")
+
     # 生成统计报告
-    generate_summary(skill_pool)
+    generate_summary(skill_pool, renamed_count)
 
     # --- 统一保存 ---
     excel_data = []

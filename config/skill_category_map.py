@@ -36,6 +36,7 @@ SKILL_CATEGORY_MAP = {
 
     "petBodySkill": "尸宠技能",
     "petSkill": "尸宠技能",
+    "petSkillLink": "尸宠技能",
 
     "vehicleSkill": "载具技能",
     "vehicle": "载具技能",
@@ -75,7 +76,7 @@ SKILL_CATEGORY_MAP = {
     "shield": "护盾技能",
 
     "forest": "其他技能",
-    "unknown": "其他技能",
+    "unknown": "测试技能",
     "other": "其他技能",
     "food": "其他技能",
     "we": "其他技能",

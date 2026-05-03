@@ -41,8 +41,9 @@ data/        - 生成的输出文件（JSON + Excel，已加入 gitignore）
   - 汇总 JSON 文件（`data/arms/武器数据汇总_*.json`）
   - Excel 更新表（`data/arms/武器数据更新_*.xlsx`）
 - `parse_skills.py` - 处理具有 father/skill 层级结构的技能数据，包含重名检测和报告功能
-- `parse_things.py` - 处理物品数据（碎片、材料等），支持 gift 等特殊子标签解析，包含重名检测和报告功能
-- `patch_things.py` - 对 things 数据进行后处理补丁，通过 arms 数据补全武器碎片缺失字段（smeltD、btnList、itemsLevel 等）
+- `parse_things.py` - 处理物品数据（碎片、材料等），支持 gift 等特殊子标签解析，包含重名检测、报告功能和武器碎片自动补丁
+- `patch_things.py` - 兼容入口，直接调用 parse_things.py 的完整流程
+- `parse_body.py` - 处理角色数据，支持嵌套的 hurtArr 攻击数据解析，包含重名检测和报告功能
 
 ## 常用命令
 
@@ -55,11 +56,12 @@ python scripts/parse_arms.py
 # 处理技能数据（输出至 data/skills/）
 python scripts/parse_skills.py
 
-# 处理物品数据（输出至 data/things/）
+# 处理物品数据（含武器碎片自动补丁，输出至 data/things/）
+# 如需完整补丁效果，请先运行 parse_arms.py 生成武器数据
 python scripts/parse_things.py
 
-# 对 things 数据应用补丁（需要先运行 parse_arms.py 和 parse_things.py）
-python scripts/patch_things.py
+# 处理角色数据（输出至 data/body/）
+python scripts/parse_body.py
 ```
 
 ### 环境配置
@@ -85,6 +87,7 @@ pip install -e .
 - **武器**：存储在 `<father type="...">` → `<bullet>` 节点下；通过存在 `bodyImgRange` 或 `allImgRange` 子元素来识别武器
 - **技能**：存储在 `<father name="...">` → `<skill>` 节点下
 - **物品**：存储在 `<father>` → `<things>` 节点下
+- **角色**：存储在 `<father name="..." cnName="...">` → `<body>` 节点下，含嵌套的 `<hurtArr>` 攻击数据
 
 ### 输出格式
 
@@ -98,14 +101,14 @@ pip install -e .
 
 ## 数据水合说明
 
-部分 things 数据（如武器碎片）在 XML 中只有基础定义，游戏运行时通过 AS3 代码水合生成完整数据。Wiki 无法运行时水合，因此需要 `patch_things.py` 进行静态补丁：
+部分 things 数据（如武器碎片）在 XML 中只有基础定义，游戏运行时通过 AS3 代码水合生成完整数据。Wiki 无法运行时水合，因此 `parse_things.py` 在提取完成后会自动进行静态补丁：
 
 **补丁逻辑**：
 - 黑色武器碎片（blackChip）：匹配 arms 数据，补全 `itemsLevel`、`smeltD`、`btnList`、`iconUrl`
 - 稀有武器碎片（rareChip）：补全描述、`smeltD`、`btnList`
-- 修补后的数据会添加 `_patched: true` 标记
+- 自动生成武器缺少的稀有碎片条目
 
-**注意**：需要先运行 `parse_arms.py` 生成武器数据，补丁脚本才能正确匹配。
+**注意**：如需完整补丁效果，请先运行 `parse_arms.py` 生成武器数据。
 
 ## 注意事项
 

@@ -17,7 +17,7 @@ REPORT_OUT = './data/skills/处理报告.txt'
 # 食物 ID 前缀到中文名的映射，用于数据补全
 FOOD_PREFIX_MAP = {
     "onion": "洋葱",
-    "pepper": "辣椒",
+    "pepper": "青椒",
     "potato": "土豆",
     "tomato": "番茄",
     "carrot": "胡萝卜",
@@ -25,6 +25,13 @@ FOOD_PREFIX_MAP = {
     "chicken": "鸡肉",
     "pig": "猪肉",
     "cattle": "牛肉"
+}
+
+# 重名技能排除列表：原始数据中同一英文 name 对应多个不同 cnName 的异常情况
+# 格式: {英文name: 需跳过的cnName}  — 即跳过指定 name+cnName 组合的技能
+# 背景: 官方 XML 存在同名异义 bug，Wiki 需明确选择保留版本
+SKILL_SKIP_LIST = {
+    "Salamander_wather": "水卷风",  # 保留"水汽溅腾"，排除"水卷风"
 }
 
 def generate_summary(skill_pool, renamed_count=0):
@@ -116,6 +123,10 @@ def run_skill_processor():
                     # 获取父节点标识，优先取 name，没有则取 type
                     # 正常来说应该所有都是 name
                     father_name = father.get('name') or father.get('type') or "unknown"
+
+                    # petBodySkill 中 cnName="技能链接" 的技能拆分到独立分类
+                    if father_name == 'petBodySkill' and father.get('cnName') == '技能链接':
+                        father_name = 'petSkillLink'
                     
                     # 遍历该 father 下的所有 skill
                     for skill_node in father.findall('skill'):
@@ -155,6 +166,12 @@ def run_skill_processor():
                             # 其他已知分类但缺失名称的（可选）
                             elif father_name == 'some_other_type':
                                 print('存在未命名技能：', raw_id, '，请检查原始数据。')
+
+                        # 重名技能排除检测：跳过原始数据中同名异义的废弃版本
+                        skip_name = skill_data.get('name', '')
+                        skip_cn = skill_data.get('cnName', '')
+                        if skip_name in SKILL_SKIP_LIST and SKILL_SKIP_LIST[skip_name] == skip_cn:
+                            continue
 
                         # 存入池中，以英文 name 为唯一键
                         skill_pool[skill_data['name']] = skill_data

@@ -11,3 +11,14 @@ GATHER_SUIT_MAP = {
     "紫金": "暗金套装",
     "氩星": "暗金套装",
 }
+
+# father name → 补全 cnName 映射表
+# 部分套装 father 标签在 XML 中缺少 cnName，在此手动补全
+SUIT_NAME_MAP = {
+    "normalEquip": "白色超人",
+    "superMan": "蓝色超人",
+    "footballPlayer": "勇气橄榄",
+    "greenFootballPlayer": "幻想橄榄",
+    "cityBoy": "红刘海",
+    "blueWaist": "白刘海",
+}

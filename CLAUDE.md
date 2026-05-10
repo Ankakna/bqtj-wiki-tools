@@ -44,6 +44,7 @@ data/        - 生成的输出文件（JSON + Excel，已加入 gitignore）
 - `parse_things.py` - 处理物品数据（碎片、材料等），支持 gift 等特殊子标签解析，包含重名检测、报告功能和武器碎片自动补丁
 - `patch_things.py` - 兼容入口，直接调用 parse_things.py 的完整流程
 - `parse_body.py` - 处理角色数据，支持嵌套的 hurtArr 攻击数据解析，包含重名检测和报告功能
+- `parse_suit.py` - 处理套装数据，从 gather → father → image 层级提取套装定义，基于 gather 的 cnName 挂载分类，包含重名检测和报告功能
 
 ## 常用命令
 
@@ -62,6 +63,9 @@ python scripts/parse_things.py
 
 # 处理角色数据（输出至 data/body/）
 python scripts/parse_body.py
+
+# 处理套装数据（输出至 data/suit/）
+python scripts/parse_suit.py
 ```
 
 ### 环境配置
@@ -88,6 +92,7 @@ pip install -e .
 - **技能**：存储在 `<father name="...">` → `<skill>` 节点下
 - **物品**：存储在 `<father>` → `<things>` 节点下
 - **角色**：存储在 `<father name="..." cnName="...">` → `<body>` 节点下，含嵌套的 `<hurtArr>` 攻击数据
+- **套装**：存储在 `<gather cnName="...">` → `<father name="...">` → `<image>` 节点下（最多4个部件: head/coat/pants/belt）
 
 ### 输出格式
 
@@ -98,6 +103,8 @@ pip install -e .
 ### 类别映射
 
 武器类别在 [config/arm_map.py](config/arm_map.py) 中通过 `CATEGORY_MAP` 字典手动映射，因为游戏数据缺乏可靠的类别元数据。
+
+套装类别在 [config/suit_map.py](config/suit_map.py) 中通过 `GATHER_SUIT_MAP` 字典映射，基于 gather 标签的 cnName 属性判定分类。无 cnName 的 gather 默认为"普通套装"。
 
 ## 数据水合说明
 

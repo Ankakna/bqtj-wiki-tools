@@ -11,7 +11,7 @@ import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
 from core import XmlCleaner, XmlParser, ValueConverter
-from config import GATHER_SUIT_MAP
+from config import GATHER_SUIT_MAP, SUIT_NAME_MAP
 
 # --- 配置 ---
 XML_DIR = './xml'
@@ -44,9 +44,9 @@ def parse_suit_father(father_node, gather_cn_name, gather_range):
     if 'father' not in suit_data:
         return None
 
-    # 如果 father 没有 cnName，用 name 作为显示名称
+    # 如果 father 没有 cnName，先查映射表，否则用 name
     if 'fatherCnName' not in suit_data:
-        suit_data['fatherCnName'] = suit_data['name']
+        suit_data['fatherCnName'] = SUIT_NAME_MAP.get(suit_data['name'], suit_data['name'])
 
     # 注入 gather 信息
     suit_data['gatherCnName'] = gather_cn_name or ''

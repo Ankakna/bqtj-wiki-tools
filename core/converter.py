@@ -1,3 +1,4 @@
+import ast
 from typing import Any
 
 class ValueConverter:
@@ -31,6 +32,13 @@ class ValueConverter:
         if key_name and key_name.endswith('B'):
             val_lower = value.lower()
             return val_lower in ('true', '1')
+
+        # Python 字典字面量处理（如 addObjJson 的 "{'key': value}" 格式）
+        if value.startswith('{') and value.endswith('}'):
+            try:
+                return ast.literal_eval(value)
+            except (ValueError, SyntaxError):
+                pass
 
         # 数组逻辑判断：判断键名是否以 Arr 结尾（如 skillArr）或包含逗号
         if (key_name and key_name.endswith('Arr')) or ',' in value:

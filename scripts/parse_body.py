@@ -11,6 +11,8 @@ import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
 from core import XmlCleaner, XmlParser, ValueConverter
+from config import BODY_RENAME_MAP
+from pypinyin import pinyin, Style
 
 # --- 配置 ---
 XML_DIR = './xml'
@@ -39,13 +41,14 @@ def parse_body_node(body_node, father_attrs):
     item_obj = {}
     item_obj.update(father_attrs)
 
-    # 处理 body 标签自身属性（保留 shell 等，跳过 index 和 name 属性因为 cnName 才是准确值）
+    # 处理 body 标签自身属性（保留 shell 等，跳过 index 属性）
     if body_node.attrib:
         for k, v in body_node.attrib.items():
             if k == 'index':
                 continue
             if k == 'name':
-                # body 标签的 name 属性与 cnName 子标签内容可能不一致，以 cnName 为准
+                # body 标签的 name 属性与 cnName 子标签内容可能不一致，以 name 为准
+                item_obj['cnName'] = ValueConverter.to_smart_value(v, k)
                 continue
             item_obj[k] = ValueConverter.to_smart_value(v, k)
 
@@ -53,6 +56,8 @@ def parse_body_node(body_node, father_attrs):
     children_dict = {}
     for child in body_node:
         tag = child.tag
+        if tag == 'cnName' and item_obj.get('cnName'):
+            continue
         if tag not in children_dict:
             children_dict[tag] = []
 
@@ -190,6 +195,24 @@ def run_body_processor():
 
     print(f"\n[提取] 共提取 {len(body_pool)} 个角色")
 
+    # 尸宠单位自动添加"尸宠"前缀（father 为 pet 的单位）
+    pet_prefixed = 0
+    for name, data in body_pool.items():
+        if data.get('father') == 'pet' and not data.get('cnName', '').startswith('尸宠'):
+            data['cnName'] = '尸宠' + data['cnName']
+            pet_prefixed += 1
+    if pet_prefixed:
+        print(f"已为 {pet_prefixed} 个尸宠单位添加\"尸宠\"前缀")
+
+    # 应用角色重命名表
+    renamed_count = 0
+    for name, data in body_pool.items():
+        if name in BODY_RENAME_MAP:
+            data['cnName'] = BODY_RENAME_MAP[name]
+            renamed_count += 1
+    if renamed_count:
+        print(f"已根据重命名表更新 {renamed_count} 个角色的 cnName")
+
     # 生成报告
     generate_summary(body_pool)
 
@@ -217,6 +240,41 @@ def run_body_processor():
         print(f"全量 Excel 已生成: {EXCEL_NAME}")
 
     print(f"\n处理完成！提取角色总数: {len(body_pool)}")
+
+    # --- 生成拼音排序 Wiki 列表 ---
+    wiki_list = _generate_wiki_list(body_pool)
+    WIKI_LIST_OUT = os.path.join(EXCEL_DIR, '角色列表_wiki.txt')
+    with open(WIKI_LIST_OUT, 'w', encoding='utf-8') as f:
+        f.write(wiki_list)
+    print(f"Wiki 角色列表已生成: {WIKI_LIST_OUT}")
+
+
+def _get_pinyin_sort_key(cn_name):
+    """返回中文名的拼音排序键"""
+    try:
+        py = pinyin(cn_name, style=Style.TONE3)
+        return ''.join([item[0] for item in py])
+    except Exception:
+        return cn_name
+
+
+def _generate_wiki_list(body_pool):
+    """生成按拼音排序的 Wiki 角色列表"""
+    # 收集所有角色 cnName
+    names = []
+    for data in body_pool.values():
+        cn = data.get('cnName', '')
+        if cn and cn != '[缺失中文名]':
+            names.append(cn)
+
+    # 去重并按拼音排序
+    names = sorted(set(names), key=_get_pinyin_sort_key)
+
+    lines = ['{{角色图鉴/列表']
+    for name in names:
+        lines.append(f'|{name}')
+    lines.append('}}')
+    return '\n'.join(lines)
 
 
 if __name__ == '__main__':

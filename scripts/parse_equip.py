@@ -6,17 +6,13 @@
 """
 from collections import defaultdict
 import os
-import json
-import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
-from core import XmlCleaner, ValueConverter
+from core import XmlCleaner, ValueConverter, OutputWriter, ReportGenerator
 
 # --- 配置 ---
 XML_DIR = './xml'
-JSON_OUT = './data/equip/json'
-REPORT_OUT = './data/equip/处理报告.txt'
-EXCEL_DIR = './data/equip'
+OUTPUT_DIR = './data/equip'
 
 
 def process_element(element):
@@ -159,32 +155,33 @@ def generate_summary(equip_pool):
     for cn, names in cn_map.items():
         if len(names) > 1:
             dup_count += 1
-            report.append(f" ⚠️  名称: {cn}")
+            report.append(f" [!]名称: {cn}")
             report.append(f"     关联ID: {', '.join(names)}")
     if dup_count == 0:
-        report.append(" ✅ 未发现重名冲突。")
+        report.append(" [OK]未发现重名冲突。")
     else:
         report.append(f"\n 共发现 {dup_count} 组重名装备。")
 
     report.append("\n[异常数据检测]")
     missing_cn = [n for n, d in equip_pool.items() if not d.get('cnName')]
     if missing_cn:
-        report.append(f" ❌ 缺少中文名 (cnName) 的装备 ({len(missing_cn)}个):")
+        report.append(f" [X]缺少中文名 (cnName) 的装备 ({len(missing_cn)}个):")
         report.append(f"    {', '.join(missing_cn[:20])}...")
     else:
-        report.append(" ✅ 所有装备均包含中文名。")
+        report.append(" [OK]所有装备均包含中文名。")
 
     final_report = "\n".join(report)
     print(final_report)
-    with open(REPORT_OUT, "w", encoding="utf-8") as f:
+    report_path = os.path.join(OUTPUT_DIR, '处理报告.txt')
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(report_path, "w", encoding="utf-8") as f:
         f.write(final_report)
-    print(f"\n📄 统计报告已保存至: {REPORT_OUT}")
+    print(f"\n[报告]统计报告已保存至: {report_path}")
 
 
 def run_equip_processor():
     """全自动装备处理器：扫描 XML → 提取 father/equip 结构 → JSON/Excel 输出"""
     print(f"开始全量扫描目录: {XML_DIR}")
-    os.makedirs(JSON_OUT, exist_ok=True)
 
     equip_pool = {}
 
@@ -233,29 +230,8 @@ def run_equip_processor():
     # 生成报告
     generate_summary(equip_pool)
 
-    # --- 保存 JSON ---
-    print(f"\n正在写入 {len(equip_pool)} 个独立 JSON 文件...")
-    for equip_key, data in equip_pool.items():
-        file_path = os.path.join(JSON_OUT, f"{equip_key}.json")
-        with open(file_path, 'w', encoding='utf-8') as j:
-            json.dump(data, j, ensure_ascii=False, indent=2)
-
-    # --- 保存 Excel ---
-    os.makedirs(EXCEL_DIR, exist_ok=True)
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    EXCEL_NAME = f'{EXCEL_DIR}/装备数据全量更新_{timestamp}.xlsx'
-
-    excel_data = []
-    for equip_key, data in equip_pool.items():
-        excel_data.append({
-            "PageName": f"Data:Equip/{equip_key}.json",
-            "Content": json.dumps(data, ensure_ascii=False)
-        })
-
-    if excel_data:
-        pd.DataFrame(excel_data).to_excel(EXCEL_NAME, index=False, header=False)
-        print(f"全量 Excel 已生成: {EXCEL_NAME}")
-
+    # --- 保存 JSON + Excel ---
+    OutputWriter.write(equip_pool, OUTPUT_DIR, 'Equip', cn_label='装备')
     print(f"\n处理完成！提取装备总数: {len(equip_pool)}")
 
 

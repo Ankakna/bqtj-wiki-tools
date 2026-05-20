@@ -6,19 +6,13 @@
 """
 from collections import defaultdict
 import os
-import json
-import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
-from core import XmlCleaner, XmlParser, ValueConverter
+from core import XmlCleaner, XmlParser, ValueConverter, OutputWriter
 from config import BODY_RENAME_MAP
-from pypinyin import pinyin, Style
-
 # --- 配置 ---
 XML_DIR = './xml'
-JSON_OUT = './data/body/json'
-REPORT_OUT = './data/body/处理报告.txt'
-EXCEL_DIR = './data/body'
+OUTPUT_DIR = './data/body'
 
 
 def process_element(element):
@@ -127,32 +121,33 @@ def generate_summary(body_pool):
     for cn, names in cn_map.items():
         if len(names) > 1:
             dup_count += 1
-            report.append(f" ⚠️  名称: {cn}")
+            report.append(f" [!]名称: {cn}")
             report.append(f"     关联ID: {', '.join(names)}")
     if dup_count == 0:
-        report.append(" ✅ 未发现重名冲突。")
+        report.append(" [OK]未发现重名冲突。")
     else:
         report.append(f"\n 共发现 {dup_count} 组重名角色。")
 
     report.append("\n[异常数据检测]")
     missing_cn = [n for n, d in body_pool.items() if not d.get('cnName')]
     if missing_cn:
-        report.append(f" ❌ 缺少中文名 (cnName) 的角色 ({len(missing_cn)}个):")
+        report.append(f" [X]缺少中文名 (cnName) 的角色 ({len(missing_cn)}个):")
         report.append(f"    {', '.join(missing_cn[:20])}...")
     else:
-        report.append(" ✅ 所有角色均包含中文名。")
+        report.append(" [OK]所有角色均包含中文名。")
 
     final_report = "\n".join(report)
     print(final_report)
-    with open(REPORT_OUT, "w", encoding="utf-8") as f:
+    report_path = os.path.join(OUTPUT_DIR, '处理报告.txt')
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(report_path, "w", encoding="utf-8") as f:
         f.write(final_report)
-    print(f"\n📄 统计报告已保存至: {REPORT_OUT}")
+    print(f"\n[报告]统计报告已保存至: {report_path}")
 
 
 def run_body_processor():
     """全自动角色处理器：扫描 XML → 提取 father/body 结构 → JSON/Excel 输出"""
     print(f"开始全量扫描目录: {XML_DIR}")
-    os.makedirs(JSON_OUT, exist_ok=True)
 
     body_pool = {}
 
@@ -216,65 +211,10 @@ def run_body_processor():
     # 生成报告
     generate_summary(body_pool)
 
-    # --- 保存 JSON ---
-    print(f"\n正在写入 {len(body_pool)} 个独立 JSON 文件...")
-    for body_name, data in body_pool.items():
-        file_path = os.path.join(JSON_OUT, f"{body_name}.json")
-        with open(file_path, 'w', encoding='utf-8') as j:
-            json.dump(data, j, ensure_ascii=False, indent=2)
-
-    # --- 保存 Excel ---
-    os.makedirs(EXCEL_DIR, exist_ok=True)
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    EXCEL_NAME = f'{EXCEL_DIR}/角色数据全量更新_{timestamp}.xlsx'
-
-    excel_data = []
-    for body_name, data in body_pool.items():
-        excel_data.append({
-            "PageName": f"Data:Body/{body_name}.json",
-            "Content": json.dumps(data, ensure_ascii=False)
-        })
-
-    if excel_data:
-        pd.DataFrame(excel_data).to_excel(EXCEL_NAME, index=False, header=False)
-        print(f"全量 Excel 已生成: {EXCEL_NAME}")
-
+    # --- 保存 JSON + Excel ---
+    OutputWriter.write(body_pool, OUTPUT_DIR, 'Body', cn_label='角色')
     print(f"\n处理完成！提取角色总数: {len(body_pool)}")
 
-    # --- 生成拼音排序 Wiki 列表 ---
-    wiki_list = _generate_wiki_list(body_pool)
-    WIKI_LIST_OUT = os.path.join(EXCEL_DIR, '角色列表_wiki.txt')
-    with open(WIKI_LIST_OUT, 'w', encoding='utf-8') as f:
-        f.write(wiki_list)
-    print(f"Wiki 角色列表已生成: {WIKI_LIST_OUT}")
-
-
-def _get_pinyin_sort_key(cn_name):
-    """返回中文名的拼音排序键"""
-    try:
-        py = pinyin(cn_name, style=Style.TONE3)
-        return ''.join([item[0] for item in py])
-    except Exception:
-        return cn_name
-
-
-def _generate_wiki_list(body_pool):
-    """生成按拼音排序的 Wiki 角色列表"""
-    # 收集所有角色 cnName
-    names = []
-    for data in body_pool.values():
-        cn = data.get('cnName', '')
-        if cn and cn != '[缺失中文名]':
-            names.append(cn)
-
-    # 去重并按拼音排序
-    names = sorted(set(names), key=_get_pinyin_sort_key)
-
-    lines = ['{{角色图鉴/列表']
-    for name in names:
-        lines.append(f'|{name}')
-    lines.append('}}')
-    return '\n'.join(lines)
 
 
 if __name__ == '__main__':

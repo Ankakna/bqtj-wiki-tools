@@ -32,3 +32,19 @@ class XmlCleaner:
         content = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
         content = re.sub(r'<!\[CDATA\[.*?\]\]>', '', content, flags=re.DOTALL)
         return content
+
+
+def clean_game_description(text):
+    """
+    清理游戏描述文本中的内部标记语法：
+    - [n] 替换为真实换行
+    - {b}/{/b}、{font...}/{/font} 等格式标记全部删除
+    - 逐行去除首尾空白及空行
+    """
+    if not text:
+        return ""
+    text = text.replace('[n]', '\n')
+    text = text.replace('{b}', '').replace('{/b}', '')
+    text = re.sub(r'\{font[^}]*\}', '', text)
+    text = text.replace('{/font}', '')
+    return "\n".join([line.strip() for line in text.strip().split('\n') if line.strip()])

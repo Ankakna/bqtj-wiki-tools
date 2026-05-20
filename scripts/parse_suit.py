@@ -6,18 +6,14 @@
 """
 from collections import defaultdict
 import os
-import json
-import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
-from core import XmlCleaner, XmlParser, ValueConverter
+from core import XmlCleaner, XmlParser, ValueConverter, OutputWriter, ReportGenerator
 from config import GATHER_SUIT_MAP, SUIT_NAME_MAP
 
 # --- 配置 ---
 XML_DIR = './xml'
-JSON_OUT = './data/suit/json'
-REPORT_OUT = './data/suit/处理报告.txt'
-EXCEL_DIR = './data/suit'
+OUTPUT_DIR = './data/suit'
 
 
 def get_suit_category(gather_cn_name):
@@ -137,16 +133,16 @@ def generate_summary(suit_pool):
 
     final_report = "\n".join(report)
     print(final_report)
-    os.makedirs(os.path.dirname(REPORT_OUT), exist_ok=True)
-    with open(REPORT_OUT, "w", encoding="utf-8") as f:
+    report_path = os.path.join(OUTPUT_DIR, '处理报告.txt')
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(report_path, "w", encoding="utf-8") as f:
         f.write(final_report)
-    print(f"\n[报告] 统计报告已保存至: {REPORT_OUT}")
+    print(f"\n[报告] 统计报告已保存至: {report_path}")
 
 
 def run_suit_processor():
     """全自动套装处理器：扫描 XML → 提取 gather/father/image → JSON/Excel 输出"""
     print(f"开始全量扫描目录: {XML_DIR}")
-    os.makedirs(JSON_OUT, exist_ok=True)
 
     suit_pool = {}
     skipped_fathers = 0
@@ -185,35 +181,8 @@ def run_suit_processor():
     # 生成报告
     generate_summary(suit_pool)
 
-    # --- 保存单个 JSON ---
-    print(f"\n正在写入 {len(suit_pool)} 个独立 JSON 文件...")
-    for suit_name, data in suit_pool.items():
-        file_path = os.path.join(JSON_OUT, f"{suit_name}.json")
-        with open(file_path, 'w', encoding='utf-8') as j:
-            json.dump(data, j, ensure_ascii=False, indent=2)
-
-    # --- 保存汇总 JSON ---
-    os.makedirs(EXCEL_DIR, exist_ok=True)
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    SUMMARY_JSON = f'{EXCEL_DIR}/套装数据汇总_{timestamp}.json'
-    summary_list = list(suit_pool.values())
-    with open(SUMMARY_JSON, 'w', encoding='utf-8') as f:
-        json.dump(summary_list, f, ensure_ascii=False, indent=2)
-    print(f"汇总 JSON 已生成: {SUMMARY_JSON} ({len(summary_list)} 个套装)")
-
-    # --- 保存 Excel ---
-    EXCEL_NAME = f'{EXCEL_DIR}/套装数据全量更新_{timestamp}.xlsx'
-    excel_data = []
-    for suit_name, data in suit_pool.items():
-        excel_data.append({
-            "PageName": f"Data:Suit/{suit_name}.json",
-            "Content": json.dumps(data, ensure_ascii=False)
-        })
-
-    if excel_data:
-        pd.DataFrame(excel_data).to_excel(EXCEL_NAME, index=False, header=False)
-        print(f"全量 Excel 已生成: {EXCEL_NAME}")
-
+    # --- 保存输出 ---
+    OutputWriter.write(suit_pool, OUTPUT_DIR, 'Suit', cn_label='套装')
     print(f"\n处理完成！提取套装总数: {len(suit_pool)}")
 
 

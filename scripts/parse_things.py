@@ -7,18 +7,15 @@ from collections import defaultdict
 import os
 import json
 import glob
-import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
 from typing import Dict, Any
-from core import XmlCleaner, XmlParser, ValueConverter
+from core import XmlCleaner, XmlParser, ValueConverter, OutputWriter, clean_game_description
 
 # --- 配置 ---
 XML_DIR = './xml'
-JSON_OUT = './data/things/json'
+OUTPUT_DIR = './data/things'
 ARMS_JSON_DIR = './data/arms/json'
-REPORT_OUT = './data/things/处理报告.txt'
-EXCEL_DIR = './data/things'
 
 # Things 特有的 gift 标签字段映射
 GIFT_KEYS = ["type", "name", "num", "color", "lv", "childType", "numExtra", "tipB", "dropName"]
@@ -40,12 +37,6 @@ def _get_smelt_config(items_level: int, color: str) -> Dict[str, Any]:
         config["grade"] = -1
     return config
 
-
-def clean_description(text):
-    """清理 description 文本"""
-    if not text:
-        return ""
-    return "".join([line.strip() for line in text.strip().split('\n') if line.strip()])
 
 
 def parse_gift_element(element):
@@ -74,7 +65,7 @@ def process_element(element):
     if element.text and element.text.strip():
         text = element.text.strip()
         if element.tag == 'description':
-            return clean_description(text)
+            return clean_game_description(text)
         return ValueConverter.to_smart_value(text, element.tag)
     return None
 
@@ -310,7 +301,6 @@ def generate_summary(things_pool, patch_stats=None):
         total_patched = patch_stats['black_chips'] + patch_stats['rare_chips'] + patch_stats['generated']
         report.append(f"\n[补丁水合]")
         report.append(f" 黑色武器碎片已修补: {patch_stats['black_chips']}")
-        report.append(f" 稀有武器碎片已修补: {patch_stats['rare_chips'] - patch_stats['generated']}")
         report.append(f" 稀有武器碎片已生成: {patch_stats['generated']}")
         report.append(f" 跳过: {patch_stats['skipped']}")
         if patch_stats['errors']:
@@ -319,16 +309,17 @@ def generate_summary(things_pool, patch_stats=None):
 
     final_report = "\n".join(report)
     print(final_report)
-    with open(REPORT_OUT, "w", encoding="utf-8") as f:
+    report_path = os.path.join(OUTPUT_DIR, '处理报告.txt')
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(report_path, "w", encoding="utf-8") as f:
         f.write(final_report)
-    print(f"\n[报告] 统计报告已保存至: {REPORT_OUT}")
+    print(f"\n[报告] 统计报告已保存至: {report_path}")
 
 
 def run_things_processor():
     """全自动物品处理器：XML 提取 + 武器碎片补丁 → JSON/Excel"""
 
     print(f"开始全量扫描目录: {XML_DIR}")
-    os.makedirs(JSON_OUT, exist_ok=True)
 
     # ======== Phase 1: XML 提取 ========
     print("\n--- Phase 1: XML 提取 ---")
@@ -373,44 +364,12 @@ def run_things_processor():
     print(f"\n--- Phase 3: 保存输出 ---")
     generate_summary(things_pool, patch_stats)
 
-    # 保存 JSON
-    print(f"\n正在写入 {len(things_pool)} 个独立 JSON 文件...")
-    for things_name, data in things_pool.items():
-        file_path = os.path.join(JSON_OUT, f"{things_name}.json")
-        # 输出前清理内部标记
-        output_data = data.copy()
-        output_data.pop('_generated', None)
-        with open(file_path, 'w', encoding='utf-8') as j:
-            json.dump(output_data, j, ensure_ascii=False, indent=2)
+    # --- 保存 JSON ---
+    OutputWriter.write(things_pool, OUTPUT_DIR, 'Things', cn_label='物品',
+                       clean_keys=['_generated', '_patched'], skip_excel=True)
 
-    # 生成 Excel（全量 + 补丁标记）
-    os.makedirs(EXCEL_DIR, exist_ok=True)
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    all_excel = []
-    patch_excel = []
-
-    for things_name, data in things_pool.items():
-        output_data = data.copy()
-        is_patched = output_data.pop('_generated', None) or output_data.pop('_patched', None)
-        entry = {
-            "PageName": f"Data:Things/{things_name}.json",
-            "Content": json.dumps(output_data, ensure_ascii=False)
-        }
-        all_excel.append(entry)
-        if is_patched:
-            patch_excel.append(entry)
-
-    # 全量 Excel
-    if all_excel:
-        EXCEL_FULL = f'{EXCEL_DIR}/物品数据全量更新_{timestamp}.xlsx'
-        pd.DataFrame(all_excel).to_excel(EXCEL_FULL, index=False, header=False)
-        print(f"全量 Excel 已生成: {EXCEL_FULL}")
-
-    # 增量 Excel（仅补丁项）
-    if patch_excel:
-        EXCEL_PATCH = f'{EXCEL_DIR}/物品数据更新_补全_{timestamp}.xlsx'
-        pd.DataFrame(patch_excel).to_excel(EXCEL_PATCH, index=False, header=False)
-        print(f"补丁增量 Excel 已生成: {EXCEL_PATCH} ({len(patch_excel)} 条)")
+    # --- Excel（全量单表） ---
+    OutputWriter.write_excel(things_pool, OUTPUT_DIR, 'Things', '物品')
 
     # 最终统计
     total_patched = patch_stats.get('black_chips', 0) + patch_stats.get('rare_chips', 0) + patch_stats.get('generated', 0)

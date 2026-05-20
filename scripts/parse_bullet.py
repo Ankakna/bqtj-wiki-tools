@@ -6,17 +6,13 @@
 """
 from collections import defaultdict
 import os
-import json
-import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
-from core import XmlCleaner, XmlParser, ValueConverter
+from core import XmlCleaner, XmlParser, ValueConverter, OutputWriter, ReportGenerator
 
 # --- 配置 ---
 XML_DIR = './xml'
-JSON_OUT = './data/bullet/json'
-REPORT_OUT = './data/bullet/处理报告.txt'
-EXCEL_DIR = './data/bullet'
+OUTPUT_DIR = './data/bullet'
 
 
 def is_weapon_bullet(bullet_node):
@@ -51,32 +47,33 @@ def generate_summary(bullet_pool):
     for cn, names in cn_map.items():
         if len(names) > 1:
             dup_count += 1
-            report.append(f" ⚠️  名称: {cn}")
+            report.append(f" [!]名称: {cn}")
             report.append(f"     关联ID: {', '.join(names)}")
     if dup_count == 0:
-        report.append(" ✅ 未发现重名冲突。")
+        report.append(" [OK]未发现重名冲突。")
     else:
         report.append(f"\n 共发现 {dup_count} 组重名子弹。")
 
     report.append("\n[异常数据检测]")
     missing_cn = [n for n, d in bullet_pool.items() if not d.get('cnName')]
     if missing_cn:
-        report.append(f" ❌ 缺少中文名 (cnName) 的子弹 ({len(missing_cn)}个):")
+        report.append(f" [X]缺少中文名 (cnName) 的子弹 ({len(missing_cn)}个):")
         report.append(f"    {', '.join(missing_cn[:20])}...")
     else:
-        report.append(" ✅ 所有子弹均包含中文名。")
+        report.append(" [OK]所有子弹均包含中文名。")
 
     final_report = "\n".join(report)
     print(final_report)
-    with open(REPORT_OUT, "w", encoding="utf-8") as f:
+    report_path = os.path.join(OUTPUT_DIR, '处理报告.txt')
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(report_path, "w", encoding="utf-8") as f:
         f.write(final_report)
-    print(f"\n📄 统计报告已保存至: {REPORT_OUT}")
+    print(f"\n[报告]统计报告已保存至: {report_path}")
 
 
 def run_bullet_processor():
     """全自动子弹处理器：扫描 XML → 提取 father/bullet 结构（排除武器）→ JSON/Excel 输出"""
     print(f"开始全量扫描目录: {XML_DIR}")
-    os.makedirs(JSON_OUT, exist_ok=True)
 
     bullet_pool = {}
     skipped_weapons = 0
@@ -134,29 +131,8 @@ def run_bullet_processor():
     # 生成报告
     generate_summary(bullet_pool)
 
-    # --- 保存 JSON ---
-    print(f"\n正在写入 {len(bullet_pool)} 个独立 JSON 文件...")
-    for bullet_name, data in bullet_pool.items():
-        file_path = os.path.join(JSON_OUT, f"{bullet_name}.json")
-        with open(file_path, 'w', encoding='utf-8') as j:
-            json.dump(data, j, ensure_ascii=False, indent=2)
-
-    # --- 保存 Excel ---
-    os.makedirs(EXCEL_DIR, exist_ok=True)
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    EXCEL_NAME = f'{EXCEL_DIR}/子弹数据全量更新_{timestamp}.xlsx'
-
-    excel_data = []
-    for bullet_name, data in bullet_pool.items():
-        excel_data.append({
-            "PageName": f"Data:Bullet/{bullet_name}.json",
-            "Content": json.dumps(data, ensure_ascii=False)
-        })
-
-    if excel_data:
-        pd.DataFrame(excel_data).to_excel(EXCEL_NAME, index=False, header=False)
-        print(f"全量 Excel 已生成: {EXCEL_NAME}")
-
+    # --- 保存 JSON + Excel ---
+    OutputWriter.write(bullet_pool, OUTPUT_DIR, 'Bullet', cn_label='子弹')
     print(f"\n处理完成！提取非武器子弹总数: {len(bullet_pool)}")
 
 

@@ -5,18 +5,15 @@
 每个 <image> 是一个完整的时装条目，以 name 为唯一标识。
 """
 import os
-import json
 import ast
-import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
-from core import XmlCleaner, ValueConverter
+from core import XmlCleaner, ValueConverter, OutputWriter, ReportGenerator
 from config import normalize_fashion_cn
 
 # --- 配置 ---
 XML_FILE = './xml/16_XMLOut_fashionClass.bin'
-JSON_OUT = './data/fashion/json'
-EXCEL_DIR = './data/fashion'
+OUTPUT_DIR = './data/fashion'
 
 
 def parse_add_obj_json(text):
@@ -87,29 +84,13 @@ def run_fashion_processor():
 
     print(f"[提取] 共提取 {len(fashion_items)} 个时装")
 
-    # --- 保存独立 JSON ---
-    os.makedirs(JSON_OUT, exist_ok=True)
-    for item in fashion_items:
-        name = item['name']
-        file_path = os.path.join(JSON_OUT, f"{name}.json")
-        with open(file_path, 'w', encoding='utf-8') as j:
-            json.dump(item, j, ensure_ascii=False, indent=2)
-    print(f"独立 JSON 已生成: {JSON_OUT}/ ({len(fashion_items)} 个文件)")
+    fashion_pool = {item['name']: item for item in fashion_items}
 
-    # --- 保存 Excel ---
-    os.makedirs(EXCEL_DIR, exist_ok=True)
-    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    EXCEL_NAME = f'{EXCEL_DIR}/时装数据全量更新_{timestamp}.xlsx'
+    # --- 生成报告 ---
+    ReportGenerator.generate(fashion_pool, OUTPUT_DIR, report_prefix='时装', group_field='moduleType')
 
-    excel_data = []
-    for item in fashion_items:
-        excel_data.append({
-            "PageName": f"Data:Fashion/{item['name']}.json",
-            "Content": json.dumps(item, ensure_ascii=False)
-        })
-
-    pd.DataFrame(excel_data).to_excel(EXCEL_NAME, index=False, header=False)
-    print(f"Excel 已生成: {EXCEL_NAME} ({len(excel_data)} 行)")
+    # --- 保存输出 ---
+    OutputWriter.write(fashion_pool, OUTPUT_DIR, 'Fashion', cn_label='时装')
     print(f"\n处理完成！提取时装总数: {len(fashion_items)}")
 
 

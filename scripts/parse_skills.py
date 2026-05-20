@@ -1,18 +1,13 @@
 from collections import defaultdict
 import os
-import json
-import pandas as pd
 import datetime
 import xml.etree.ElementTree as ET
-from core import XmlCleaner, XmlParser, ValueConverter
+from core import XmlCleaner, XmlParser, ValueConverter, OutputWriter
 from config import SKILL_RENAME_MAP, SKILL_CATEGORY_MAP
 
 # --- 配置 ---
 XML_DIR = './xml'
-JSON_OUT = './data/skills/json'
-EXCEL_NAME = f'./data/skills/技能数据全量更新_{datetime.datetime.now().strftime("%Y%m%d_%H%M%S")}.xlsx'
-# 报告输出路径
-REPORT_OUT = './data/skills/处理报告.txt'
+OUTPUT_DIR = './data/skills'
 
 # 食物 ID 前缀到中文名的映射，用于数据补全
 FOOD_PREFIX_MAP = {
@@ -69,11 +64,11 @@ def generate_summary(skill_pool, renamed_count=0):
     for (cn, cat), names in cn_map.items():
         if len(names) > 1:
             dup_count += 1
-            report.append(f" ⚠️  名称: {cn}  [{cat}]")
+            report.append(f" [!]名称: {cn}  [{cat}]")
             report.append(f"     关联ID: {', '.join(names)}")
 
     if dup_count == 0:
-        report.append(" ✅ 未发现重名冲突。")
+        report.append(" [OK]未发现重名冲突。")
     else:
         report.append(f"\n 共发现 {dup_count} 组重名技能。")
 
@@ -85,17 +80,19 @@ def generate_summary(skill_pool, renamed_count=0):
     report.append("\n[异常数据检测]")
     missing_cn = [n for n, d in skill_pool.items() if not d.get('cnName')]
     if missing_cn:
-        report.append(f" ❌ 缺少中文名 (cnName) 的技能 ({len(missing_cn)}个):")
+        report.append(f" [X]缺少中文名 (cnName) 的技能 ({len(missing_cn)}个):")
         report.append(f"    {', '.join(missing_cn[:20])}...")
     else:
-        report.append(" ✅ 所有技能均包含中文名。")
+        report.append(" [OK]所有技能均包含中文名。")
 
     # 输出到终端和文件
     final_report = "\n".join(report)
     print(final_report)
-    with open(REPORT_OUT, "w", encoding="utf-8") as f:
+    report_path = os.path.join(OUTPUT_DIR, '处理报告.txt')
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(report_path, "w", encoding="utf-8") as f:
         f.write(final_report)
-    print(f"\n📄 详细统计报告已保存至: {REPORT_OUT}")
+    print(f"\n[报告]详细统计报告已保存至: {report_path}")
 
 def run_skill_processor():
     '''
@@ -103,7 +100,6 @@ def run_skill_processor():
     逻辑：扫描所有 XML -> 寻找 father/skill 结构 -> 提取数据并记录其父节点名称。
     '''
     print(f"开始全量扫描目录: {XML_DIR}")
-    os.makedirs(JSON_OUT, exist_ok=True)
     
     # 使用字典存储，name 作为 key，确保同一个技能名只保留一份（或最后一份）
     skill_pool = {}
@@ -193,27 +189,8 @@ def run_skill_processor():
     generate_summary(skill_pool, renamed_count)
 
     # --- 统一保存 ---
-    excel_data = []
-    print(f"正在写入 {len(skill_pool)} 个独立 JSON 文件...")
-    
-    for skill_name, data in skill_pool.items():
-        # 保存为单 JSON
-        file_path = os.path.join(JSON_OUT, f"{skill_name}.json")
-        with open(file_path, 'w', encoding='utf-8') as j:
-            json.dump(data, j, ensure_ascii=False, indent=2)
-        
-        # 准备 Excel 更新表
-        excel_data.append({
-            "PageName": f"Data:Skill/{skill_name}.json",
-            "Content": json.dumps(data, ensure_ascii=False)
-        })
-
-    # 保存 Excel
-    if excel_data:
-        df = pd.DataFrame(excel_data)
-        df.to_excel(EXCEL_NAME, index=False, header=False)
-        print(f"处理完成！提取技能总数: {len(skill_pool)}")
-        print(f"Excel 更新表已生成: {EXCEL_NAME}")
+    OutputWriter.write(skill_pool, OUTPUT_DIR, 'Skill', cn_label='技能')
+    print(f"处理完成！提取技能总数: {len(skill_pool)}")
 
 if __name__ == '__main__':
     run_skill_processor()

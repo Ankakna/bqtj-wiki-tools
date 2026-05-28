@@ -9,7 +9,7 @@ import ast
 import datetime
 import xml.etree.ElementTree as ET
 from core import XmlCleaner, ValueConverter, OutputWriter, ReportGenerator
-from config import normalize_fashion_cn
+from config import normalize_fashion_cn, FASHION_NAME_MAP
 
 # --- 配置 ---
 XML_FILE = './xml/16_XMLOut_fashionClass.bin'
@@ -38,6 +38,10 @@ def parse_image_node(image_node):
             item['cnName'] = normalize_fashion_cn(v)
         else:
             item[k] = ValueConverter.to_smart_value(v, k)
+
+    # 特例覆盖：若 name 在映射表中，用映射值替换 cnName
+    if item.get('name') in FASHION_NAME_MAP:
+        item['cnName'] = FASHION_NAME_MAP[item['name']]
 
     # 处理子元素
     for child in image_node:

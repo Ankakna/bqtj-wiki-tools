@@ -174,4 +174,10 @@ CATEGORY_MAP = {
     "fireFlamerDea": ["death"],
     "starDeaS": ["death"],
     "electricArcX": ["death"],
+    "airWave": ["darkgold"],
+}
+
+# name → 强制 cnName 覆盖表（处理重名冲突等特殊情况）
+ARM_NAME_MAP = {
+    "rocketSpace": "苍穹-末日枪神",
 }

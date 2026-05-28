@@ -19,6 +19,12 @@ FASHION_NO_SUFFIX = {
 }
 
 
+# name → 强制 cnName 覆盖表（处理官方数据重名等特殊情况）
+FASHION_NAME_MAP = {
+    "chinaCaptain": "中国队长时装",
+}
+
+
 def normalize_fashion_cn(cn_name: str) -> str:
     """规范化时装 cnName：若不在白名单中且未以"时装"结尾，则追加"时装"后缀"""
     if not cn_name:

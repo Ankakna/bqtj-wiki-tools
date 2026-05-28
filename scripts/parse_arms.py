@@ -1,7 +1,7 @@
 import os
 import xml.etree.ElementTree as ET
 from core import XmlCleaner, XmlParser, ValueConverter, OutputWriter, ReportGenerator
-from config import CATEGORY_MAP
+from config import CATEGORY_MAP, ARM_NAME_MAP
 
 # --- 配置 ---
 XML_DIR = './xml'
@@ -40,6 +40,19 @@ def run_arm_processor():
 
                         arm_data['armsType'] = arms_type
                         arm_data['category'] = CATEGORY_MAP.get(arm_data['name'], ["未分类"])
+
+                        # 处理重名：肉鸽武器加"-肉鸽"后缀
+                        cn = arm_data.get('cnName', '')
+                        if 'death' in arm_data['category']:
+                            arm_data['cnName'] = cn + '-肉鸽'
+                        # 随机属性武器加"-随机属性武器"后缀
+                        elif arm_data.get('randomPro', 0) > 0:
+                            arm_data['cnName'] = cn + '-随机属性武器'
+
+                        # 特例覆盖：强制 cnName 映射
+                        if arm_data.get('name') in ARM_NAME_MAP:
+                            arm_data['cnName'] = ARM_NAME_MAP[arm_data['name']]
+
                         arm_data = ValueConverter.prepare_output(arm_data, "爆枪突击", "arms")
 
                         arm_pool[arm_data['name']] = arm_data

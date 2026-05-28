@@ -72,6 +72,15 @@
 			<effectType>weaponSensitive</effectType><mul>0</mul>
 			<description>降低[1-mul]受到的伤害（除副手外）。</description>
 		</skill>
+		<skill cnName="副手易感">
+			<name>weaponSen2</name><showInLifeBarB>1</showInLifeBarB><wantDescripB>1</wantDescripB>
+			<cnName>副手易感</cnName><ignoreNoSkillB>1</ignoreNoSkillB><ignoreSilenceB>1</ignoreSilenceB>
+			<conditionType>passive</conditionType><condition>underAllHit</condition><target>me</target><addType>instant</addType>
+			<effectType>weaponSensitive</effectType><mul>0.1</mul>
+			<description>降低[1-mul]受到的伤害（除副手外）。</description>
+		</skill>
+		
+		
 		<skill cnName="载具敏感">
 			<name>vehicleSensitive</name><showInLifeBarB>1</showInLifeBarB><wantDescripB>1</wantDescripB>
 			<cnName>载具敏感</cnName><ignoreNoSkillB>1</ignoreNoSkillB><ignoreSilenceB>1</ignoreSilenceB>
@@ -91,7 +100,8 @@
 			<cnName>红武敏感</cnName><ignoreNoSkillB>1</ignoreNoSkillB><ignoreSilenceB>1</ignoreSilenceB>
 			<conditionType>passive</conditionType><condition>underAllHit</condition><target>me</target><addType>instant</addType>
 			<effectType>redArmsSensitive</effectType>
-			<description>只受红色武器的伤害。</description>
+			<mul>0.05</mul>
+			<description>降低[1-mul]受到的伤害（除红色武器外）</description>
 		</skill>
 		<skill cnName="徒手敏感">
 			<name>handSensitive</name><showInLifeBarB>1</showInLifeBarB><wantDescripB>1</wantDescripB>

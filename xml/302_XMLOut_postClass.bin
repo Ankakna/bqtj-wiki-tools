@@ -18,6 +18,8 @@
 			<loveAdd>40</loveAdd>
 			<lotteryNum>2</lotteryNum>
 			<noDeductLoveB>1</noDeductLoveB>
+			
+			<dieRestartB>1</dieRestartB>
 			<autoDesB>1</autoDesB>
 			<proName>lifeAll,hurtAll,lottery</proName>
 		</body>
@@ -31,6 +33,8 @@
 			<loveAdd>60</loveAdd>
 			<lotteryNum>3</lotteryNum>
 			<noDeductLoveB>1</noDeductLoveB>
+			
+			<dieRestartB>1</dieRestartB>
 			<autoDesB>1</autoDesB>
 			<dropFollowB>1</dropFollowB>
 			<proName>lifeAll,hurtAll,dpsAll,lottery</proName>

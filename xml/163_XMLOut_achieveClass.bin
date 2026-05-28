@@ -714,7 +714,7 @@
 		</father>
 	</gather>
 	<gather name="death" cnName="肉鸽模式">
-		<father name="deathDiff" cnName="通关难度">
+		<father name="deathDiff" cnName="通关难度" goods="achieveCard">
 			<achieve name="deathDiff0" cnName="简单肉鸽">
 				<condition type="valueCompare" pro="deathWinDiff" value="1" /><gift>things;yaGem;50</gift>
 				<description>通关肉鸽 简单 难度。</description>
@@ -734,7 +734,7 @@
 		</father>
 		
 		
-		<father name="deathRole" cnName="角色通关">
+		<father name="deathRole" cnName="角色通关" goods="achieveCard">
 			<achieve name="deathStriker" cnName="小白肉鸽">
 				<condition type="valueCompare" pro="deathStrikerWinDiff" value="2" /><gift>things;deathSilver;100</gift>
 				<description>小白通关肉鸽 普通 难度。</description>
@@ -753,7 +753,7 @@
 			</achieve>
 		</father>
 		
-		<father name="deathBook" cnName="记忆收集">
+		<father name="deathBook" cnName="记忆收集" goods="achieveCard">
 			<achieve name="deathBook1" cnName="肉鸽记忆x20">
 				<condition type="valueCompare" pro="deathBookNum" value="20" /><gift>things;renameCard;1</gift>
 				<description>获得肉鸽记忆[condition.value]个。</description>

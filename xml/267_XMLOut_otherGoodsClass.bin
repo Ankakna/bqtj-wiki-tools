@@ -47,6 +47,9 @@
 			<goods propId="2528" cnName="挑战次数" name="wilderNum" 								price="30" chooseNumB="1" dayBuyLimitNum="5"><priceType>money</priceType></goods>
 			
 			
+			<!-- 成就完成所需 -->
+			<goods propId="4589" cnName="成就完成卡" name="achieveCard" 						price="50" chooseNumB="1"><priceType>money</priceType></goods>
+			
 			<!-- 武器皮肤 -->
 			<goods propId="4385" cnName="金蝉写实皮肤" name="sniperCicadaO" 	dataType="armsSkin" inBagType="no"		price="50"><priceType>money</priceType></goods>
 			<goods propId="4386" cnName="赤鼬赛博紫皮肤" name="shotgunSkunkSPurple" 	dataType="armsSkin" inBagType="no"		price="50"><priceType>money</priceType></goods>

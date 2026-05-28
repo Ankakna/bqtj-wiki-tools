@@ -8,6 +8,7 @@
 			<body cnName="寻找弹药箱" name="findCaissonB" 							 tip="开启后，弹药和携弹量都为0时会寻找掉落的弹药箱。"/>
 			<body cnName="通关后自动存档" name="autoSaveB" 							 tip="在普通关卡和无尽模式中，AI战斗开启时通关，且拾取完所有掉落物，且未存档时间超过5分钟，则会自动存档。"/>
 			<body cnName="通关后自动重玩" name="restartB" 							 tip="关卡通关拾取完所有掉落物后1秒自动重玩关卡（如果可以重玩的话）。该功能只有在总统职务开启“掉落物跟踪”后才能使用。"/>
+			<body cnName="死后重玩次数" name="dieRestartNum" 							 tip="P1死后自动重玩的次数（如果可以重玩的话）。该功能只有联邦国务卿及以上职务才能使用。"/>
 			
 		</father>
 		

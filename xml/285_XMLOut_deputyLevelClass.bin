@@ -348,7 +348,7 @@
 				<unitG>
 					<allDefault aiOrder="patrolGlobal"></allDefault>
 					<unitOrder id="we2" camp="we"><!-- camp不填默认为enemy -->
-						<unit id="xiaomei" cnName="天鹰小美" armsRange="scorpionCrossbow" num="1" lifeMul="0.3" dpsMul="40" dpsSpecielLabel="heroLvDps" aiOrder="followBodyAttack:p1" dieGotoState="stru"/><!-- 某个单位的属性 -->
+						<unit cnName="天鹰小美" armsRange="scorpionCrossbow" num="1" lifeMul="0.3" dpsMul="40" dpsSpecielLabel="heroLvDps" aiOrder="followBodyAttack:p1" dieGotoState="stru"/><!-- 某个单位的属性 -->
 					</unitOrder>
 					<unitOrder id="enemy1">
 						<numberType>number</numberType>

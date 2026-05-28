@@ -224,6 +224,7 @@
 		<body name="setBulletEffectUrl" cnName="设定指定子弹图像的Url" input="str"  string="highlighterSun:" inputTitle="子弹名:地址"/>
 		<body name="scaleScene" cnName="缩放视野" input="num"  string="100" />
 		<body name="playFlv" cnName="播放视频" input="str"  string="" inputTitle="网址" />
+		<body name="connectHideTime" cnName="数据加载界面延迟隐藏" input="num"  string="1" inputTitle="延迟秒数" />
 		
 	</father>
 	<father name="achieve" cnName="魂卡成就">

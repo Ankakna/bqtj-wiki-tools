@@ -32,6 +32,8 @@
 		<things><cnName>光锥碎片</cnName><name>lightCone</name><iconUrl>specialGun/lightConeIcon</iconUrl></things>
 		<things><cnName>隼武碎片</cnName><name>falconGun</name><iconUrl>specialGun/falconGunIcon</iconUrl><smeltD grade="-1" /></things>
 		<things><cnName>极源碎片</cnName><name>extremeGun</name><iconUrl>specialGun/extremeGunIcon</iconUrl><smeltD grade="-1" /></things>
+		<things><cnName>空气波碎片</cnName><name>airWave</name><iconUrl>newGun/airCannon_icon</iconUrl><smeltD grade="-1" /></things>
+		
 		<things><cnName>巨蟹座碎片</cnName><name>consCancer</name><iconUrl>newGun/consCancerIcon</iconUrl><smeltD grade="-1" /></things>
 		<things><cnName>处女座碎片</cnName><name>consVirgo</name><iconUrl>newGun/consVirgoIcon</iconUrl><smeltD grade="-1" /></things>
 		<things><cnName>天秤座碎片</cnName><name>consLibra</name><iconUrl>newGun/consLibraIcon</iconUrl><smeltD grade="-1" /></things>

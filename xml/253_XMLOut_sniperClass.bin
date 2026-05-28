@@ -353,6 +353,7 @@
 			<lineD lightColor="0xFF9900" size="3" lightSize="8" blendMode="add" type="one" />
 			<bodyImgRange>specialGun/sniperCicada6</bodyImgRange>
 			<bulletImgRange>specialGun/bullet</bulletImgRange>
+			<info>最多可穿透7个敌人。</info>
 		</bullet>
 	</father>
 	

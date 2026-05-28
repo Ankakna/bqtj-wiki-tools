@@ -492,14 +492,19 @@
 			<!-- 技能各等级 ------------------------------------------------------------ -->
 			<growth>
 				<skill></skill>
-				<skill><obj>"cnName":"无疆骑士","num":1,"lifeMul":35,"dpsMul":1,"mulByFatherB":true,"maxNum":1,"lifeTime":30,"skillArr":["crazy_knights","boundless_enemy"]</obj></skill>
 				<skill>
-					<obj>"cnName":"无疆骑士","num":1,"lifeMul":50,"dpsMul":2,"mulByFatherB":true,"maxNum":1,"lifeTime":30,"skillArr":["crazy_knights","boundless_enemy"]</obj>
-					<changeText>生命值倍数：[obj.lifeMul]{n}战斗力倍数：[obj.dpsMul]</changeText>
+					<mul>1</mul>
+					<obj>"cnName":"无疆骑士","num":1,"lifeMul":35,"dpsMul":1,"mulByFatherB":true,"maxNum":1,"lifeTime":30,"skillArr":["crazy_knights","boundless_enemy"]</obj>
 				</skill>
 				<skill>
+					<mul>2</mul>
+					<obj>"cnName":"无疆骑士","num":1,"lifeMul":50,"dpsMul":2,"mulByFatherB":true,"maxNum":1,"lifeTime":30,"skillArr":["crazy_knights","boundless_enemy"]</obj>
+					<changeText>生命值倍数：[obj.lifeMul]{n}战斗力倍数：[mul]</changeText>
+				</skill>
+				<skill>
+					<mul>3</mul>
 					<obj>"cnName":"无疆骑士","num":1,"lifeMul":70,"dpsMul":3,"mulByFatherB":true,"maxNum":1,"lifeTime":30,"skillArr":["crazy_knights","boundless_enemy"]</obj>
-					<changeText>生命值倍数：[obj.lifeMul]{n}战斗力倍数：[obj.dpsMul]</changeText>
+					<changeText>生命值倍数：[obj.lifeMul]{n}战斗力倍数：[mul]</changeText>
 				</skill>
 			</growth>
 		</skill>

@@ -46,7 +46,7 @@
 			</growth>	
 		</task>
 		
-		<task name="weekParts" cnName="零件–屠戮" uiShowTime="999999" unlockLv="30"  maxLvLimitB="0">
+		<task name="weekParts" cnName="零件-屠戮" uiShowTime="999999" unlockLv="30"  maxLvLimitB="0">
 			<openD tk="BuDong_plot"/>
 			<diff>20</diff>
 			<shortText>前往[map]消灭守关首领！</shortText>
@@ -64,7 +64,7 @@
 			
 			<!-- 开启条件 -->
 		</task>
-		<task name="weekHourse" cnName="午马–践踏" uiShowTime="999999" unlockLv="30"  maxLvLimitB="0">
+		<task name="weekHourse" cnName="午马-践踏" uiShowTime="999999" unlockLv="30"  maxLvLimitB="0">
 			<openD tk="BuDong_plot"/>
 			<diff>20</diff>
 			<shortText>前往[map]消灭守关首领！</shortText>
@@ -81,7 +81,7 @@
 			<!-- 开启条件 -->
 		</task>
 		
-		<task name="weekHeadBlack" cnName="头盔–暗物质" uiShowTime="999999" unlockLv="30" >
+		<task name="weekHeadBlack" cnName="头盔-暗物质" uiShowTime="999999" unlockLv="30" >
 			<openD tk="GuiWang_breath"/>
 			<remarks>head</remarks>
 			<diff>0.7</diff>
@@ -103,7 +103,7 @@
 				<must>things;victoryKey;4</must>
 			</openD>
 		</task>
-		<task name="weekCoatBlack" cnName="战衣–暗物质" uiShowTime="999999" unlockLv="30" >
+		<task name="weekCoatBlack" cnName="战衣-暗物质" uiShowTime="999999" unlockLv="30" >
 			<openD tk="GuiWang_breath"/>
 			<remarks>coat</remarks>
 			<diff>0.7</diff>
@@ -126,7 +126,7 @@
 			</openD>
 		</task>
 		
-		<task name="weekPantsBlack" cnName="战裤–暗物质" uiShowTime="999999" unlockLv="30" >
+		<task name="weekPantsBlack" cnName="战裤-暗物质" uiShowTime="999999" unlockLv="30" >
 			<openD tk="GuiWang_breath"/>
 			<remarks>pants</remarks>
 			<diff>0.7</diff>
@@ -148,7 +148,7 @@
 				<must>things;victoryKey;12</must>
 			</openD>
 		</task>
-		<task name="weekBeltBlack" cnName="腰带–暗物质" uiShowTime="999999" unlockLv="30" >
+		<task name="weekBeltBlack" cnName="腰带-暗物质" uiShowTime="999999" unlockLv="30" >
 			<openD tk="GuiWang_breath"/>
 			<remarks>belt</remarks>
 			<diff>0.7</diff>
@@ -174,7 +174,7 @@
 		
 		
 		
-		<task name="weekHead" cnName="头盔–威慑" uiShowTime="999999" unlockLv="30" >
+		<task name="weekHead" cnName="头盔-威慑" uiShowTime="999999" unlockLv="30" >
 			<openD tk="BaiSha_skeleton"/>
 			<remarks>head</remarks>
 			<diff>0.7</diff>
@@ -196,7 +196,7 @@
 				<must>things;victoryKey;4</must>
 			</openD>
 		</task>
-		<task name="weekCoat" cnName="战衣–铲除" uiShowTime="999999" unlockLv="30" >
+		<task name="weekCoat" cnName="战衣-铲除" uiShowTime="999999" unlockLv="30" >
 			<openD tk="BaiSha_skeleton"/>
 			<remarks>coat</remarks>
 			<diff>0.7</diff>
@@ -219,7 +219,7 @@
 			</openD>
 		</task>
 		
-		<task name="weekPants" cnName="战裤–制服" uiShowTime="999999" unlockLv="30" >
+		<task name="weekPants" cnName="战裤-制服" uiShowTime="999999" unlockLv="30" >
 			<openD tk="BaiSha_skeleton"/>
 			<remarks>pants</remarks>
 			<diff>0.7</diff>
@@ -241,7 +241,7 @@
 				<must>things;victoryKey;12</must>
 			</openD>
 		</task>
-		<task name="weekBelt" cnName="腰带–监禁" uiShowTime="999999" unlockLv="30" >
+		<task name="weekBelt" cnName="腰带-监禁" uiShowTime="999999" unlockLv="30" >
 			<openD tk="BaiSha_skeleton"/>
 			<remarks>belt</remarks>
 			<diff>0.7</diff>
@@ -263,7 +263,7 @@
 				<must>things;victoryKey;4</must>
 			</openD>
 		</task>
-		<task name="weekArms" cnName="武器–处决" uiShowTime="999999" unlockLv="30" >
+		<task name="weekArms" cnName="武器-处决" uiShowTime="999999" unlockLv="30" >
 			<openD tk="BaiSha_skeleton"/>
 			<remarks>arms</remarks>
 			<diff>0.7</diff>

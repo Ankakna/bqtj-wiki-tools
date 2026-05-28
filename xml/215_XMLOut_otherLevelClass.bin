@@ -214,7 +214,7 @@
 			
 			<level name="bossCardPK" cn="魂卡pk">
 				<sceneLabel>Hospital5</sceneLabel>
-				<info overBackB="1"  diff="1" dumB="1" noMoreB="1" noVehicleB="1" noTreasureB="1" mustSingleB="1"  noDeviceB="1" tm="180" hb="1" />
+				<info overBackB="1"  diff="1" dumB="1" noMoreB="1" noVehicleB="1" noTreasureB="1" mustSingleB="1"  noDeviceB="1" firstLostB="1" tm="180" hb="1" />
 				<drop noB="1" />
 				<unitG>
 				</unitG>

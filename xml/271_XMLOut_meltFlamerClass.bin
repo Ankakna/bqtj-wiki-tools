@@ -72,6 +72,7 @@
 			<fireImgType>no</fireImgType>
 			<!--图像范围------------------------------------------------------------ -->
 			<bodyImgRange>specialGun/meltFlamer6</bodyImgRange><bulletImgRange>specialGun/bullet</bulletImgRange>
+			<info>可无限穿透敌人。</info>
 		</bullet>
 	</father>
 	<father name="godArmsSkill" cnName="神级武器技能">

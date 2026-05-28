@@ -189,6 +189,7 @@
 			<!--图像范围------------------------------------------------------------ -->
 			<bodyImgRange>specialGun/pistolFox6</bodyImgRange>
 			<bulletImgRange>specialGun/bullet</bulletImgRange>
+			<info>可将敌人麻痹。</info>
 		</bullet>
 	</father>
 </data>

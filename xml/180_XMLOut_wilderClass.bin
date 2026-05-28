@@ -189,6 +189,13 @@
 	
 	
 	<father name="holiday" cnName="特别" sortIndex="99">
+		<body name="GhostGungod" cnName="末日枪神" scene="XuWu1" lifeMul="20" dpsMul="0.05" openTime="2026-5-21" noMoreB="1"  day="40">
+			<drop cnName="空气波碎片" pro="1" d7="10" d6="9" d5="8" d4="7" d3="6" d2="5" d1="4" d0="3">
+				<gift>things;airWave;1</gift>
+			</drop>
+		</body>
+		
+		
 		<body id="13" name="NianMonster" cnName="年兽" scene="PrisonDoor" lifeMul="0.5" openTime="2019-2-26" day="21"  >
 			<drop cnName="烟花弩碎片" pro="1" d7="22" d6="21" d5="20" d4="19" d3="18" d2="17" d1="16" d0="15">
 				<gift>things;beadCrossbow;1</gift>
@@ -197,6 +204,11 @@
 				<gift>things;NianCarCash;1</gift>
 			</drop>
 		</body>
+		
+		
+		
+		
+		
 		
 		
 		<body name="Skeleton" cnName="暴君" scene="JungleOutside" lifeMul="6" dpsMul="1.5" openTime="2022-1-15" day="30">
@@ -217,6 +229,7 @@
 			</drop>
 		</body>
 		
+		<![CDATA[ 上限次数超过162，并且不可购买，则每日次数变成2次 ]]>
 		<body name="IronDog" cnName="铁犬" scene="XuWu1" lifeMul="6" dpsMul="0.3" openTime="2024-11-5" day="9999" noExchangeB="1" noBuyB="1" noMoreB="1" limitAll="162">
 			<drop cnName="纪念币" pro="1" d6="12" d5="10" d4="8" d3="7" d2="6" d1="5" d0="4">
 				<gift>base;anniCoin;1</gift>
@@ -259,6 +272,10 @@
 				<gift>things;wangShu;1</gift>
 			</drop>
 		</body>
+		
+		
+		
+		
 	</father>
 	
 	

@@ -522,7 +522,7 @@
 			<addType>instant</addType>
 			<effectType>underFlyHurtMul</effectType>
 			<mul>0.2</mul>
-			<description>受到飞行敌人的伤害降低[1-mul]。</description>
+			<description>受到飞行敌人的伤害降低[1-mul]。不受飞行魂卡的伤害。</description>
 		</skill>
 		<skill name="激光盾">
 			<name>noUnderLaser</name><showInLifeBarB>1</showInLifeBarB><wantDescripB>1</wantDescripB>

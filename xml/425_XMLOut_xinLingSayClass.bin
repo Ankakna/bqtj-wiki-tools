@@ -133,7 +133,7 @@
 			</sayList>
 			<sayList name="s2">
 				<say target="藏师将军"><content>我来了！</content></say>
-				<say target="main2"><content>你怎么来了？</content></say>
+				<say target="p1"><content>你怎么来了？</content></say>
 				<say target="藏师将军"><content>北斗城如此危险，你必须有我这样的强力帮手才行！</content></say>
 				<say target="我"><content>好！我们现在就出发！</content></say>
 			</sayList>
@@ -197,5 +197,54 @@
 				<say target="我"><content>搞什么啊？神秘兮兮的。</content></say>
 			</sayList>
 		</level>
+		
+		
+		<level name="XinLing_storyXiaoMei">
+			<sayList name="s1">
+				<say target="制毒师"><content>你带着小美要小心一点，不要让她给跑了。</content></say>
+				<say target="p1"><content>怎么会？我可信任她了。</content></say>
+				<say target="天鹰小美"><content>我只是想再回到出生的地方看看。</content></say>
+				<say target="天鹰小美"><content>等把这里的僵尸清理干净了，我就告诉你们我的身世。</content></say>
+				<say target="p1"><content>我一直觉得你和@Girl很像，你不会是她的克隆体吧？</content></say>
+				<say target="天鹰小美"><content>注意前面的僵尸，它们已经被改造过了，我们只能用弩来攻击它们！</content></say>
+			</sayList>
+			<sayList name="s2">
+				<say target="p1"><content>现在可以说了吗？</content></say>
+				<say target="天鹰小美"><content>你说的没错，我和小樱长得很像，但我并不是她的克隆体。</content></say>
+				<say target="天鹰小美"><content>我和她是双胞胎！</content></say>
+				<say target="p1"><content>为什么小樱说她家里只有她一个小孩呢？</content></say>
+				<say target="天鹰小美"><content>她家人说谎了，有些事情，小樱不知道更好。</content></say>
+				<say target="天鹰小美"><content>当年我和小樱同时出生，但是我的体质太差了，染上严重的传染病，医生说我救不活了。</content></say>
+				<say target="天鹰小美"><content>于是……我就被遗弃了。是亚瑟把我带回了天鹰实验室，治好了我的病。</content></say>
+				<say target="天鹰小美"><content>亚瑟赋予了我新的生命。</content></say>
+				<say target="p1"><content>你所知道的这些，必然都是亚瑟告诉你的吧？</content></say>
+				<say target="天鹰小美"><content>没错！但是亚瑟不会骗我的，我相信他！</content></say>
+				<say target="p1"><content>那么多弃婴，亚瑟为什么偏偏选你呢？</content></say>
+				<say target="天鹰小美"><content>亚瑟确实不是什么好人，他选我是为了测试他的纳米机器人。</content></say>
+				<say target="天鹰小美"><content>但亚瑟并不是那么坏，地下城的每个小孩都是他救活的，而且亚瑟对小孩们都非常好。</content></say>
+				<say target="p1"><content>没看出来亚瑟这么有爱心。</content></say>
+				<say target="天鹰小美"><content>确实，亚瑟后来被野心吞噬了，但是他曾拯救过整个霞光大陆！</content></say>
+				<say target="p1"><content>没有哪个坏人会觉得自己是坏人。</content></say>
+				<say target="天鹰小美"><content>在僵尸席卷各大城市的时候，他在使用纳米机器人抑制住了大量僵尸的活性，有效控制住了僵尸的蔓延。</content></say>
+				<say target="天鹰小美"><content>你真以为霞光5年的宁静是因为高墙吗？</content></say>
+				<say target="p1"><content>为什么后来这些僵尸都成了他做坏事的帮凶呢？</content></say>
+				<say target="天鹰小美"><content>一部分僵尸病毒后来变异了，这些僵尸摆脱了纳米机器人的抑制，重新开始攻击城市。</content></say>
+				<say target="天鹰小美"><content>为了抵御这些僵尸，亚瑟启用了纳米机器人的AI程序，可以远程控制部分僵尸的行为，自此成立僵尸大军。</content></say>
+				<say target="天鹰小美"><content>用僵尸消灭僵尸，亚瑟真是太聪明了。</content></say>
+				<say target="天鹰小美"><content>亚瑟还用超能石增强僵尸大军的能力，但是当他发现自己越来越强大时，他被野心吞噬了。</content></say>
+				<say target="天鹰小美"><content>他不仅想成为霞光大陆的领袖，还想成为全世界的王者。</content></say>
+				<say target="p1"><content>你当时没有阻止他？</content></say>
+				<say target="天鹰小美"><content>在没有被你们俘虏之前，我对整个世界还是失望的，特别是憎恨遗弃我的父母！</content></say>
+				<say target="天鹰小美"><content>我会阻止他吗？追随他还来不及呢！</content></say>
+				<say target="p1"><content>那你现在还这样想吗？</content></say>
+				<say target="天鹰小美"><content>我……不知道。</content></say>
+				<say target="p1"><content>不为难你了，你知道亚瑟现在在哪吗？</content></say>
+				<say target="天鹰小美"><content>他没告诉我他去哪了，不过我猜应该藏在丛林深处。</content></say>
+				<say target="p1"><content>我有事找他呢。</content></say>
+				<say target="天鹰小美"><content>纵然他以前犯下太多的罪孽，请你留他一条命，好吗？</content></say>
+				<say target="p1"><content>先让我抓到再说吧。</content></say>
+			</sayList>
+		</level>
+		
 	</father>	
 </data>

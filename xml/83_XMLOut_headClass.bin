@@ -104,8 +104,8 @@
 			<addObjJson>{'maxJumpNumAdd':2}</addObjJson>
 		</head>
 		<head name="childrenFly" cnName="六一起飞" diff="30" life="365">
-			<condition info="在{purple 2025年6月20号之前}累计8天活跃度达到90。"/>
-			<addObjJson>{'fgNE':0.5}</addObjJson>
+			<condition info="在{purple 2026年6月20号之前}累计8天活跃度达到90。"/>
+			<addObjJson>{'fgNE':0.6,'moveMul':0.25}</addObjJson>
 		</head>
 		
 		<head name="anniver5" cnName="爆枪五周年" diff="50">

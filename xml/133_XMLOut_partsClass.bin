@@ -319,6 +319,16 @@
 			<description>对AI射程超过1500的枪械无效。</description>
 		</things>
 		
+		<things cnName="AI迫近器" o="{'aiStopGap':130}">
+			<name>aiStopParts_1</name><baseLabel>noHurtParts</baseLabel>
+			<cnName>AI迫近器</cnName>
+			<objType>rare</objType>
+			<maxLevel>1</maxLevel>
+			<iconUrl>PartsIcon/aiStopParts1</iconUrl>
+			<description>AI控制下，持有该武器的角色会一直迫近敌人，直到双方距离小于“AI迫近截止”距离。适用于拥有“近视”技能的角色。</description>
+		</things>
+		
+		
 		
 		<![CDATA[宝箱]]>
 		<things cnName="修罗弹夹" o="">

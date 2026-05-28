@@ -9,7 +9,7 @@
 			<swfName>bioShock</swfName>
 			<showLevel>9999</showLevel>
 			<!-- 基本系数 -->
-			<headIconUrl>IconGather/GhostSoldier</headIconUrl>
+			<headIconUrl>bioShock/head_icon</headIconUrl>
 			<!-- 碰撞体积 -->
 			<hitRect>-12, -90, 24, 90</hitRect>
 			<squatHitRect>-12,-50,24,50</squatHitRect>
@@ -25,6 +25,7 @@
 			<!-- 技能 -->
 			<skillArr>GhostGungodBuff</skillArr>
 			<bossSkillArr>gunReloadSwap</bossSkillArr>
+			<wilderSkillArr>deadlyArrow,fightBackBullet,crazy_enemy,moreBullet,penDefence,cardNoAttackSkill</wilderSkillArr>
 		</body>
 		
 				<skill name="换枪">

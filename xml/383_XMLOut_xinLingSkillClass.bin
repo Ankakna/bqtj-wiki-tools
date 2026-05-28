@@ -5,6 +5,7 @@
 		<skill name="横扫">
 			<name>spurtingLing</name>
 			<cnName>横扫</cnName><ignoreImmunityB>1</ignoreImmunityB><ignoreNoSkillB>1</ignoreNoSkillB><noSkillDodgeB>1</noSkillDodgeB>
+			<effectInfoArr>增加伤害输出</effectInfoArr>
 			<!--触发条件与目标------------------------------------------------------------ -->
 			<changeText>范围[range]码{n}最短触发间隔[minTriggerT]秒</changeText>
 			<conditionType>passive</conditionType>
@@ -19,7 +20,7 @@
 			<mul>1</mul>
 			<range>350</range>
 			<pointEffectImg name="orangeLightning"/>
-			<description>对目标造成伤害时，将对目标周围[range]码的敌人造成同等伤害（无视减伤技能，无视免疫、技能免疫），对拥有副手、载具、尸宠、红武、徒手敏感的敌人无效。最短触发间隔[minTriggerT]秒。{font color='#00FF00'}14级无需装备技能也会有技能效果。{/font}</description>
+			<description>对目标造成伤害时，将对目标周围[range]码的敌人造成同等伤害（无视减伤技能，无视免疫、技能免疫），对拥有副手、载具、尸宠、徒手敏感的敌人无效。最短触发间隔[minTriggerT]秒。{font color='#00FF00'}14级无需装备技能也会有技能效果。{/font}</description>
 			<growth>
 				<skill><range>350</range><minTriggerT>1.8</minTriggerT></skill>
 				<skill><range>380</range><minTriggerT>1.7</minTriggerT></skill>
@@ -71,6 +72,7 @@
 		<skill name="攻防一体">
 			<name>lifeAddHurtLing</name><iconUrl>SkillIcon/lifeAddHurtDR</iconUrl><wantDescripB>1</wantDescripB>
 			<cnName>攻防一体</cnName><everNoClearB>1</everNoClearB><ignoreImmunityB>1</ignoreImmunityB><noSkillDodgeB>1</noSkillDodgeB><ignoreNoSkillB>1</ignoreNoSkillB>
+			<effectInfoArr>增加伤害输出</effectInfoArr>
 			<!--英雄技能属性------------------------------------------------------------ -->
 			<changeText>增伤最高[mul]</changeText>
 			<!--触发条件与目标------------------------------------------------------------ -->
@@ -105,6 +107,7 @@
 		<skill name="整数增益">
 			<name>integerHurtLing</name><iconUrl>SkillIcon/integerHurtDR</iconUrl><wantDescripB>1</wantDescripB>
 			<cnName>整数增益</cnName><everNoClearB>1</everNoClearB><ignoreNoSkillB>1</ignoreNoSkillB>
+			<effectInfoArr>增加伤害输出</effectInfoArr>
 			<!--英雄技能属性------------------------------------------------------------ -->
 			<changeText>提升[mul-1]的伤害{n}</changeText>
 			<!--触发条件与目标------------------------------------------------------------ -->

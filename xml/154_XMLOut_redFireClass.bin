@@ -98,6 +98,7 @@
 			<!--图像范围------------------------------------------------------------ -->
 			<bodyImgRange>specialGun/redFire6</bodyImgRange>
 			<bulletImgRange>specialGun/bullet</bulletImgRange>
+			<info>拥有半径170码的范围伤害。</info>
 		</bullet>
 	</father>
 	<father>

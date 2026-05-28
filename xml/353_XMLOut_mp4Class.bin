@@ -17,5 +17,10 @@
 		<body name="foxLingSuper1" url="swf/mp4/foxLingSuper1.mp4"/>
 		<body name="foxLingSuper2" url="swf/mp4/foxLingSuper2.mp4"/>
 		<body name="foxLingSuper3" url="swf/mp4/foxLingSuper3.mp4"/>
+		
+		<body name="cowboyYing1" url="swf/mp4/cowboyYing1.mp4"/>
+		<body name="cowboyYing2" url="swf/mp4/cowboyYing2.mp4"/>
+		<body name="mechaYing1" url="swf/mp4/mechaYing1.mp4"/>
+		<body name="mechaYing2" url="swf/mp4/mechaYing2.mp4"/>
 	</father>
 </data>

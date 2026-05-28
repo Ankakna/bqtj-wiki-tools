@@ -5,7 +5,9 @@
 	<pro name="bulletSpeed" cnName="子弹速度" first="+"  unit="%" typeArr="rect"></pro>
 	<pro name="followValue" cnName="跟踪度" first="+" unit="%" typeArr="rect"></pro>
 	<pro name="shootDistanceAddMul" cnName="射程" first="+" unit="%"></pro>
+	
 	<pro name="aiShootRange" cnName="AI射程" first="+" unit="码"></pro>
+	<pro name="aiStopGap" cnName="AI迫近截止" unit="码"></pro>
 	
 	<pro name="gravity" cnName="子弹重力" typeArr="rect"></pro>
 	

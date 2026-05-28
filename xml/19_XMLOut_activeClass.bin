@@ -6,8 +6,9 @@
 		<one name="endlessLevel" 	cnName="进行无尽模式" 	num="1" 		active="20"/>
 		<one name="dayTask" 			cnName="每日任务" 	num="1" 		active="15" />
 		<one name="treasureTask" 	cnName="寻宝任务" 	num="1" 		active="10" />
-		<one name="kingTask" 			cnName="擒王任务" 	num="1" 		active="10" />
 		<one name="extraTask" 		cnName="副本任务" 	num="1" 		active="15" />
+		<one name="weekTask" 			cnName="每周任务" 	num="1" 		active="10" />
+		
 		<one name="normalLevel" 		cnName="完成关卡" 			num="1" 	active="30" 	noGotoB="1"/>
 		<one name="wilder" 			cnName="秘境胜利" 	num="1" 		active="10" />
 		<one name="gm3" 			cnName="GM三人组" 	num="1" 		active="10" />

@@ -184,7 +184,7 @@
 			</sayList>
 			<sayList name="s2">
 				<say target="藏师将军"><content>我来了！</content></say>
-				<say target="main2"><content>你怎么来了？</content></say>
+				<say target="p1"><content>你怎么来了？</content></say>
 				<say target="藏师将军"><content>北斗城如此危险，你必须有我这样的强力帮手才行！</content></say>
 				<say target="我"><content>好！我们现在就出发！</content></say>
 			</sayList>
@@ -356,9 +356,11 @@
 				<say target="小樱"><content>就这些啊，大哥哥，你还不相信我呀？</content></say>
 				<say target="main2"><content>好吧，那行。以后你想学超能力，就跟着我吧。</content></say>
 				<say target="小樱"><content>小樱遵命，嘻嘻。</content></say>
+				<![CDATA[
 				<say target="小樱"><content>大哥哥，你叫什么名字啊？</content></say>
 				<say target="main2"><content>我叫@playerName。</content></say>
 				<say target="小樱"><content>好霸气的名字呀！</content></say>
+				]]>
 			</sayList>
 		</level>
 	</father>
@@ -397,7 +399,7 @@
 					<say r="Girl" target="小樱"><content>太好了！小白有救了！</content></say>
 				<say target="制毒师"><content>各位救了我的命，我可不想欠你们的！</content></say>
 				<say target="我"><content>太感谢了！</content></say>
-				<say target="main2"><content>你对毒物如此了解，你是否知道这群僵尸中得是哪种毒？</content></say>
+				<say target="p1"><content>你对毒物如此了解，你是否知道这群僵尸中得是哪种毒？</content></say>
 				<say target="制毒师"><content>我还不是很了解，据说与其他地方相比，霞光市的僵尸毒非常与众不同。也因此我来到了这里，没想到在沃土镇被僵尸群困住了，差点丢了性命。</content></say>
 				<say target="制毒师"><content>正好，现在有这么多的僵尸样本，但是还缺少高等携枪僵尸的尸体样本。</content></say>
 				<say target="我"><content>我知道西池那里有很多高等级的携枪僵尸。</content></say>
@@ -408,7 +410,7 @@
 			<sayList name="s1">
 				<say target="制毒师"><content>尸体样本差不多够了，但是我还得找一个安全的地方，这样才能够安心做实验。</content></say>
 				<say target="我"><content>对！我发现到哪个地方都要提心吊胆，担心哪里会蹦出一只僵尸来。我们必须有自己的大本营！</content></say>
-				<say target="main2"><content>我们要选一个离南唐城最远的地方。</content></say>
+				<say target="p1"><content>我们要选一个离南唐城最远的地方。</content></say>
 				<say target="制毒师"><content>我来之前研究过霞光市的地图，双塔村不错，距离南唐城最远，而且有天然的屏障，我们只要守住2个路口就可以高枕无忧了。</content></say>
 				<say target="我"><content>好！就双塔村了！</content></say>
 			</sayList>
@@ -452,7 +454,7 @@
 		<level name="BaiZhang_train" cnName="百丈道-百丈训练场">
 			<sayList name="s1">
 				<say target="制毒师/手机"><content>你在哪呢？我在塔楼上看到大批僵尸出现在猪头洋，你快阻止它们前往双塔基地！</content></say>
-				<say target="main2"><content>我们马上就赶到。</content></say>
+				<say target="p1"><content>我们马上就赶到。</content></say>
 			</sayList>
 		</level>
 		<level name="ZhuTou_war" cnName="猪头洋混战">

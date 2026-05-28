@@ -272,10 +272,10 @@
 				<addObjJson>{'dpsAll':0.35,'lifeAll':0.40,"blackArmsDropPro":0.6,"blackEquipDropPro":0.6,"gemDropPro":0.40,"yaStoneDropNum":8}</addObjJson>
 			</image>
 			
-			<image name="cowboyYingSuper" cnName="猎风时装" sex="female" hd="1" replaceWeaponType="stick" weaponAction="cowboyAttack" skillArr="cowboyYingSuper" imgSwf="cowboyYing" iconLabel="cowboyYing/fashion_icon2">
+			<image name="cowboyYingSuper" cnName="猎风时装" sex="female" hd="1" mp4Arr="cowboyYing2,cowboyYing1" replaceWeaponType="stick" weaponAction="cowboyAttack" skillArr="cowboyYingSuper" imgSwf="cowboyYing" iconLabel="cowboyYing/fashion_icon2">
 				<addObjJson>{'dpsAll':0.35,'lifeAll':0.40,"blackArmsDropPro":0.6,"blackEquipDropPro":0.6,"specialPartsDropPro":0.40,"wilderKeyDay":1}</addObjJson>
 			</image>
-			<image name="mechaYingSuper" cnName="赤姬时装" sex="female" hd="1" replaceWeaponType="sword" weaponAction="mecha_swordAttack" skillArr="hundredGhostsSkill" imgSwf="mechaYing" iconLabel="mechaYing/fashion_icon2">
+			<image name="mechaYingSuper" cnName="赤姬时装" sex="female" hd="1" mp4Arr="mechaYing2,mechaYing1" replaceWeaponType="sword" weaponAction="mecha_swordAttack" skillArr="hundredGhostsSkill" imgSwf="mechaYing" iconLabel="mechaYing/fashion_icon2">
 				<addObjJson>{'dpsAll':0.35,'lifeAll':0.40,"blackArmsDropPro":0.6,"blackEquipDropPro":0.6,"gemDropPro":0.40,"demStroneDropNum":1}</addObjJson>
 			</image>
 			<image name="foxLingSuper" cnName="白狐时装" sex="female" hd="1" mp4Arr="foxLingSuper1,foxLingSuper2,foxLingSuper3" replaceWeaponType="darts" weaponAction="fox_dartsAttack" skillArr="foxLingSkill" imgSwf="foxLing" iconLabel="foxLing/fashion_icon2">

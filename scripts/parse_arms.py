@@ -1,4 +1,6 @@
 import os
+import json
+import pandas as pd
 import xml.etree.ElementTree as ET
 from core import XmlCleaner, XmlParser, ValueConverter, OutputWriter, ReportGenerator
 from config import CATEGORY_MAP, ARM_NAME_MAP
@@ -65,7 +67,35 @@ def run_arm_processor():
     ReportGenerator.generate(arm_pool, OUTPUT_DIR, report_prefix='武器', group_field='armsType')
 
     # --- 保存输出 ---
-    OutputWriter.write(arm_pool, OUTPUT_DIR, 'Arm', cn_label='武器')
+    timestamp = OutputWriter.write(arm_pool, OUTPUT_DIR, 'Arm', cn_label='武器')
+
+    # --- 生成 ArmsItemData（Item 模块所需的精简整合 JSON） ---
+    item_fields = ['name', 'cnName', 'bodyImgRange', 'color']
+    item_data = []
+    for arm in arm_pool.values():
+        entry = {}
+        for k in item_fields:
+           val = arm.get(k)
+           # 只添加非空值（None 或空字符串都跳过）
+           if val is not None and val != "":
+                entry[k] = val
+        item_data.append(entry)
+
+    item_json_path = os.path.join(OUTPUT_DIR, 'ArmsItemData.json')
+    with open(item_json_path, 'w', encoding='utf-8') as f:
+        json.dump(item_data, f, ensure_ascii=False, indent=2)
+    print(f"处理ArmsItemData JSON: {item_json_path} ({len(item_data)} 条)")
+
+    # 追加到 Excel
+    excel_path = os.path.join(OUTPUT_DIR, f'武器数据更新_{timestamp}.xlsx')
+    existing_df = pd.read_excel(excel_path, header=None)
+    new_row = pd.DataFrame([{
+        0: "Data:ArmsItemData.json",
+        1: json.dumps(item_data, ensure_ascii=False)
+    }])
+    combined_df = pd.concat([existing_df, new_row], ignore_index=True)
+    combined_df.to_excel(excel_path, index=False, header=False)
+
     print(f"处理完成！共包含 {len(arm_pool)} 个武器定义")
 
 if __name__ == '__main__':

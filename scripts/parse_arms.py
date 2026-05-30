@@ -76,22 +76,31 @@ def run_arm_processor():
         entry = {}
         for k in item_fields:
            val = arm.get(k)
-           # 只添加非空值（None 或空字符串都跳过）
            if val is not None and val != "":
                 entry[k] = val
         item_data.append(entry)
 
+    arms_item_json = {
+        "data": {
+            "father": {
+                "@name": "ArmsItem",
+                "@cnName": "武器标签",
+                "item": item_data
+            }
+        }
+    }
+
     item_json_path = os.path.join(OUTPUT_DIR, 'ArmsItemData.json')
     with open(item_json_path, 'w', encoding='utf-8') as f:
-        json.dump(item_data, f, ensure_ascii=False, indent=2)
-    print(f"处理ArmsItemData JSON: {item_json_path} ({len(item_data)} 条)")
+        json.dump(arms_item_json, f, ensure_ascii=False, indent=2)
+    print(f"ArmsItemData JSON: {item_json_path} ({len(item_data)} 条)")
 
     # 追加到 Excel
     excel_path = os.path.join(OUTPUT_DIR, f'武器数据更新_{timestamp}.xlsx')
     existing_df = pd.read_excel(excel_path, header=None)
     new_row = pd.DataFrame([{
         0: "Data:ArmsItemData.json",
-        1: json.dumps(item_data, ensure_ascii=False)
+        1: json.dumps(arms_item_json, ensure_ascii=False)
     }])
     combined_df = pd.concat([existing_df, new_row], ignore_index=True)
     combined_df.to_excel(excel_path, index=False, header=False)

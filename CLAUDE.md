@@ -49,7 +49,8 @@ data/        - 生成的输出文件（JSON + Excel，已加入 gitignore）
 - `parse_equip.py` - 处理装备数据（饰品、护盾、载具、副手），支持自闭合属性型和含子元素型，包含重名检测和报告功能
 - `parse_bullet.py` - 处理非武器子弹数据（英雄技能子弹、载具子弹、敌方子弹等），通过 bodyImgRange/allImgRange 排除武器子弹，包含重名检测和报告功能
 - `parse_suit.py` - 处理套装数据，从 gather → father → image 层级提取套装定义，基于 gather 的 cnName 挂载分类，包含重名检测和报告功能
-- `parse_fashion.py` - 处理时装数据，从 16_XMLOut_fashionClass.bin 提取所有时装条目，独立输出 JSON + Excel文件。
+- `parse_fashion.py` - 处理时装数据，从 fashionClass.bin 提取所有时装条目，独立输出 JSON + Excel文件
+- `parse_parts.py` - 处理零件数据，从 partsClass.bin 提取所有时装条目，独立输出 JSON + Excel文件，包含专门为Module:PartsItem使用的 JSON 文件
 
 ## 常用命令
 
@@ -80,6 +81,9 @@ python scripts/parse_fashion.py
 
 # 处理非武器子弹数据（输出至 data/bullet/）
 python scripts/parse_bullet.py
+
+# 处理特殊/稀有零件数据（输出至 data/parts/）
+python scripts/parse_parts.py
 ```
 
 ### 环境配置
@@ -109,7 +113,8 @@ pip install -e .
 - **套装**：存储在 `<gather cnName="...">` → `<father name="...">` → `<image>` 节点下（最多4个部件: head/coat/pants/belt）
 - **装备**：存储在 `<father>` → `<equip>` 节点下。三种形态：副手（自闭合，属性含 baseLabel/lv）、护盾饰品（自闭合，属性含 baseLabel/maxLv）、载具（含子元素如 main/sub/addObjJson）
 - **子弹（非武器）**：存储在 `<father>` → `<bullet>` 节点下。通过检测 bodyImgRange/allImgRange 来排除武器子弹
-- **时装**：存储在 `16_XMLOut_fashionClass.bin` 的 `<father name="fashion">` → `<image>` 节点下，每个 image 是独立的时装条目
+- **时装**：存储在 `fashionClass.bin` 的 `<father name="fashion">` → `<image>` 节点下，每个 image 是独立的时装条目
+- **零件**：存储在 `partsClass.bin` 的 `<father name="parts">` → `<things>` 节点下
 
 ### 输出格式
 
